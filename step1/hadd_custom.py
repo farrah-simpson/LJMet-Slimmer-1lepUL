@@ -7,7 +7,7 @@ parser = ArgumentParser()
 parser.add_argument( "-y", "--year", required = True )
 args = parser.parse_args()
 
-PATH = "/isilon/hadoop/store/user/dali/FWLJMET106XUL_singleLep20{}UL_RunIISummer20_3t_step1hadds/".format( args.year )
+PATH = "/eos/uscms/store/group/lpcljm/FWLJMET106XUL_singleLep20{}UL_RunIISummer20_X53_step1hadds/".format( args.year )
 
 SYSTS = [ str(syst) for syst in config.JES_shifts if config.JES_shifts[ syst ] ]
 SHIFTS = [ "up", "down" ]

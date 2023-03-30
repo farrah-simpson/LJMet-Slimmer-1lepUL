@@ -1,5 +1,5 @@
-eosUserName = "dali" # EDIT ME
-postfix = "3t" # EDIT ME
+eosUserName = "fsimpson" # EDIT ME
+postfix = "X53" # EDIT ME
 years = [ "16APV", "16", "17", "18" ]
 
 sampleDir = {
@@ -52,13 +52,13 @@ JEC_files = {
 }
 
 JES_shifts = {
-  "JER": False,
-  "JEC": False, # fully de-correlated, corresponds to total JEC from LJMet
+  "JER": True,
+  "JEC": True, # fully de-correlated, corresponds to total JEC from LJMet
   "FlavorQCD": False,
-  "FlavorPureGluon": True,
-  "FlavorPureQuark": True,
-  "FlavorPureCharm": True,
-  "FlavorPureBottom": True,
+  "FlavorPureGluon": False,
+  "FlavorPureQuark": False,
+  "FlavorPureCharm": False,
+  "FlavorPureBottom": False,
   "RelativeBal": False,
   "RelativeSample_Era": False,
   "HF": False,
@@ -119,6 +119,50 @@ samples = {
       "ChargedHiggs_HplusTB_HplusToTB_M-2500_TuneCP5_13TeV_amcatnlo_pythia8",
       "ChargedHiggs_HplusTB_HplusToTB_M-3000_TuneCP5_13TeV_amcatnlo_pythia8"
     ],
+    "VLQ": [
+      "PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8",     
+      "PairVLQ_x53x53_tWtW_narrow_RH_M800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M900_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1000_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1100_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8"
+    ],
+    "VLQBSM": [
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH1000_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8"
+    ],
+
     "TTTX": [
       "TTTT_TuneCP5_13TeV-amcatnlo-pythia8",
       "TTTJ_TuneCP5_13TeV-madgraph-pythia8",
@@ -232,6 +276,51 @@ samples = {
       "ChargedHiggs_HplusTB_HplusToTB_M-2500_TuneCP5_13TeV_amcatnlo_pythia8",
       "ChargedHiggs_HplusTB_HplusToTB_M-3000_TuneCP5_13TeV_amcatnlo_pythia8"
     ],
+    "VLQ": [
+      "PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8",     
+      "PairVLQ_x53x53_tWtW_narrow_RH_M800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M900_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1000_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1100_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8"
+    ],
+    "VLQBSM": [
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH1000_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8"
+    ],
+
+
     "TTTX": [
       "TTTT_TuneCP5_13TeV-amcatnlo-pythia8",
       "TTTJ_TuneCP5_13TeV-madgraph-pythia8",
@@ -345,6 +434,51 @@ samples = {
       "ChargedHiggs_HplusTB_HplusToTB_M-2500_TuneCP5_13TeV_amcatnlo_pythia8",
       "ChargedHiggs_HplusTB_HplusToTB_M-3000_TuneCP5_13TeV_amcatnlo_pythia8"
     ],
+    "VLQ": [
+      "PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8",     
+      "PairVLQ_x53x53_tWtW_narrow_RH_M800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M900_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1000_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1100_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8"
+    ],
+    "VLQBSM": [
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH1000_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8"
+    ],
+
+
     "TTTX": [
       "TTTT_TuneCP5_13TeV-amcatnlo-pythia8",
       #"TTTJ_TuneCP5_13TeV-madgraph-pythia8",
@@ -457,6 +591,49 @@ samples = {
       "ChargedHiggs_HplusTB_HplusToTB_M-2000_TuneCP5_13TeV_amcatnlo_pythia8",
       "ChargedHiggs_HplusTB_HplusToTB_M-2500_TuneCP5_13TeV_amcatnlo_pythia8",
       "ChargedHiggs_HplusTB_HplusToTB_M-3000_TuneCP5_13TeV_amcatnlo_pythia8"
+    ],
+    "VLQ": [
+      "PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8",     
+      "PairVLQ_x53x53_tWtW_narrow_RH_M800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M900_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1000_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1100_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8"
+    ],
+    "VLQBSM": [
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX800_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX900_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1000_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1100_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH200_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH1000_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH200_TuneCP5_13TeV-madgraph-pythia8", 
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH400_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH600_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH800_TuneCP5_13TeV-madgraph-pythia8",
+      "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8"
     ],
     "TTTX": [
       "TTTT_TuneCP5_13TeV-amcatnlo-pythia8",

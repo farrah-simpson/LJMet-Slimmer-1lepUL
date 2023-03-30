@@ -344,6 +344,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   inputTree->SetBranchStatus("theJetAK8SDSubjetIndex_JetSubCalc",1);
   inputTree->SetBranchStatus("theJetAK8SDSubjetSize_JetSubCalc",1);
   inputTree->SetBranchStatus("maxProb_JetSubCalc",1);
+  inputTree->SetBranchStatus("theJetParticleNetTvsQCD_JetSubCalc",1);
+  inputTree->SetBranchStatus("theJetParticleNetWvsQCD_JetSubCalc",1);
 
   //top
   inputTree->SetBranchStatus("ttbarMass_TTbarMassCalc",1);
@@ -478,7 +480,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("triggerSF",&triggerSF,"triggerSF/F");
   outputTree->Branch("triggerHadSF",&triggerHadSF,"triggerHadSF/F");
   outputTree->Branch("triggerXSF",&triggerXSF,"triggerXSF/F");
-  //outputTree->Branch("triggerVlqXSF",&triggerVlqXSF,"triggerVlqXSF/F");
+  outputTree->Branch("triggerVlqXSF",&triggerVlqXSF,"triggerVlqXSF/F");
   outputTree->Branch("isoSF",&isoSF,"isoSF/F");
   outputTree->Branch("btagCSVWeight",&btagCSVWeight,"btagCSVWeight/F");
   outputTree->Branch("btagCSVWeight_HFup",&btagCSVWeight_HFup,"btagCSVWeight_HFup/F");
@@ -682,7 +684,9 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("minDR_lepAK8",&minDR_lepAK8,"minDR_lepAK8/F");
   outputTree->Branch("ptRel_lepAK8",&ptRel_lepAK8,"ptRel_lepAK8/F");
   outputTree->Branch("deltaR_lepAK8s",&deltaR_lepAK8s);
-
+  outputTree->Branch("theJetParticleNetTvsQCD_JetSubCalc_PtOrdered",&theJetParticleNetTvsQCD_JetSubCalc_PtOrdered);
+  outputTree->Branch("theJetParticleNetWvsQCD_JetSubCalc_PtOrdered",&theJetParticleNetWvsQCD_JetSubCalc_PtOrdered);
+ 
   // mass + tau tagging
   outputTree->Branch("maxProb_JetSubCalc_PtOrdered",&maxProb_JetSubCalc_PtOrdered);
   outputTree->Branch("theJetAK8CHSPrunedMass_JetSubCalc_PtOrdered",&theJetAK8CHSPrunedMass_JetSubCalc_PtOrdered);
@@ -761,18 +765,31 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   // ----------------------------------------------------------------------------
 
   // basic cuts
-  float metCut=20;
-  float htCut=350;
-  int   nAK8jetsCut=0;
-  float lepPtCut=20.0;
-  float elEtaCut=2.5;
-  float muEtaCut=2.4;
-  int   njetsCut=4;
-  int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
-  float jetPtCut=30;
-  float jetEtaCut=2.4;
-  float ak8EtaCut=2.4;
-  float ak8PtCut=200;
+//  float metCut=20;
+//  float htCut=350;
+//  int   nAK8jetsCut=0;
+//  float lepPtCut=20.0;
+//  float elEtaCut=2.5;
+//  float muEtaCut=2.4;
+//  int   njetsCut=4;
+//  int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
+//  float jetPtCut=30;
+//  float jetEtaCut=2.4;
+//  float ak8EtaCut=2.4;
+//  float ak8PtCut=200;
+   float metCut=80;
+   float htCut=500;
+   int   nAK8jetsCut=0;
+   float lepPtCut=60.0;
+   float elEtaCut=2.5;
+   float muEtaCut=2.4;
+   int   njetsCut=3;
+   int   nbjetsCut=1; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
+   float jetPtCut=30;
+   float jetEtaCut=2.4;
+   float ak8EtaCut=2.4;
+   float ak8PtCut=200;
+
 
   // counters
   int npass_trigger   = 0;
@@ -1480,7 +1497,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     triggerSF = 1.0;
     triggerHadSF = 1.0;
     triggerXSF = 1.0;
-    //triggerVlqXSF = 1.0;
+    triggerVlqXSF = 1.0;
     isoSF = 1.0;
     std::vector<std::string> eltriggersX;
     std::vector<std::string> mutriggersX;
@@ -1591,18 +1608,23 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         if( Year == "2016APV" ){ // there are no centrally maintained 2016APV SF, so use the SF separately
           triggerSF = hardcodedConditions.GetElectronTriggerSF( leppt, lepeta, Year );
           triggerXSF = hardcodedConditions.GetElectronTriggerXSF( leppt, lepeta, Year );
+          triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
+
         }
         else if( MCLepPastTrigger == 1 && MCPastTriggerX == 1 ){ // defaults to using the single-object trigger if available
           triggerSF = hardcodedConditions.GetElectronTriggerSF( leppt, lepeta, Year );
           triggerXSF = 1.0; 
+          triggerVlqXSF = 1.0; 
         }
         else if( MCLepPastTrigger == 0 && MCPastTriggerX == 1 ){ 
           triggerSF = 1.0;
           triggerXSF = hardcodedConditions.GetElectronTriggerXSF( leppt, lepeta, Year );
+          triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
         }
         else{ 
           triggerSF = hardcodedConditions.GetElectronTriggerSF(leppt, lepeta, Year);
           triggerXSF = hardcodedConditions.GetElectronTriggerXSF(leppt, lepeta, Year);
+          triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
         }
         
         //triggerHadSF = hardcodedConditions.GetIsEHadronTriggerSF(NJets_JetSubCalc, AK4HT, Year);
@@ -1630,14 +1652,20 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         if( MCLepPastTrigger == 1 && MCPastTriggerX == 1 ){ // defaults to using the single-object trigger if available
           triggerSF = hardcodedConditions.GetMuonTriggerSF( leppt, lepeta, Year );
           triggerXSF = 1.0; 
+          triggerVlqXSF = 1.0; 
+
         }
         else if( MCLepPastTrigger == 0 && MCPastTriggerX == 1 ){ 
           triggerSF = 1.0;
           triggerXSF = hardcodedConditions.GetMuonTriggerXSF( leppt, lepeta, Year );
+          triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
+
         }
         else{ 
           triggerSF = hardcodedConditions.GetMuonTriggerSF(leppt, lepeta, Year);
           triggerXSF = hardcodedConditions.GetMuonTriggerXSF(leppt, lepeta, Year);
+          triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
+
         }
         
         //triggerHadSF = hardcodedConditions.GetIsMHadronTriggerSF(NJets_JetSubCalc, AK4HT, Year);
@@ -2196,6 +2224,9 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     theJetAK8CHSTau2_JetSubCalc_PtOrdered.clear();
     theJetAK8CHSTau3_JetSubCalc_PtOrdered.clear();
     theJetAK8Indx_Wtagged.clear();
+    theJetParticleNetWvsQCD_JetSubCalc_PtOrdered.clear();
+    theJetParticleNetTvsQCD_JetSubCalc_PtOrdered.clear();
+
     for(unsigned int ijet=0; ijet < jetak8ptindpair.size(); ijet++){
       maxProb_JetSubCalc_PtOrdered.push_back(maxProb_JetSubCalc->at(jetak8ptindpair[ijet].second));
       theJetAK8DoubleB_JetSubCalc_PtOrdered.push_back(theJetAK8DoubleB_JetSubCalc->at(jetak8ptindpair[ijet].second));
@@ -2221,6 +2252,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       theJetAK8CHSTau1_JetSubCalc_PtOrdered.push_back(theJetAK8CHSTau1_JetSubCalc->at(jetak8ptindpair[ijet].second));      	
       theJetAK8CHSTau2_JetSubCalc_PtOrdered.push_back(theJetAK8CHSTau2_JetSubCalc->at(jetak8ptindpair[ijet].second));
       theJetAK8CHSTau3_JetSubCalc_PtOrdered.push_back(theJetAK8CHSTau3_JetSubCalc->at(jetak8ptindpair[ijet].second));
+      theJetParticleNetTvsQCD_JetSubCalc_PtOrdered.push_back(theJetParticleNetTvsQCD_JetSubCalc->at(jetak8ptindpair[ijet].second));
+      theJetParticleNetWvsQCD_JetSubCalc_PtOrdered.push_back(theJetParticleNetWvsQCD_JetSubCalc->at(jetak8ptindpair[ijet].second));
     }
 
     // ----------------------------------------------------------------------------
@@ -2281,12 +2314,25 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       // W & top tagging on MC
       // ----------------------------------------------------------------------------
     
-      float tau21WP = 0.45; //WP from https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetTopTagging#13_TeV_Working_Points_and_Scale
-      float tau32WP = 0.80; //WP5 from https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetTopTagging#13_TeV_Working_Points_and_Scale
-
+      float PN_TvsQCDWP = 0.490; //WP from https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetTopTagging#13_TeV_Working_Points_and_Scale
+      float PN_WvsQCDWP = 0.935; //WP5 from https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetTopTagging#13_TeV_Working_Points_and_Scale
+      if( Year == "2016" ) {
+        float PN_TvsQCDWP = 0.490; //1% mist. rate 0.490 BCDEF, 0.495 FGH from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+        float PN_WvsQCDWP = 0.935; //1% mist. rate 0.935 BCDEF, 0.934 FGH from  https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+      }
+      else if( Year == "2017" ) {
+        float PN_TvsQCDWP = 0.581; //1% mist. rate from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+        float PN_WvsQCDWP = 0.944; //1% mist. rate from  https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+      }
+      else if( Year == "2018" ) {
+        float PN_TvsQCDWP = 0.58; //1% mist. rate from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+        float PN_WvsQCDWP = 0.94; //1% mist. rate from  https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+      }
       float tau21 = theJetAK8NjettinessTau2_JetSubCalc_PtOrdered.at(ijet)/theJetAK8NjettinessTau1_JetSubCalc_PtOrdered.at(ijet);
       float tau32 = theJetAK8NjettinessTau3_JetSubCalc_PtOrdered.at(ijet)/theJetAK8NjettinessTau2_JetSubCalc_PtOrdered.at(ijet);
-
+      float PN_TvsQCD = theJetParticleNetTvsQCD_JetSubCalc_PtOrdered.at(ijet);
+      float PN_WvsQCD = theJetParticleNetWvsQCD_JetSubCalc_PtOrdered.at(ijet);
+ 
       float massSD = theJetAK8SoftDropCorr_JetSubCalc_PtOrdered.at(ijet);
       float massSD_JMSup = theJetAK8SoftDrop_JetSubCalc_JMSup_PtOrdered.at(ijet);
       float massSD_JMSdn = theJetAK8SoftDrop_JetSubCalc_JMSdn_PtOrdered.at(ijet);
@@ -2342,7 +2388,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         if(isWmatched || isZmatched || isHmatched || isTmatched) theJetAK8MatchedPt_JetSubCalc_PtOrdered.push_back(matchedPt);
         else theJetAK8MatchedPt_JetSubCalc_PtOrdered.push_back(-99.0);
 
-        if (not (isWmatched && matchedPt > 200) && not (isZmatched && matchedPt > 200) && not (isTmatched && matchedPt > 400) && not (isHmatched && matchedPt > 300)) {
+        if (not (isWmatched && matchedPt > 200) && not (isZmatched && matchedPt > 200) && not (isTmatched && matchedPt > 300) && not (isHmatched && matchedPt > 300)) {
           int firstsub = theJetAK8SDSubjetIndex_JetSubCalc_PtOrdered.at(ijet);
           int nsubs = theJetAK8SDSubjetSize_JetSubCalc_PtOrdered.at(ijet);
           for(int isub = firstsub; isub < firstsub + nsubs; isub++){
@@ -2352,48 +2398,54 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         }
 
         if(isJmatched) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(0);
-        if(isTmatched && matchedPt > 400) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(1);
+        if(isTmatched && matchedPt > 300) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(1);
         if(isHmatched && matchedPt > 300) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(2);
         if(isZmatched && matchedPt > 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(3);
         if(isWmatched && matchedPt > 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(4);
         if(isBmatched) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(5);
 
         // ------------------------------------------------------------------------------------------------------------------
-        // TOP TAGGING -- needs to be updated
+        // TOP TAGGING 
         // ------------------------------------------------------------------------------------------------------------------
-        double tau32SF = 1.0;
-        double tau32SFup = 1.0;
-        double tau32SFdn = 1.0;
-        double tau32eff = 1.0;
-        if( isTmatched && matchedPt >= 400 ){	    
-          hardcodedConditions.GetTtaggingSF(matchedPt, &tau32SF, &tau32SFup, &tau32SFdn, Year);
+        double PNTSF = 1.0;
+        double PNTSFup = 1.0;
+        double PNTSFdn = 1.0;
+        double PNteff = 1.0;
+
+        double PN_TvsQCDSF = 1.0;
+        double PN_TvsQCDSFup = 1.0;
+        double PN_TvsQCDSFdn = 1.0;
+        double PN_TvsQCDeff = 1.0;
+
+        if( isTmatched && matchedPt >= 300 ){	    
+          hardcodedConditions.GetTtaggingSF(matchedPt, &PNTSF, &PNTSFup, &PNTSFdn, Year);
           // Use matched T to find the efficiency -- EWK/QCD will almost never pass here (use ttbar eff when they do)
-          if(isTTTT) {hardcodedConditions.GetTtaggingEff(matchedPt, &tau32eff, Year, "tttt");}
-          else if(isXX) {hardcodedConditions.GetTtaggingEff(matchedPt, &tau32eff, Year, "x53x53",SigMass);}		
-          else if(isTT) {hardcodedConditions.GetTtaggingEff(matchedPt, &tau32eff, Year, "ttbar");}
-          else {hardcodedConditions.GetTtaggingEff(matchedPt, &tau32eff, Year, "singletop");}
+          if(isTTTT) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "tttt");}
+          else if(isXX) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "x53x53",SigMass);}		
+          else if(isTT) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "ttbar");}
+          else {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "singletop");}
         }
       
         // Set the initial tagged/untagged state
-        bool isTtagged = (massSD > 105) && (massSD < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-        bool isTtagged_JMSup = (massSD_JMSup > 105) && (massSD_JMSup < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-        bool isTtagged_JMSdn = (massSD_JMSdn > 105) && (massSD_JMSdn < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-        bool isTtagged_JMRup = (massSD_JMRup > 105) && (massSD_JMRup < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-        bool isTtagged_JMRdn = (massSD_JMRdn > 105) && (massSD_JMRdn < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+        bool isTtagged = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
+        bool isTtagged_JMSup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
+        bool isTtagged_JMSdn = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
+        bool isTtagged_JMRup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
+	bool isTtagged_JMRdn = ( PN_TvsQCD < PN_TvsQCDWP ) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
 
         // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
-        int tag_top = applySF(isTtagged,tau32SF,tau32eff);
-        int tag_top_tau32up = applySF(isTtagged,tau32SFup,tau32eff);
-        int tag_top_tau32dn = applySF(isTtagged,tau32SFdn,tau32eff);
-        int tag_top_JMSup = applySF(isTtagged_JMSup,tau32SF,tau32eff);
-        int tag_top_JMSdn = applySF(isTtagged_JMSdn,tau32SF,tau32eff);
-        int tag_top_JMRup = applySF(isTtagged_JMRup,tau32SF,tau32eff);
-        int tag_top_JMRdn = applySF(isTtagged_JMRdn,tau32SF,tau32eff);
+        int tag_top = applySF(isTtagged,PNTSF,PNteff);
+        int tag_top_PFup = applySF(isTtagged,PNTSFup,PNteff);
+        int tag_top_PFdn = applySF(isTtagged,PNTSFdn,PNteff);
+        int tag_top_JMSup = applySF(isTtagged_JMSup,PNTSF,PNteff);
+        int tag_top_JMSdn = applySF(isTtagged_JMSdn,PNTSF,PNteff);
+        int tag_top_JMRup = applySF(isTtagged_JMRup,PNTSF,PNteff);
+        int tag_top_JMRdn = applySF(isTtagged_JMRdn,PNTSF,PNteff);
    
         // Now increase the tag count in the right variable	  
         NJetsTtagged += tag_top;
-        NJetsTtagged_shifts[0] += tag_top_tau32up;
-        NJetsTtagged_shifts[1] += tag_top_tau32dn;
+        NJetsTtagged_shifts[0] += tag_top_PFup;
+        NJetsTtagged_shifts[1] += tag_top_PFdn;
         NJetsTtagged_shifts[2] += tag_top_JMSup;
         NJetsTtagged_shifts[3] += tag_top_JMSdn;
         NJetsTtagged_shifts[4] += tag_top_JMRup;
@@ -2405,54 +2457,55 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         // W TAGGING
         // ------------------------------------------------------------------------------------------------------------------
 
-        double tau21SF = 1.0;
-        double tau21SFup = 1.0;
-        double tau21SFdn = 1.0;
-        double tau21ptSFup = 1.0;
-        double tau21ptSFdn = 1.0;
-        double tau21eff = 1.0;
-        if(isWmatched && matchedPt >= 175 && massSD > 65 && massSD < 105 && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200){	    
-          hardcodedConditions.GetWtaggingSF(theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet), &tau21SF, &tau21SFup, &tau21SFdn, &tau21ptSFup, &tau21ptSFdn, Year);
+        double PNWSF = 1.0;
+        double PNWSFup = 1.0;
+        double PNWSFdn = 1.0;
+        double PNWeff = 1.0;
+
+        double PN_WvsQCDSF = 1.0;
+        double PN_WvsQCDSFup = 1.0;
+        double PN_WvsQCDSFdn = 1.0;
+        double PN_WvsQCDeff = 1.0;
+
+
+        if(isWmatched && matchedPt >= 175 && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200){	    
+          hardcodedConditions.GetWtaggingSF(theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet), &PNWSF, &PNWSFup, &PNWSFdn, Year);
           // Use matched W to find the efficiency -- EWK/QCD will almost never pass here (use ttbar eff when they do)
-          if(isXX) {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "x53x53",SigMass);}
-          else if(isTpTp) {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "TpTp",SigMass);}
-          else if(isBpBp) {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "BpBp",SigMass);}
-          else if(isTTTT) {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "tttt");}
-          else if(isTT) {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "ttbar");}
-          else if(isSTt) {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "singletopt");}
-          else if(isSTtW) {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "singletoptW");}
-          else {hardcodedConditions.GetWtaggingEff(matchedPt, &tau21eff, Year, "WV");}
+          if(isXX) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "x53x53",SigMass);}
+          else if(isTpTp) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "TpTp",SigMass);}
+          else if(isBpBp) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "BpBp",SigMass);}
+          else if(isTTTT) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "tttt");}
+          else if(isTT) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "ttbar");}
+          else if(isSTt) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "singletopt");}
+          else if(isSTtW) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "singletoptW");}
+          else {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "WV");}
         }
       
         // Set the initial tagged/untagged state
-        bool isWtagged = (massSD > 65) && (massSD < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMSup = (massSD_JMSup > 65) && (massSD_JMSup < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMSdn = (massSD_JMSdn > 65) && (massSD_JMSdn < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMRup = (massSD_JMRup > 65) && (massSD_JMRup < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMRdn = (massSD_JMRdn > 65) && (massSD_JMRdn < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isWtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isWtagged_JMSup = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isWtagged_JMSdn = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isWtagged_JMRup = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isWtagged_JMRdn = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
         if(isWtagged) { theJetAK8Indx_Wtagged.push_back(ijet); }
    
         // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
-        int tag_W = applySF(isWtagged,tau21SF,tau21eff);
-        int tag_W_tau21up = applySF(isWtagged,tau21SFup,tau21eff);
-        int tag_W_tau21dn = applySF(isWtagged,tau21SFdn,tau21eff);
-        int tag_W_JMSup = applySF(isWtagged_JMSup,tau21SF,tau21eff);
-        int tag_W_JMSdn = applySF(isWtagged_JMSdn,tau21SF,tau21eff);
-        int tag_W_JMRup = applySF(isWtagged_JMRup,tau21SF,tau21eff);
-        int tag_W_JMRdn = applySF(isWtagged_JMRdn,tau21SF,tau21eff);
-        int tag_W_tau21ptup = applySF(isWtagged,tau21ptSFup,tau21eff);
-        int tag_W_tau21ptdn = applySF(isWtagged,tau21ptSFdn,tau21eff);
+        int tag_W = applySF(isWtagged,PNWSF,PNWeff);
+        int tag_W_PNWup = applySF(isWtagged,PNWSFup,PNWeff);
+        int tag_W_PNWdn = applySF(isWtagged,PNWSFdn,PNWeff);
+        int tag_W_JMSup = applySF(isWtagged_JMSup,PNWSF,PNWeff);
+        int tag_W_JMSdn = applySF(isWtagged_JMSdn,PNWSF,PNWeff);
+        int tag_W_JMRup = applySF(isWtagged_JMRup,PNWSF,PNWeff);
+        int tag_W_JMRdn = applySF(isWtagged_JMRdn,PNWSF,PNWeff);
 
         // Now increase the tag count in the right variable	  
         NJetsWtagged += tag_W;
-        NJetsWtagged_shifts[0] += tag_W_tau21up;
-        NJetsWtagged_shifts[1] += tag_W_tau21dn;
+        NJetsWtagged_shifts[0] += tag_W_PNWup;
+        NJetsWtagged_shifts[1] += tag_W_PNWdn;
         NJetsWtagged_shifts[2] += tag_W_JMSup;
         NJetsWtagged_shifts[3] += tag_W_JMSdn;
         NJetsWtagged_shifts[4] += tag_W_JMRup;
         NJetsWtagged_shifts[5] += tag_W_JMRdn;
-        NJetsWtagged_shifts[6] += tag_W_tau21ptup;
-        NJetsWtagged_shifts[7] += tag_W_tau21ptdn;
 
         if(tag_W && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) > WJetLeadPt){ WJetLeadPt = theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet); }
       } //end of isMC
@@ -2463,8 +2516,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         theJetAK8Wmatch_JetSubCalc_PtOrdered.push_back(0);
         theJetAK8Tmatch_JetSubCalc_PtOrdered.push_back(0);
 
-        bool isWtagged = (massSD > 65)  && (massSD < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isTtagged = (massSD > 105) && (massSD < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+        bool isWtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isTtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
 
         NJetsWtagged += isWtagged;
         NJetsTtagged += isTtagged;

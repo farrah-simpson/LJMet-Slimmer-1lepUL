@@ -304,6 +304,8 @@ public :
    vector<double>  theJetAK8CHSTau1_JetSubCalc_PtOrdered;
    vector<double>  theJetAK8CHSTau2_JetSubCalc_PtOrdered;
    vector<double>  theJetAK8CHSTau3_JetSubCalc_PtOrdered;
+   vector<double>  theJetParticleNetTvsQCD_JetSubCalc_PtOrdered;
+   vector<double>  theJetParticleNetWvsQCD_JetSubCalc_PtOrdered;
    vector<double>  theJetAK8Pt_JetSubCalc_PtOrdered;
    vector<double>  theJetAK8Eta_JetSubCalc_PtOrdered;
    vector<double>  theJetAK8Phi_JetSubCalc_PtOrdered;
@@ -820,6 +822,8 @@ public :
    vector<double>  *theJetPileupJetId_JetSubCalc;
    vector<bool>    *theJetPileupJetTight_JetSubCalc;
    vector<double>  *theJetPt_JetSubCalc;
+   vector<double>  *theJetParticleNetTvsQCD_JetSubCalc;
+   vector<double>  *theJetParticleNetWvsQCD_JetSubCalc;
    vector<double>  *topBestGenEnergy_HOTTaggerCalc;
    vector<double>  *topBestGenEta_HOTTaggerCalc;
    vector<double>  *topBestGenPhi_HOTTaggerCalc;
@@ -1236,6 +1240,8 @@ public :
    TBranch        *b_theJetAK8CHSSoftDropMass_JetSubCalc;   //!
    TBranch        *b_theJetAK8CHSTau1_JetSubCalc;   //!
    TBranch        *b_theJetAK8CHSTau2_JetSubCalc;   //!
+   TBranch        *b_theJetParticleNetTvsQCD_JetSubCalc; 
+   TBranch        *b_theJetParticleNetWvsQCD_JetSubCalc;
    TBranch        *b_theJetAK8CHSTau3_JetSubCalc;   //!
    TBranch        *b_theJetAK8CSV_JetSubCalc;   //!
    TBranch        *b_theJetAK8DoubleB_JetSubCalc;   //!
@@ -1339,7 +1345,7 @@ step1::step1( TString inputFileName, TString outputFileName, TString Year_, TStr
   if(isSig){
     if(inputFileName.Contains("Tprime")) isTpTp = true;
     else if(inputFileName.Contains("Bprime")) isBpBp = true;
-    else if(inputFileName.Contains("X53")) isXX = true;
+    else if(inputFileName.Contains("x53")) isXX = true;
     else if(inputFileName.Contains("TTT")) isTTTX = true;
 
     if(inputFileName.Contains("_M-700")) SigMass = 0; 
@@ -1795,6 +1801,8 @@ void step1::Init(TTree *tree)
    theJetAK8CHSTau1_JetSubCalc = 0;
    theJetAK8CHSTau2_JetSubCalc = 0;
    theJetAK8CHSTau3_JetSubCalc = 0;
+   theJetParticleNetTvsQCD_JetSubCalc = 0;
+   theJetParticleNetWvsQCD_JetSubCalc = 0;
    theJetAK8CSV_JetSubCalc = 0;
    theJetAK8DoubleB_JetSubCalc = 0;
    theJetAK8Energy_JetSubCalc = 0;
@@ -2254,6 +2262,8 @@ void step1::Init(TTree *tree)
    inputTree->SetBranchAddress("theJetAK8CHSTau1_JetSubCalc", &theJetAK8CHSTau1_JetSubCalc, &b_theJetAK8CHSTau1_JetSubCalc);
    inputTree->SetBranchAddress("theJetAK8CHSTau2_JetSubCalc", &theJetAK8CHSTau2_JetSubCalc, &b_theJetAK8CHSTau2_JetSubCalc);
    inputTree->SetBranchAddress("theJetAK8CHSTau3_JetSubCalc", &theJetAK8CHSTau3_JetSubCalc, &b_theJetAK8CHSTau3_JetSubCalc);
+   inputTree->SetBranchAddress("theJetParticleNetTvsQCD_JetSubCalc", &theJetParticleNetTvsQCD_JetSubCalc, &b_theJetParticleNetTvsQCD_JetSubCalc);
+   inputTree->SetBranchAddress("theJetParticleNetWvsQCD_JetSubCalc", &theJetParticleNetWvsQCD_JetSubCalc, &b_theJetParticleNetWvsQCD_JetSubCalc);
    inputTree->SetBranchAddress("theJetAK8CSV_JetSubCalc", &theJetAK8CSV_JetSubCalc, &b_theJetAK8CSV_JetSubCalc);
    inputTree->SetBranchAddress("theJetAK8DoubleB_JetSubCalc", &theJetAK8DoubleB_JetSubCalc, &b_theJetAK8DoubleB_JetSubCalc);
    inputTree->SetBranchAddress("theJetAK8Energy_JetSubCalc", &theJetAK8Energy_JetSubCalc, &b_theJetAK8Energy_JetSubCalc);
