@@ -1,0 +1,14 @@
+use_x509userproxy = true
+universe = vanilla
+Executable = /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/make_step1.sh
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+Transfer_Input_Files = /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/compile_step1.C, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/make_step1.C, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/step1.cc, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/step1.h, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/HardcodedConditions.cc, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/HardcodedConditions.h, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/BTagCalibForLJMet.cpp, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/BTagCalibForLJMet.h, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/btag_sf/reshaping_deepCSV_106XUL17_v4.csv, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/btag_sf/reshaping_deepJet_106XUL17_v4.csv, /home/fsimpson/CMSSW_10_6_29/src/LJMet-Slimmer-1lepUL/step1/btag_sf/RegroupedV2_Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt
+request_memory = 6144
+Output = PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8_4.out
+Error = PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8_4.err
+Log = PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8_4.log
+JobBatchName = step1_nominalUL17_PairVLQ_x53x53_tWtW_narrow_RH_M700 
+Notification = Never
+Arguments = "PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8 PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8 /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182013/0000 /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53_step1/nominal/PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8 '40 41 42 43 44 45 46 47 48 49 5 50 51 52 53 54 55 56 57 58 59 6 60 61 62 63 64 65 66 67' 4 17 nominal BRUX BRUX"
+Queue 1

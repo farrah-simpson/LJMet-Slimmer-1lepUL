@@ -3,7 +3,7 @@ postfix = "X53" # EDIT ME
 years = [ "16APV", "16", "17", "18" ]
 
 sampleDir = {
-  year: "FWLJMET106XUL_singleLep20{}UL_RunIISummer20".format( year ) for year in years
+  year: "FWLJMET106XUL_singleLep20{}UL_RunIISummer20_X53X53".format( year ) for year in years
 }
 
 ljmetDir = {
@@ -17,7 +17,7 @@ ljmetDir = {
 step1Dir = {
   year: {
     "LPC": "/eos/uscms/store/group/lpcljm/{}_{}_step1".format( sampleDir[ year ], postfix ), 
-    "BRUX": "/isilon/hadoop/store/group/bruxljm/{}_{}_step1".format( sampleDir[ year ], postfix ) 
+    "BRUX": "/isilon/hadoop/store/group/bruxljm/{}_step1".format( sampleDir[ year ] ) 
   } for year in years
 }
 
@@ -25,7 +25,7 @@ step1Dir = {
 haddDir = {
   year: {
     "LPC": "/eos/uscms/store/user/{}/{}_{}_step1hadds".format( eosUserName, sampleDir[ year ], postfix ),
-    "BRUX": "/isilon/hadoop/store/user/{}/{}_{}_step1hadds".format( eosUserName, sampleDir[ year ], postfix ) 
+    "BRUX": "/isilon/hadoop/store/user/{}/{}_step1hadds".format( eosUserName, sampleDir[ year ] ) 
   } for year in years
 }
 
@@ -45,10 +45,10 @@ deepJet_SF = {
 }
 
 JEC_files = {
-  "16APV": "btag_sf/Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt",
-  "16": "btag_sf/Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt",
-  "17": "btag_sf/Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
-  "18": "btag_sf/Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt"
+  "16APV": "btag_sf/RegroupedV2_Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt",
+  "16": "btag_sf/RegroupedV2_Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt",
+  "17": "btag_sf/RegroupedV2_Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
+  "18": "btag_sf/RegroupedV2_Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt"
 }
 
 JES_shifts = {

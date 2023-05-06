@@ -101,10 +101,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   string bSyst = "nominal";
   if( isMC && !( Syst == "nominal" || Syst == "JECup" || Syst == "JECdown" || Syst == "JERup" || Syst == "JERdown" ) ){
     // select the corresponding file for the year
-    string fJEC( "Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt" );
-    if( Year == "2016" ) fJEC = "Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt";
-    else if( Year == "2017" ) fJEC = "Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt";
-    else if( Year == "2018" ) fJEC = "Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt";
+    string fJEC( "RegroupedV2_Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt" );
+    if( Year == "2016" ) fJEC = "RegroupedV2_Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt";
+    else if( Year == "2017" ) fJEC = "RegroupedV2_Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt";
+    else if( Year == "2018" ) fJEC = "RegroupedV2_Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt";
 
     cout << ">> Syst: " << Syst << endl;
     if( Syst.EndsWith( "up" ) ) shiftUp = true;
@@ -1027,6 +1027,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     else if (sample.find("WJetsToLNu_") != std::string::npos) sampleType = "WJets";
     else if (sample.find("DYJetsToLL_") != std::string::npos) sampleType = "ZJets";
     else if (sample.find("QCD_") != std::string::npos) sampleType = "qcd";
+    else if (isXX) sampleType = "x53x53";
 
     // ----------------------------------------------------------------------------
     // ttHF weight calculation
@@ -2644,6 +2645,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         else if(isTTV) sample_hot = "ttVjets";
         else if(isTTHnonbb) sample_hot = "ttHToNonbb";
         else if(isTTHbb) sample_hot = "ttHTobb";
+        else if(isXX) sample_hot = "x53x53";
 
         hardcodedConditions.GetHOTtaggingEff(topPt_HOTTaggerCalc->at(itop), &TopTagEff1p, Year, sample_hot, isGenMatched, "1pfake");
         hardcodedConditions.GetHOTtaggingEff(topPt_HOTTaggerCalc->at(itop), &TopTagEff2p, Year, sample_hot, isGenMatched, "2pfake");

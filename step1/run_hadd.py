@@ -9,7 +9,7 @@ parser = ArgumentParser()
 parser.add_argument( "-y", "--year", default = "17", help = "Options: [16APV,16,17,18]" )
 parser.add_argument( "-g", "--groups", nargs = "+", required = True )
 parser.add_argument( "-f", "--filesPerHadd", default = "900" )
-parser.add_argument( "-l", "--location", default = "LPC", help = "Options: LPC, BRUX" )
+parser.add_argument( "-l", "--location", default = "BRUX", help = "Options: LPC, BRUX" )
 parser.add_argument( "--shifts", action = "store_true" )
 args = parser.parse_args()
 

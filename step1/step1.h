@@ -1348,18 +1348,18 @@ step1::step1( TString inputFileName, TString outputFileName, TString Year_, TStr
     else if(inputFileName.Contains("x53")) isXX = true;
     else if(inputFileName.Contains("TTT")) isTTTX = true;
 
-    if(inputFileName.Contains("_M-700")) SigMass = 0; 
-    else if(inputFileName.Contains("_M-800")) SigMass = 1;
-    else if(inputFileName.Contains("_M-900")) SigMass = 2;
-    else if(inputFileName.Contains("_M-1000")) SigMass = 3;
-    else if(inputFileName.Contains("_M-1100")) SigMass = 4;
-    else if(inputFileName.Contains("_M-1200")) SigMass = 5;
-    else if(inputFileName.Contains("_M-1300")) SigMass = 6;
-    else if(inputFileName.Contains("_M-1400")) SigMass = 7;
-    else if(inputFileName.Contains("_M-1500")) SigMass = 8;
-    else if(inputFileName.Contains("_M-1600")) SigMass = 9;
-    else if(inputFileName.Contains("_M-1700")) SigMass = 10;
-    else if(inputFileName.Contains("_M-1800")) SigMass = 11;
+    if(inputFileName.Contains("_M700") or inputFileName.Contains("_MX700")) SigMass = 0; 
+    else if(inputFileName.Contains("_M800") or inputFileName.Contains("_MX800")) SigMass = 1;
+    else if(inputFileName.Contains("_M900") or inputFileName.Contains("_MX900")) SigMass = 2;
+    else if(inputFileName.Contains("_M1000")  or inputFileName.Contains("_MX1000")) SigMass = 3;
+    else if(inputFileName.Contains("_M1100") or inputFileName.Contains("_MX1100")) SigMass = 4;
+    else if(inputFileName.Contains("_M1200") or inputFileName.Contains("_MX1200")) SigMass = 5;
+    else if(inputFileName.Contains("_M1300")  or inputFileName.Contains("_MX1300")) SigMass = 6;
+    else if(inputFileName.Contains("_M1400")  or inputFileName.Contains("_MX1400")) SigMass = 7;
+    else if(inputFileName.Contains("_M1500") or  inputFileName.Contains("_MX1500")) SigMass = 8;
+    else if(inputFileName.Contains("_M1600")  or inputFileName.Contains("_MX1600")) SigMass = 9;
+    else if(inputFileName.Contains("_M1700")  or inputFileName.Contains("_MX1700")) SigMass = 10;
+    else if(inputFileName.Contains("_M1800")  or inputFileName.Contains("_MX1800")) SigMass = 11;
     else SigMass = -1;
   }
   else SigMass = -1;

@@ -1,0 +1,80 @@
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+Info in <TUnixSystem::ACLiC>: creating shared library /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./HardcodedConditions_cc.so
+Info in <TUnixSystem::ACLiC>: creating shared library /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./BTagCalibForLJMet_cpp.so
+In file included from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/BTagCalibForLJMet_cpp_ACLiC_dict.cxx:40:0:
+/isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./BTagCalibForLJMet.cpp: In constructor 'BTagCalibrationForLJMetReader::BTagCalibrationForLJMetReaderImpl::BTagCalibrationForLJMetReaderImpl(BTagEntryForLJMet::OperatingPoint, const string&, const std::vector<std::__cxx11::basic_string<char> >&)':
+/isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./BTagCalibForLJMet.cpp:425:38: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+     otherSysTypeReaders_[ost] = std::auto_ptr<BTagCalibrationForLJMetReaderImpl>(
+                                      ^~~~~~~~
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/gcc/7.0.0-pafccj/include/c++/7.4.1/memory:80:0,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/ROOT/TypeTraits.hxx:15,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TString.h:29,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TNamed.h:26,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TDictionary.h:44,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TClass.h:23,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/BTagCalibForLJMet_cpp_ACLiC_dict.cxx:13:
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/gcc/7.0.0-pafccj/include/c++/7.4.1/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+Info in <TUnixSystem::ACLiC>: creating shared library /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./step1_cc.so
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageLogger.h:136:0,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/CondFormats/JetMETObjects/interface/Utilities.h:7,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/CondFormats/JetMETObjects/interface/JetCorrectorParameters.h:11,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./step1.h:22,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./step1.cc:2,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/step1_cc_ACLiC_dict.cxx:40:
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:107:40: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static std::string jobMode;                         // change log 6
+                                        ^~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:108:42: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static unsigned char messageLoggerScribeIsRunning;  // change log 7
+                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:109:33: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static bool debugAlwaysSuppressed;                  // change log 9
+                                 ^~~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:110:33: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static bool infoAlwaysSuppressed;                   // change log 9
+                                 ^~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:111:33: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static bool warningAlwaysSuppressed;                // change log 9
+                                 ^~~~~~~~~~~~~~~~~~~~~~~
+Info in <TUnixSystem::ACLiC>: creating shared library /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./make_step1_C.so
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageLogger.h:136:0,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/CondFormats/JetMETObjects/interface/Utilities.h:7,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/CondFormats/JetMETObjects/interface/JetCorrectorParameters.h:11,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./step1.h:22,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./step1.cc:2,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./make_step1.C:2,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/make_step1_C_ACLiC_dict.cxx:40:
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:107:40: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static std::string jobMode;                         // change log 6
+                                        ^~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:108:42: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static unsigned char messageLoggerScribeIsRunning;  // change log 7
+                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:109:33: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static bool debugAlwaysSuppressed;                  // change log 9
+                                 ^~~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:110:33: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static bool infoAlwaysSuppressed;                   // change log 9
+                                 ^~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_29/src/FWCore/MessageLogger/interface/MessageDrop.h:111:33: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+     CMS_THREAD_SAFE static bool warningAlwaysSuppressed;                // change log 9
+                                 ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./make_step1.C:3:0,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/make_step1_C_ACLiC_dict.cxx:40:
+/isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./BTagCalibForLJMet.cpp: In constructor 'BTagCalibrationForLJMetReader::BTagCalibrationForLJMetReaderImpl::BTagCalibrationForLJMetReaderImpl(BTagEntryForLJMet::OperatingPoint, const string&, const std::vector<std::__cxx11::basic_string<char> >&)':
+/isilon/condor/hep107.hep.brown.edu/execute/dir_244945/./BTagCalibForLJMet.cpp:425:38: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+     otherSysTypeReaders_[ost] = std::auto_ptr<BTagCalibrationForLJMetReaderImpl>(
+                                      ^~~~~~~~
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/gcc/7.0.0-pafccj/include/c++/7.4.1/memory:80:0,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/ROOT/TypeTraits.hxx:15,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TString.h:29,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TNamed.h:26,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TDictionary.h:44,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.14.09-pafccj6/include/TClass.h:23,
+                 from /isilon/condor/hep107.hep.brown.edu/execute/dir_244945/make_step1_C_ACLiC_dict.cxx:13:
+/cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/gcc/7.0.0-pafccj/include/c++/7.4.1/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+rm: cannot remove 'PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8_1nominal_hadd.root': No such file or directory

@@ -1,0 +1,1336 @@
+/isilon/condor/hep101.hep.brown.edu/execute/dir_109647
+>> Setting macroDir to PWD
+
+Processing compile_step1.C...
+>> Running on BRUX, PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8 stored on BRUX
+>> Input file path: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000
+>> Running step1 over list: 68 69 7 70 71 72 73 74 75 76 77 78 79 8 80 81 82 83 84 85 86 87 88 89 9 90 91 92 93 94
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_68.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_68
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_69.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_69
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_7.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_7
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_70.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_70
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_71.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_71
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_72.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_72
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_73.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_73
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_74.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_74
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_75.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_75
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_76.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_76
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_77.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_77
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_78.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_78
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_79.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_79
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_8.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_8
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_80.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_80
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_81.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_81
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_82.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_82
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_83.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_83
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_84.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_84
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_85.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_85
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_86.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_86
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_87.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_87
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_88.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_88
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_89.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_89
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_9.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_9
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_90.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_90
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_91.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_91
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_92.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_92
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_93.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_93
+>> Adding PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_94.root to the list by reading PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_94
+[OPT] Using deepCSV reshaping file: reshaping_deepCSV_106XUL17_v4.csv
+[OPT] Using deepJet reshaping file: reshaping_deepJet_106XUL17_v4.csv
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_68.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_68.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1046 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1046 events
+Nelectrons      = 501 / 1046
+Npassed_ElEta   = 501 / 1046
+Nmuons          = 545 / 1046
+NrelIsoFail     = 0 / 1046
+Npassed_MuEta   = 545 / 1046
+Npassed_nAK8Jets= 1046 / 1046
+Npassed_Trigger = 1001 / 1046
+Npassed_MET     = 913 / 1046
+Npassed_lepPt   = 958 / 1046
+Npassed_HT      = 1045 / 1046
+npass_Njets     = 1042 / 1046
+Npassed_ALL     = 829 / 1046
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_69.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_69.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1036 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1036 events
+Nelectrons      = 507 / 1036
+Npassed_ElEta   = 507 / 1036
+Nmuons          = 529 / 1036
+NrelIsoFail     = 0 / 1036
+Npassed_MuEta   = 529 / 1036
+Npassed_nAK8Jets= 1036 / 1036
+Npassed_Trigger = 998 / 1036
+Npassed_MET     = 930 / 1036
+Npassed_lepPt   = 948 / 1036
+Npassed_HT      = 1036 / 1036
+npass_Njets     = 1033 / 1036
+Npassed_ALL     = 850 / 1036
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_7.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_7.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1072 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1072 events
+Nelectrons      = 468 / 1072
+Npassed_ElEta   = 468 / 1072
+Nmuons          = 604 / 1072
+NrelIsoFail     = 0 / 1072
+Npassed_MuEta   = 604 / 1072
+Npassed_nAK8Jets= 1072 / 1072
+Npassed_Trigger = 1034 / 1072
+Npassed_MET     = 949 / 1072
+Npassed_lepPt   = 972 / 1072
+Npassed_HT      = 1071 / 1072
+npass_Njets     = 1068 / 1072
+Npassed_ALL     = 854 / 1072
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_70.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_70.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1050 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1050 events
+Nelectrons      = 444 / 1050
+Npassed_ElEta   = 444 / 1050
+Nmuons          = 606 / 1050
+NrelIsoFail     = 0 / 1050
+Npassed_MuEta   = 606 / 1050
+Npassed_nAK8Jets= 1050 / 1050
+Npassed_Trigger = 1013 / 1050
+Npassed_MET     = 929 / 1050
+Npassed_lepPt   = 959 / 1050
+Npassed_HT      = 1049 / 1050
+npass_Njets     = 1049 / 1050
+Npassed_ALL     = 848 / 1050
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_71.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_71.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1051 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1051 events
+Nelectrons      = 481 / 1051
+Npassed_ElEta   = 481 / 1051
+Nmuons          = 570 / 1051
+NrelIsoFail     = 0 / 1051
+Npassed_MuEta   = 570 / 1051
+Npassed_nAK8Jets= 1051 / 1051
+Npassed_Trigger = 1022 / 1051
+Npassed_MET     = 910 / 1051
+Npassed_lepPt   = 969 / 1051
+Npassed_HT      = 1050 / 1051
+npass_Njets     = 1045 / 1051
+Npassed_ALL     = 835 / 1051
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_72.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_72.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1026 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1026 events
+Nelectrons      = 496 / 1026
+Npassed_ElEta   = 496 / 1026
+Nmuons          = 530 / 1026
+NrelIsoFail     = 0 / 1026
+Npassed_MuEta   = 530 / 1026
+Npassed_nAK8Jets= 1026 / 1026
+Npassed_Trigger = 993 / 1026
+Npassed_MET     = 904 / 1026
+Npassed_lepPt   = 948 / 1026
+Npassed_HT      = 1025 / 1026
+npass_Njets     = 1024 / 1026
+Npassed_ALL     = 833 / 1026
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_73.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_73.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1076 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1076 events
+Nelectrons      = 499 / 1076
+Npassed_ElEta   = 499 / 1076
+Nmuons          = 577 / 1076
+NrelIsoFail     = 0 / 1076
+Npassed_MuEta   = 577 / 1076
+Npassed_nAK8Jets= 1076 / 1076
+Npassed_Trigger = 1046 / 1076
+Npassed_MET     = 930 / 1076
+Npassed_lepPt   = 993 / 1076
+Npassed_HT      = 1070 / 1076
+npass_Njets     = 1069 / 1076
+Npassed_ALL     = 847 / 1076
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_74.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_74.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1075 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1075 events
+Nelectrons      = 484 / 1075
+Npassed_ElEta   = 484 / 1075
+Nmuons          = 591 / 1075
+NrelIsoFail     = 0 / 1075
+Npassed_MuEta   = 591 / 1075
+Npassed_nAK8Jets= 1075 / 1075
+Npassed_Trigger = 1032 / 1075
+Npassed_MET     = 945 / 1075
+Npassed_lepPt   = 977 / 1075
+Npassed_HT      = 1073 / 1075
+npass_Njets     = 1070 / 1075
+Npassed_ALL     = 852 / 1075
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_75.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_75.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1058 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1058 events
+Nelectrons      = 486 / 1058
+Npassed_ElEta   = 486 / 1058
+Nmuons          = 572 / 1058
+NrelIsoFail     = 0 / 1058
+Npassed_MuEta   = 572 / 1058
+Npassed_nAK8Jets= 1058 / 1058
+Npassed_Trigger = 1021 / 1058
+Npassed_MET     = 930 / 1058
+Npassed_lepPt   = 962 / 1058
+Npassed_HT      = 1055 / 1058
+npass_Njets     = 1052 / 1058
+Npassed_ALL     = 837 / 1058
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_76.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_76.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1091 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1091 events
+Nelectrons      = 512 / 1091
+Npassed_ElEta   = 512 / 1091
+Nmuons          = 579 / 1091
+NrelIsoFail     = 0 / 1091
+Npassed_MuEta   = 579 / 1091
+Npassed_nAK8Jets= 1091 / 1091
+Npassed_Trigger = 1060 / 1091
+Npassed_MET     = 952 / 1091
+Npassed_lepPt   = 1004 / 1091
+Npassed_HT      = 1089 / 1091
+npass_Njets     = 1088 / 1091
+Npassed_ALL     = 873 / 1091
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_77.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_77.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1095 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1095 events
+Nelectrons      = 472 / 1095
+Npassed_ElEta   = 472 / 1095
+Nmuons          = 623 / 1095
+NrelIsoFail     = 0 / 1095
+Npassed_MuEta   = 623 / 1095
+Npassed_nAK8Jets= 1095 / 1095
+Npassed_Trigger = 1061 / 1095
+Npassed_MET     = 980 / 1095
+Npassed_lepPt   = 994 / 1095
+Npassed_HT      = 1094 / 1095
+npass_Njets     = 1089 / 1095
+Npassed_ALL     = 882 / 1095
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_78.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_78.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1064 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1064 events
+Nelectrons      = 475 / 1064
+Npassed_ElEta   = 475 / 1064
+Nmuons          = 589 / 1064
+NrelIsoFail     = 0 / 1064
+Npassed_MuEta   = 589 / 1064
+Npassed_nAK8Jets= 1064 / 1064
+Npassed_Trigger = 1028 / 1064
+Npassed_MET     = 969 / 1064
+Npassed_lepPt   = 977 / 1064
+Npassed_HT      = 1063 / 1064
+npass_Njets     = 1061 / 1064
+Npassed_ALL     = 886 / 1064
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_79.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_79.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1063 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1063 events
+Nelectrons      = 479 / 1063
+Npassed_ElEta   = 479 / 1063
+Nmuons          = 584 / 1063
+NrelIsoFail     = 0 / 1063
+Npassed_MuEta   = 584 / 1063
+Npassed_nAK8Jets= 1063 / 1063
+Npassed_Trigger = 1020 / 1063
+Npassed_MET     = 948 / 1063
+Npassed_lepPt   = 960 / 1063
+Npassed_HT      = 1062 / 1063
+npass_Njets     = 1057 / 1063
+Npassed_ALL     = 852 / 1063
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_8.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_8.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1026 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1026 events
+Nelectrons      = 446 / 1026
+Npassed_ElEta   = 446 / 1026
+Nmuons          = 580 / 1026
+NrelIsoFail     = 0 / 1026
+Npassed_MuEta   = 580 / 1026
+Npassed_nAK8Jets= 1026 / 1026
+Npassed_Trigger = 999 / 1026
+Npassed_MET     = 916 / 1026
+Npassed_lepPt   = 938 / 1026
+Npassed_HT      = 1024 / 1026
+npass_Njets     = 1020 / 1026
+Npassed_ALL     = 827 / 1026
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_80.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_80.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1037 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1037 events
+Nelectrons      = 489 / 1037
+Npassed_ElEta   = 489 / 1037
+Nmuons          = 548 / 1037
+NrelIsoFail     = 0 / 1037
+Npassed_MuEta   = 548 / 1037
+Npassed_nAK8Jets= 1037 / 1037
+Npassed_Trigger = 993 / 1037
+Npassed_MET     = 925 / 1037
+Npassed_lepPt   = 954 / 1037
+Npassed_HT      = 1036 / 1037
+npass_Njets     = 1033 / 1037
+Npassed_ALL     = 847 / 1037
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_81.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_81.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1042 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1042 events
+Nelectrons      = 496 / 1042
+Npassed_ElEta   = 496 / 1042
+Nmuons          = 546 / 1042
+NrelIsoFail     = 0 / 1042
+Npassed_MuEta   = 546 / 1042
+Npassed_nAK8Jets= 1042 / 1042
+Npassed_Trigger = 1002 / 1042
+Npassed_MET     = 927 / 1042
+Npassed_lepPt   = 936 / 1042
+Npassed_HT      = 1041 / 1042
+npass_Njets     = 1037 / 1042
+Npassed_ALL     = 830 / 1042
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_82.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_82.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1014 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1014 events
+Nelectrons      = 472 / 1014
+Npassed_ElEta   = 472 / 1014
+Nmuons          = 542 / 1014
+NrelIsoFail     = 0 / 1014
+Npassed_MuEta   = 542 / 1014
+Npassed_nAK8Jets= 1014 / 1014
+Npassed_Trigger = 977 / 1014
+Npassed_MET     = 898 / 1014
+Npassed_lepPt   = 941 / 1014
+Npassed_HT      = 1013 / 1014
+npass_Njets     = 1010 / 1014
+Npassed_ALL     = 828 / 1014
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_83.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_83.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1069 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1069 events
+Nelectrons      = 490 / 1069
+Npassed_ElEta   = 490 / 1069
+Nmuons          = 579 / 1069
+NrelIsoFail     = 0 / 1069
+Npassed_MuEta   = 579 / 1069
+Npassed_nAK8Jets= 1069 / 1069
+Npassed_Trigger = 1032 / 1069
+Npassed_MET     = 953 / 1069
+Npassed_lepPt   = 971 / 1069
+Npassed_HT      = 1067 / 1069
+npass_Njets     = 1064 / 1069
+Npassed_ALL     = 859 / 1069
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_84.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_84.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1032 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1032 events
+Nelectrons      = 478 / 1032
+Npassed_ElEta   = 478 / 1032
+Nmuons          = 554 / 1032
+NrelIsoFail     = 0 / 1032
+Npassed_MuEta   = 554 / 1032
+Npassed_nAK8Jets= 1032 / 1032
+Npassed_Trigger = 1009 / 1032
+Npassed_MET     = 902 / 1032
+Npassed_lepPt   = 943 / 1032
+Npassed_HT      = 1031 / 1032
+npass_Njets     = 1027 / 1032
+Npassed_ALL     = 824 / 1032
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_85.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_85.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1091 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1091 events
+Nelectrons      = 496 / 1091
+Npassed_ElEta   = 496 / 1091
+Nmuons          = 595 / 1091
+NrelIsoFail     = 0 / 1091
+Npassed_MuEta   = 595 / 1091
+Npassed_nAK8Jets= 1091 / 1091
+Npassed_Trigger = 1047 / 1091
+Npassed_MET     = 978 / 1091
+Npassed_lepPt   = 1000 / 1091
+Npassed_HT      = 1091 / 1091
+npass_Njets     = 1088 / 1091
+Npassed_ALL     = 891 / 1091
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_86.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_86.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1071 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1071 events
+Nelectrons      = 525 / 1071
+Npassed_ElEta   = 525 / 1071
+Nmuons          = 546 / 1071
+NrelIsoFail     = 0 / 1071
+Npassed_MuEta   = 546 / 1071
+Npassed_nAK8Jets= 1071 / 1071
+Npassed_Trigger = 1028 / 1071
+Npassed_MET     = 957 / 1071
+Npassed_lepPt   = 971 / 1071
+Npassed_HT      = 1070 / 1071
+npass_Njets     = 1067 / 1071
+Npassed_ALL     = 865 / 1071
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_87.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_87.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1057 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1057 events
+Nelectrons      = 515 / 1057
+Npassed_ElEta   = 515 / 1057
+Nmuons          = 542 / 1057
+NrelIsoFail     = 0 / 1057
+Npassed_MuEta   = 542 / 1057
+Npassed_nAK8Jets= 1057 / 1057
+Npassed_Trigger = 1027 / 1057
+Npassed_MET     = 942 / 1057
+Npassed_lepPt   = 950 / 1057
+Npassed_HT      = 1056 / 1057
+npass_Njets     = 1054 / 1057
+Npassed_ALL     = 837 / 1057
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_88.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_88.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1060 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1060 events
+Nelectrons      = 484 / 1060
+Npassed_ElEta   = 484 / 1060
+Nmuons          = 576 / 1060
+NrelIsoFail     = 0 / 1060
+Npassed_MuEta   = 576 / 1060
+Npassed_nAK8Jets= 1060 / 1060
+Npassed_Trigger = 1037 / 1060
+Npassed_MET     = 948 / 1060
+Npassed_lepPt   = 978 / 1060
+Npassed_HT      = 1059 / 1060
+npass_Njets     = 1058 / 1060
+Npassed_ALL     = 872 / 1060
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_89.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_89.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1095 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1095 events
+Nelectrons      = 520 / 1095
+Npassed_ElEta   = 520 / 1095
+Nmuons          = 575 / 1095
+NrelIsoFail     = 0 / 1095
+Npassed_MuEta   = 575 / 1095
+Npassed_nAK8Jets= 1095 / 1095
+Npassed_Trigger = 1057 / 1095
+Npassed_MET     = 973 / 1095
+Npassed_lepPt   = 1004 / 1095
+Npassed_HT      = 1092 / 1095
+npass_Njets     = 1091 / 1095
+Npassed_ALL     = 882 / 1095
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_9.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_9.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1054 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1054 events
+Nelectrons      = 464 / 1054
+Npassed_ElEta   = 464 / 1054
+Nmuons          = 590 / 1054
+NrelIsoFail     = 0 / 1054
+Npassed_MuEta   = 590 / 1054
+Npassed_nAK8Jets= 1054 / 1054
+Npassed_Trigger = 1031 / 1054
+Npassed_MET     = 929 / 1054
+Npassed_lepPt   = 952 / 1054
+Npassed_HT      = 1051 / 1054
+npass_Njets     = 1053 / 1054
+Npassed_ALL     = 833 / 1054
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_90.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_90.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1058 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1058 events
+Nelectrons      = 515 / 1058
+Npassed_ElEta   = 515 / 1058
+Nmuons          = 543 / 1058
+NrelIsoFail     = 0 / 1058
+Npassed_MuEta   = 543 / 1058
+Npassed_nAK8Jets= 1058 / 1058
+Npassed_Trigger = 1024 / 1058
+Npassed_MET     = 940 / 1058
+Npassed_lepPt   = 974 / 1058
+Npassed_HT      = 1057 / 1058
+npass_Njets     = 1056 / 1058
+Npassed_ALL     = 865 / 1058
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_91.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_91.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1078 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1078 events
+Nelectrons      = 500 / 1078
+Npassed_ElEta   = 500 / 1078
+Nmuons          = 578 / 1078
+NrelIsoFail     = 0 / 1078
+Npassed_MuEta   = 578 / 1078
+Npassed_nAK8Jets= 1078 / 1078
+Npassed_Trigger = 1038 / 1078
+Npassed_MET     = 960 / 1078
+Npassed_lepPt   = 974 / 1078
+Npassed_HT      = 1075 / 1078
+npass_Njets     = 1073 / 1078
+Npassed_ALL     = 861 / 1078
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_92.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_92.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1079 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1079 events
+Nelectrons      = 506 / 1079
+Npassed_ElEta   = 506 / 1079
+Nmuons          = 573 / 1079
+NrelIsoFail     = 0 / 1079
+Npassed_MuEta   = 573 / 1079
+Npassed_nAK8Jets= 1079 / 1079
+Npassed_Trigger = 1031 / 1079
+Npassed_MET     = 945 / 1079
+Npassed_lepPt   = 982 / 1079
+Npassed_HT      = 1078 / 1079
+npass_Njets     = 1077 / 1079
+Npassed_ALL     = 859 / 1079
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_93.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_93.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1023 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1023 events
+Nelectrons      = 460 / 1023
+Npassed_ElEta   = 460 / 1023
+Nmuons          = 563 / 1023
+NrelIsoFail     = 0 / 1023
+Npassed_MuEta   = 563 / 1023
+Npassed_nAK8Jets= 1023 / 1023
+Npassed_Trigger = 992 / 1023
+Npassed_MET     = 924 / 1023
+Npassed_lepPt   = 938 / 1023
+Npassed_HT      = 1023 / 1023
+npass_Njets     = 1021 / 1023
+Npassed_ALL     = 842 / 1023
+
+>> Running /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_94.root for shift: nominal
+[step1.h] Opening file: /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/singleLep2017UL/230310_182847/0000/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_94.root
+[step1.h] Finished initializing
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = 6
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 1
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+>> Completed 0 out of 1089 events
+[INFO] Defaulting to central deepJet weight for: nominal
+>> Completed 1000 out of 1089 events
+Nelectrons      = 536 / 1089
+Npassed_ElEta   = 536 / 1089
+Nmuons          = 553 / 1089
+NrelIsoFail     = 0 / 1089
+Npassed_MuEta   = 553 / 1089
+Npassed_nAK8Jets= 1089 / 1089
+Npassed_Trigger = 1038 / 1089
+Npassed_MET     = 948 / 1089
+Npassed_lepPt   = 1004 / 1089
+Npassed_HT      = 1087 / 1089
+npass_Njets     = 1085 / 1089
+Npassed_ALL     = 865 / 1089
+>> Available ROOT Files:
+-rw-r--r-- 1 fsimpson gridusers 2935833 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_68nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3029696 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_69nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3033521 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_70nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2923677 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_71nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2969950 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_72nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2964445 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_73nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3050899 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_74nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2978207 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_75nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3101458 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_76nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3126780 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_77nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3145626 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_78nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2949652 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_79nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2981476 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_7nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2960890 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_80nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2952663 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_81nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2949306 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_82nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2945392 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_83nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2871555 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_84nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3151990 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_85nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3134198 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_86nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2951439 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_87nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3144453 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_88nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3137038 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_89nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2938357 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_8nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3039303 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_90nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3058223 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_91nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3044195 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_92nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2987012 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_93nominal.root
+-rw-r--r-- 1 fsimpson gridusers 3087325 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_94nominal.root
+-rw-r--r-- 1 fsimpson gridusers 2974679 Apr 24 09:16 PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_9nominal.root
+>> xrdcp output for condor
+hadd Target file: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_5nominal_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_68nominal.root
+hadd Source file 2: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_69nominal.root
+hadd Source file 3: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_70nominal.root
+hadd Source file 4: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_71nominal.root
+hadd Source file 5: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_72nominal.root
+hadd Source file 6: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_73nominal.root
+hadd Source file 7: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_74nominal.root
+hadd Source file 8: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_75nominal.root
+hadd Source file 9: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_76nominal.root
+hadd Source file 10: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_77nominal.root
+hadd Source file 11: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_78nominal.root
+hadd Source file 12: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_79nominal.root
+hadd Source file 13: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_7nominal.root
+hadd Source file 14: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_80nominal.root
+hadd Source file 15: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_81nominal.root
+hadd Source file 16: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_82nominal.root
+hadd Source file 17: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_83nominal.root
+hadd Source file 18: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_84nominal.root
+hadd Source file 19: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_85nominal.root
+hadd Source file 20: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_86nominal.root
+hadd Source file 21: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_87nominal.root
+hadd Source file 22: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_88nominal.root
+hadd Source file 23: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_89nominal.root
+hadd Source file 24: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_8nominal.root
+hadd Source file 25: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_90nominal.root
+hadd Source file 26: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_91nominal.root
+hadd Source file 27: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_92nominal.root
+hadd Source file 28: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_93nominal.root
+hadd Source file 29: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_94nominal.root
+hadd Source file 30: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_9nominal.root
+hadd Target path: PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_5nominal_hadd.root:/
+>> mv PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_5nominal_hadd.root /isilon/hadoop/store/group/bruxljm/FWLJMET106XUL_singleLep2017UL_RunIISummer20_X53X53_step1/nominal/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8/PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_5.root
+[DONE]

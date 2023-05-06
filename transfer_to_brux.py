@@ -5,7 +5,7 @@ execfile( "step1/config.py" )
 # this script is to be used while on BRUX and transferring step1hadds from the LPC eos area
 parser = ArgumentParser()
 parser.add_argument( "-y", "--year", required = True )
-parser.add_argument( "-t", "--tag", default = "3t" )
+parser.add_argument( "-t", "--tag", default = "X53" )
 parser.add_argument( "-g", "--groups", nargs = "+", required = True )
 parser.add_argument( "-s", "--step", required = True, help = "1hadds,2,3,ABCDnn" )
 parser.add_argument( "-o", "--outpath", required = True, help = "/isilon/hadoop/store/<outpath>" )
@@ -84,7 +84,7 @@ def transfer_samples():
           ) )
         elif args.step == "LJMET":
           os.system( "xrdcp -r root://cmseos.fnal.gov///store/user/{}/{}/{} {}/".format(
-            "dali", out_folder, sample, out_dir
+            "lpcljm", out_folder, sample, out_dir
           ) )
         else:
           os.system( "xrdcp root://cmseos.fnal.gov///store/group/{}/{}/nominal/{} {}/nominal/".format(
@@ -100,7 +100,7 @@ def transfer_samples():
           try:
             if args.step == "ABCDnn":
               os.system( "xrdcp root://cmseos.fnal.gov///store/user/{}/{}/{}{}/{} {}/{}{}".format(
-                "dali", out_folder, bSyst, shift, sample.replace( "hadd", "ABCDnn_hadd" ), out_dir, bSyst, shift 
+                "lpcljm", out_folder, bSyst, shift, sample.replace( "hadd", "ABCDnn_hadd" ), out_dir, bSyst, shift 
                 )
               )
             else:
