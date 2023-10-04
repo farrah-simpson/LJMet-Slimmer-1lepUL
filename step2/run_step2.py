@@ -86,11 +86,11 @@ else:
 
 jobCount = 0
 for shift in shifts:
-  if args.test:
-    if shift != "nominal": continue
+  #if args.test:
+    #if shift != "nominal": continue
   for rootFile in step1Files[ shift ]:
     if args.test: 
-      if "TTTJ" not in rootFile: continue
+      if "MH" not in rootFile: continue
     if args.dnn:
       if "TTTW" not in rootFile and "TTTJ" not in rootFile and "TTTT" not in rootFile and "TTTo" not in rootFile: continue
       if "up" in rootFile.lower() or "down" in rootFile.lower(): continue

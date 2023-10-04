@@ -810,6 +810,14 @@ void HardcodedConditions::GetHOTtaggingEff2016APV(double pt, double *eff, std::s
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
 		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
 		}
+        else if(sample=="x53x53H"){
+               if(workingpoint=="1pfake"){*eff = 1.0;}
+               else if(workingpoint=="2pfake"){*eff = 1.0;}
+               else if(workingpoint=="5pfake"){*eff = 1.0;}
+               else if(workingpoint=="10pfake"){*eff = 1.0;}
+               else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2016! Aborting ..." << std::endl; std::abort();}
+               }
+
 	else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
 
 }
@@ -933,6 +941,14 @@ void HardcodedConditions::GetHOTtaggingEff2016(double pt, double *eff, std::stri
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
 		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
 		}
+        else if(sample=="x53x53H"){
+               if(workingpoint=="1pfake"){*eff = 1.0;}
+               else if(workingpoint=="2pfake"){*eff = 1.0;}
+               else if(workingpoint=="5pfake"){*eff = 1.0;}
+               else if(workingpoint=="10pfake"){*eff = 1.0;}
+               else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2016! Aborting ..." << std::endl; std::abort();}
+               }
+
 	else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
 
 }
@@ -1141,9 +1157,15 @@ void HardcodedConditions::GetHOTtaggingEff2017(double pt, double *eff, std::stri
                else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
                else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
                else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-               else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
+               else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
                }
-
+        else if(sample=="x53x53H"){
+               if(workingpoint=="1pfake"){*eff = 1.0;}
+               else if(workingpoint=="2pfake"){*eff = 1.0;}
+               else if(workingpoint=="5pfake"){*eff = 1.0;}
+               else if(workingpoint=="10pfake"){*eff = 1.0;}
+               else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+               }
 	else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
 }
 
@@ -1169,7 +1191,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
 	else if(sample=="TTVV"){
 		ptMins = {0,150,250,300,350,400,500};
@@ -1182,7 +1204,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
 	else if(sample=="TTTX"){
 		ptMins = {0,150,250,300,350,400,500};
@@ -1195,7 +1217,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
 	else if(sample=="ttbar"){
 		ptMins = {0,150,250,300,350,400,450,500,550,600};
@@ -1208,7 +1230,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
 	else if(sample=="ttbarHT500Njet9"){
 		ptMins = {0,150,250,300,350,400,450,500,550,600};
@@ -1234,7 +1256,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
 	else if(sample=="ttHToNonbb"){
 		ptMins = {0,150,250,300,350,400,500};
@@ -1247,7 +1269,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
 	else if(sample=="ttHTobb"){
 		ptMins = {0,150,250,300,350,400,500};
@@ -1260,7 +1282,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
 	else if(sample=="tttt"){
 		ptMins = {0,150,250,300,350,400,450,500,550,600};
@@ -1273,7 +1295,7 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
 		else if(workingpoint=="2pfake"){*eff = hotEffs2p[bin];}
 		else if(workingpoint=="5pfake"){*eff = hotEffs5p[bin];}
 		else if(workingpoint=="10pfake"){*eff = hotEffs10p[bin];}
-		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+		else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 		}
         else if(sample=="x53x53"){
                 ptMins = {0,150,250,300,350,400,450,500,550,600};
@@ -1343,9 +1365,15 @@ void HardcodedConditions::GetHOTtaggingEff2018(double pt, double *eff, std::stri
                else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
                }
 
- 
+        else if(sample=="x53x53H"){
+               if(workingpoint=="1pfake"){*eff = 1.0;}
+               else if(workingpoint=="2pfake"){*eff = 1.0;}
+               else if(workingpoint=="5pfake"){*eff = 1.0;}
+               else if(workingpoint=="10pfake"){*eff = 1.0;}
+               else{ std::cerr << "Working Point " << workingpoint << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
+               }
 
-	else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetHOTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+	else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetHOTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
 }
 
 void HardcodedConditions::GetHOTmistagEff2018(double pt, double *eff, std::string sample, std::string workingpoint, int massIndex)
@@ -1402,36 +1430,70 @@ void HardcodedConditions::GetTtaggingSF(double pt, double *PNsf, double *PNsfup,
 //Top,2016-RunBCDEF,Nominal,1.0,600,1200,1.3823424969039724,0.3203322566182154,0.35739488023541155
 //
 void HardcodedConditions::GetTtaggingSF2016APV(double pt, double *PNsf, double *PNsfup, double *PNsfdn) {
-  *PNsf   = 1.0;
-  *PNsfup = 1.0;
-  *PNsfdn = 1.0;
+  if ( pt >= 300.0 and pt <= 400.0 ) {
+    *PNsf   = 1.2529632568286877;
+    *PNsfup = 1.2529632568286877+0.14893548637024145;
+    *PNsfdn = 1.2529632568286877-0.1401589562980461; }
+  else if ( pt > 400.0 and pt <= 480.0 ) {
+    *PNsf   = 1.140886941405853;
+    *PNsfup = 1.140886941405853+ 0.1453378248525864;
+    *PNsfdn = 1.140886941405853-0.11013160312991532; }
+  else if ( pt > 480.0 and pt <= 600.0 ) {
+    *PNsf   = 1.2321784406468166;
+    *PNsfup = 1.2321784406468166+0.17834081774322008;
+    *PNsfdn = 1.2321784406468166-0.16845345175872173; }
+  else if ( pt > 600.0 and pt <= 1200.0 ) {
+    *PNsf   = 1.3823424969039724;
+    *PNsfup = 1.3823424969039724+0.35739488023541155;
+    *PNsfdn = 1.3823424969039724-0.3203322566182154; }
+  else {
+    *PNsf   = 1.;
+    *PNsfup = 1.;
+    *PNsfdn = 1.; }
 }
 
 // Needs to be updated
 void HardcodedConditions::GetTtaggingSF2016(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
-  *PNsf   = 1.0;
-  *PNsfup = 1.0;
-  *PNsfdn = 1.0;
+  if ( pt >= 300.0 and pt <= 400.0 ) {
+    *PNsf   =1.0286204672478074;
+    *PNsfup =1.0286204672478074+0.0837428626798436;
+    *PNsfdn =1.0286204672478074-0.07738336621550035; }
+  else if ( pt > 400.0 and pt <= 480.0 ) {
+    *PNsf   = 0.9861968638399904;
+    *PNsfup = 0.9861968638399904+0.05284760599583793;
+    *PNsfdn = 0.9861968638399904-0.046; }
+  else if ( pt > 480.0 and pt <= 600.0 ) {
+    *PNsf   = 1.1295417328901183;
+    *PNsfup = 1.1295417328901183+0.17885647825191325;
+    *PNsfdn = 1.1295417328901183-0.14011597977479784; }
+  else if ( pt > 600.0 and pt <= 1200.0 ) {
+    *PNsf   = 1.3035872134528272;
+    *PNsfup = 1.3035872134528272+0.31002043724845657;
+    *PNsfdn = 1.3035872134528272-0.2775637935767241; }
+  else {
+    *PNsf   = 1.;
+    *PNsfup = 1.;
+    *PNsfdn = 1.; }
 }
 
 void HardcodedConditions::GetTtaggingSF2017(double pt, double *PNsf, double *PNsfup, double *PNsfdn) {
 // Will be replaced by RunIISummer20UL version
   if ( pt >= 300.0 and pt <= 400.0 ) {
     *PNsf   = 1.2665423171877026;
-    *PNsfup = 1.2665423171877026+0.12594170644336278;
-    *PNsfdn = 1.2665423171877026-0.13075885577178425; }
+    *PNsfdn = 1.2665423171877026-0.12594170644336278;
+    *PNsfup = 1.2665423171877026+0.13075885577178425; }
   else if ( pt > 400.0 and pt <= 480.0 ) {
     *PNsf   = 1.01651719047938;
-    *PNsfup = 1.01651719047938+0.04200062224205936;
-    *PNsfdn = 1.01651719047938-0.03718799071755147; }
+    *PNsfdn = 1.01651719047938-0.04200062224205936;
+    *PNsfup = 1.01651719047938+0.03718799071755147; }
   else if ( pt > 480.0 and pt <= 600.0 ) {
     *PNsf   = 1.0563219429599855;
-    *PNsfup = 1.0563219429599855+0.04406769273143074;
-    *PNsfdn = 1.0563219429599855-0.12450427752619087; }
+    *PNsfdn = 1.0563219429599855-0.04406769273143074;
+    *PNsfup = 1.0563219429599855+0.12450427752619087; }
   else if ( pt > 600.0 and pt <= 1200.0 ) {
     *PNsf   = 1.004343034237564;
-    *PNsfup = 1.004343034237564+0.05644574156991433;
-    *PNsfdn = 1.004343034237564-0.06164302682382439; }
+    *PNsfdn = 1.004343034237564-0.05644574156991433;
+    *PNsfup = 1.004343034237564+0.06164302682382439; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
@@ -1442,20 +1504,20 @@ void HardcodedConditions::GetTtaggingSF2018(double pt,double *PNsf, double *PNsf
 // will be replaced by RunIISummer20UL version
   if ( pt >= 300.0 and pt <= 400.0 ) {
     *PNsf   = 1.1163204630587051;
-    *PNsfup = 1.1163204630587051+0.08589322774156138;
-    *PNsfdn = 1.1163204630587051-0.1145103421879804; }
+    *PNsfdn = 1.1163204630587051-0.08589322774156138;
+    *PNsfup = 1.1163204630587051+0.1145103421879804; }
   else if ( pt > 400.0 and pt <= 480.0 ) {
     *PNsf   = 0.9878718467695988;
-    *PNsfup = 0.9878718467695988+0.03394913833483326;
-    *PNsfdn = 0.9878718467695988-0.03536992757274554; }
+    *PNsfdn = 0.9878718467695988-0.03394913833483326;
+    *PNsfup = 0.9878718467695988+0.03536992757274554; }
   else if ( pt > 480.0 and pt <= 600.0 ) {
     *PNsf   = 0.988999891725833;
-    *PNsfup = 0.988999891725833+0.03135142808228031;
-    *PNsfdn = 0.988999891725833-0.03254552277081374; }
+    *PNsfdn = 0.988999891725833-0.03135142808228031;
+    *PNsfup = 0.988999891725833+0.03254552277081374; }
   else if ( pt > 600.0 and pt <= 1200.0 ) {
     *PNsf   = 0.9805739808831712;
-    *PNsfup = 0.9805739808831712+0.05931408212949585;
-    *PNsfdn = 0.9805739808831712-0.051187894522590094; }
+    *PNsfdn = 0.9805739808831712-0.05931408212949585;
+    *PNsfup = 0.9805739808831712+0.051187894522590094; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
@@ -1477,6 +1539,7 @@ void HardcodedConditions::GetTtaggingSF2018(double pt,double *PNsf, double *PNsf
    `---'                                                         `---'*/
 
 void HardcodedConditions::GetTtaggingEff(double pt, double *eff, std::string year, std::string sample, int massIndex)
+//update 2016
 {
   //The main getter for GetTtaggingEff Efficiencies
   *eff = 1.000;
@@ -1487,91 +1550,119 @@ void HardcodedConditions::GetTtaggingEff(double pt, double *eff, std::string yea
 }//end GetTtaggingEff
 
 void HardcodedConditions::GetTtaggingEff2016APV(double pt, double *eff, std::string sample, int massIndex){
-   const int Nbin = 9;
-   double ptMins[Nbin] = {400,450,500,550,600,700,800,1000,1200};
-   double ttbarEff[Nbin] = {0.553, 0.761, 0.812, 0.815, 0.794, 0.762, 0.726, 0.694, 0.672};
-   double STEff[Nbin] = {0.546, 0.760, 0.810, 0.820, 0.805, 0.774, 0.742, 0.734, 0.715}; 
- 
-   double x53x53Eff[12][Nbin] = {//X53X53
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-     {0.513, 0.685, 0.742, 0.743, 0.738, 0.734, 0.715, 0.710, 0.710},//900R
-     {0.491, 0.653, 0.714, 0.729, 0.724, 0.718, 0.711, 0.701, 0.678},//1000R
-     {0.461, 0.631, 0.687, 0.703, 0.705, 0.696, 0.698, 0.691, 0.701},//1100R
-     {0.454, 0.608, 0.666, 0.680, 0.689, 0.677, 0.678, 0.689, 0.699},//1200R
-     {0.440, 0.594, 0.642, 0.656, 0.659, 0.665, 0.659, 0.666, 0.693},//1300R
-     {0.423, 0.578, 0.627, 0.646, 0.646, 0.649, 0.645, 0.652, 0.663},//1400R
-     {0.404, 0.553, 0.595, 0.618, 0.618, 0.622, 0.633, 0.641, 0.650},//1500R
-     {0.413, 0.549, 0.599, 0.599, 0.612, 0.620, 0.623, 0.631, 0.655},//1600R
-     {0.418, 0.550, 0.586, 0.596, 0.595, 0.603, 0.610, 0.614, 0.638},//1700R
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
-     };
-
-    for(int ibin = Nbin-1; ibin >= 0; ibin--){
-    	if (pt > ptMins[ibin]){
-    		if (sample=="tttt") {*eff=1.0;}
-    		else if (sample=="ttbar") {*eff=ttbarEff[ibin];}
-    		else if (sample=="singletop") {*eff=STEff[ibin];}
-    		else if (sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
-    		else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
-    		break;
-    		}
-    	}
+    *eff = 1.0;
+//   const int Nbin = 9;
+//   double ptMins[Nbin] = {400,450,500,550,600,700,800,1000,1200};
+//   double ttbarEff[Nbin] = {};
+//   double STEff[Nbin] = {}; 
+// 
+//   double x53x53Eff[12][Nbin] = {//X53X53
+//     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
+//     {},//800
+//     {},//900R
+//     {},//1000R
+//     {},//1100R
+//     {},//1200R
+//     {},//1300R
+//     {},//1400R
+//     {},//1500R
+//     {},//1600R
+//     };
+//
+//    for(int ibin = Nbin-1; ibin >= 0; ibin--){
+//    	if (pt > ptMins[ibin]){
+//    		if (sample=="tttt") {*eff=1.0;}
+//    		else if (sample=="ttbar") {*eff=ttbarEff[ibin];}
+//    		else if (sample=="singletop") {*eff=STEff[ibin];}
+//    		else if (sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
+//    		else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+//    		break;
+//    		}
+//    	}
 }
 
 void HardcodedConditions::GetTtaggingEff2016(double pt, double *eff, std::string sample, int massIndex){
-   const int Nbin = 9;
-   double ptMins[Nbin] = {400,450,500,550,600,700,800,1000,1200};
-   double ttbarEff[Nbin] = {0.553, 0.761, 0.812, 0.815, 0.794, 0.762, 0.726, 0.694, 0.672};
-   double STEff[Nbin] = {0.546, 0.760, 0.810, 0.820, 0.805, 0.774, 0.742, 0.734, 0.715}; 
+    *eff = 1.0;
+   //const int Nbin = 9;
+   //double ptMins[Nbin] = {400,450,500,550,600,700,800,1000,1200};
+   //double ttbarEff[Nbin] = {};
+   //double STEff[Nbin] = {}; 
  
-    double x53x53Eff[12][Nbin] = {//X53X53
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-     {0.513, 0.685, 0.742, 0.743, 0.738, 0.734, 0.715, 0.710, 0.710},//900R
-     {0.491, 0.653, 0.714, 0.729, 0.724, 0.718, 0.711, 0.701, 0.678},//1000R
-     {0.461, 0.631, 0.687, 0.703, 0.705, 0.696, 0.698, 0.691, 0.701},//1100R
-     {0.454, 0.608, 0.666, 0.680, 0.689, 0.677, 0.678, 0.689, 0.699},//1200R
-     {0.440, 0.594, 0.642, 0.656, 0.659, 0.665, 0.659, 0.666, 0.693},//1300R
-     {0.423, 0.578, 0.627, 0.646, 0.646, 0.649, 0.645, 0.652, 0.663},//1400R
-     {0.404, 0.553, 0.595, 0.618, 0.618, 0.622, 0.633, 0.641, 0.650},//1500R
-     {0.413, 0.549, 0.599, 0.599, 0.612, 0.620, 0.623, 0.631, 0.655},//1600R
-     {0.418, 0.550, 0.586, 0.596, 0.595, 0.603, 0.610, 0.614, 0.638},//1700R
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
-     };
+   // double x53x53Eff[12][Nbin] = {//X53X53
+   //  {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
+   //  {},//800
+   //  {},//900R
+   //  {},//1000R
+   //  {},//1100R
+   //  {},//1200R
+   //  {},//1300R
+   //  {},//1400R
+   //  {},//1500R
+   //  {},//1600R
+   //  };
 
-    for(int ibin = Nbin-1; ibin >= 0; ibin--){
-    	if (pt > ptMins[ibin]){
-    		if (sample=="tttt") {*eff=1.0;}
-    		else if (sample=="ttbar") {*eff=ttbarEff[ibin];}
-    		else if (sample=="singletop") {*eff=STEff[ibin];}
-    		else if (sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
-    		else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
-    		break;
-    		}
-    	}
+   // for(int ibin = Nbin-1; ibin >= 0; ibin--){
+   // 	if (pt > ptMins[ibin]){
+   // 		if (sample=="tttt") {*eff=1.0;}
+   // 		else if (sample=="ttbar") {*eff=ttbarEff[ibin];}
+   // 		else if (sample=="singletop") {*eff=STEff[ibin];}
+   // 		else if (sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
+   // 		else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+   // 		break;
+   // 		}
+   // 	}
 
 }
 
 void HardcodedConditions::GetTtaggingEff2017(double pt, double *eff, std::string sample, int massIndex){
    const int Nbin = 9;
    double ptMins[Nbin] = {400,450,500,550,600,700,800,1000,1200};
-   double ttbarEff[Nbin] = {0.553, 0.761, 0.812, 0.815, 0.794, 0.762, 0.726, 0.694, 0.672};
-   double STEff[Nbin] = {0.546, 0.760, 0.810, 0.820, 0.805, 0.774, 0.742, 0.734, 0.715}; 
+   double ttbarEff[Nbin] = {0.877, 0.901, 0.912, 0.917, 0.922, 0.926, 0.930, 0.935, 0.931};
+   double STEff[Nbin] = {0.861, 0.890, 0.902, 0.912, 0.911, 0.906, 0.918, 0.911, 0.914};
  
-    double x53x53Eff[12][Nbin] = {//X53X53
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-     {0.513, 0.685, 0.742, 0.743, 0.738, 0.734, 0.715, 0.710, 0.710},//900R
-     {0.491, 0.653, 0.714, 0.729, 0.724, 0.718, 0.711, 0.701, 0.678},//1000R
-     {0.461, 0.631, 0.687, 0.703, 0.705, 0.696, 0.698, 0.691, 0.701},//1100R
-     {0.454, 0.608, 0.666, 0.680, 0.689, 0.677, 0.678, 0.689, 0.699},//1200R
-     {0.440, 0.594, 0.642, 0.656, 0.659, 0.665, 0.659, 0.666, 0.693},//1300R
-     {0.423, 0.578, 0.627, 0.646, 0.646, 0.649, 0.645, 0.652, 0.663},//1400R
-     {0.404, 0.553, 0.595, 0.618, 0.618, 0.622, 0.633, 0.641, 0.650},//1500R
-     {0.413, 0.549, 0.599, 0.599, 0.612, 0.620, 0.623, 0.631, 0.655},//1600R
-     {0.418, 0.550, 0.586, 0.596, 0.595, 0.603, 0.610, 0.614, 0.638},//1700R
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
+    double x53x53Eff[10][Nbin] = {//X53X53
+     {0.896, 0.919, 0.924, 0.936, 0.937, 0.939, 0.933, 0.937, 0.946},//700
+     {0.900, 0.914, 0.930, 0.935, 0.937, 0.938, 0.936, 0.942, 0.939},//800
+     {0.892, 0.913, 0.923, 0.933, 0.937, 0.936, 0.943, 0.942, 0.947},//900R
+     {0.888, 0.907, 0.922, 0.932, 0.939, 0.940, 0.943, 0.940, 0.937},//1000R
+     {0.885, 0.907, 0.921, 0.926, 0.934, 0.937, 0.936, 0.939, 0.940},//1100R
+     {0.878, 0.904, 0.918, 0.926, 0.936, 0.937, 0.942, 0.943, 0.942},//1200R
+     {0.876, 0.898, 0.909, 0.923, 0.931, 0.938, 0.939, 0.938, 0.940},//1300R
+     {0.878, 0.892, 0.907, 0.918, 0.932, 0.938, 0.941, 0.942, 0.941},//1400R
+     {0.866, 0.887, 0.902, 0.913, 0.921, 0.930, 0.935, 0.936, 0.916},//1500R
+     {0.867, 0.892, 0.909, 0.919, 0.929, 0.937, 0.940, 0.946, 0.944},//1600R
+     };
+ 
+    double x53x53EffH[30][Nbin] = {//X53X53
+     {0.884, 0.917, 0.915, 0.926, 0.929, 0.951, 0.947, 0.976, 1.000},
+     {0.881, 0.901, 0.916, 0.918, 0.927, 0.940, 0.937, 0.956, 0.936},
+     {0.886, 0.910, 0.926, 0.937, 0.928, 0.943, 0.950, 0.976, 1.000},
+     {0.879, 0.902, 0.909, 0.917, 0.922, 0.927, 0.935, 0.938, 0.944},
+     {0.882, 0.901, 0.907, 0.913, 0.927, 0.933, 0.942, 0.915, 0.865},
+     {0.883, 0.900, 0.912, 0.916, 0.922, 0.925, 0.933, 0.935, 0.938},
+     {0.877, 0.898, 0.907, 0.919, 0.928, 0.930, 0.934, 0.955, 0.944},
+     {0.883, 0.903, 0.911, 0.928, 0.932, 0.931, 0.940, 0.967, 0.927},
+     {0.879, 0.897, 0.910, 0.915, 0.922, 0.928, 0.930, 0.939, 0.935},
+     {0.882, 0.907, 0.913, 0.923, 0.926, 0.932, 0.935, 0.932, 0.943},
+     {0.875, 0.893, 0.903, 0.919, 0.921, 0.936, 0.937, 0.955, 0.960},
+     {0.872, 0.893, 0.909, 0.915, 0.919, 0.926, 0.932, 0.937, 0.935},
+     {0.875, 0.901, 0.917, 0.921, 0.929, 0.933, 0.937, 0.939, 0.924},
+     {0.868, 0.893, 0.903, 0.913, 0.919, 0.930, 0.941, 0.939, 0.937},
+     {0.877, 0.903, 0.911, 0.923, 0.926, 0.937, 0.940, 0.948, 0.939},
+     {0.859, 0.894, 0.906, 0.913, 0.924, 0.925, 0.933, 0.931, 0.935},
+     {0.870, 0.900, 0.914, 0.921, 0.929, 0.934, 0.936, 0.938, 0.924},
+     {0.866, 0.897, 0.903, 0.917, 0.925, 0.931, 0.933, 0.939, 0.917},
+     {0.868, 0.897, 0.911, 0.920, 0.927, 0.933, 0.940, 0.933, 0.949},     
+     {0.867, 0.892, 0.904, 0.915, 0.921, 0.925, 0.931, 0.939, 0.934,},
+     {0.861, 0.891, 0.909, 0.920, 0.927, 0.935, 0.935, 0.939, 0.939},
+     {0.871, 0.898, 0.908, 0.918, 0.923, 0.933, 0.936, 0.934, 0.933},
+     {0.866, 0.887, 0.902, 0.913, 0.921, 0.930, 0.935, 0.936, 0.916},
+     {0.867, 0.892, 0.909, 0.919, 0.929, 0.937, 0.940, 0.946, 0.944},
+     {0.859, 0.881, 0.891, 0.901, 0.918, 0.926, 0.931, 0.935, 0.936},
+     {0.843, 0.874, 0.893, 0.908, 0.921, 0.931, 0.936, 0.940, 0.935},
+     {0.856, 0.881, 0.898, 0.912, 0.925, 0.933, 0.936, 0.943, 0.934},
+     {0.860, 0.884, 0.900, 0.912, 0.924, 0.932, 0.935, 0.940, 0.926},
+     {0.855, 0.878, 0.895, 0.907, 0.919, 0.929, 0.936, 0.940, 0.928},
      };
 
     for(int ibin = Nbin-1; ibin >= 0; ibin--){
@@ -1580,6 +1671,7 @@ void HardcodedConditions::GetTtaggingEff2017(double pt, double *eff, std::string
     		else if (sample=="ttbar") {*eff=ttbarEff[ibin];}
     		else if (sample=="singletop") {*eff=STEff[ibin];}
     		else if (sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
+    		else if (sample=="x53x53H") {*eff=x53x53EffH[massIndex][ibin];}
     		else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
     		break;
     		}
@@ -1589,22 +1681,52 @@ void HardcodedConditions::GetTtaggingEff2017(double pt, double *eff, std::string
 void HardcodedConditions::GetTtaggingEff2018(double pt, double *eff, std::string sample, int massIndex){
    const int Nbin = 9;
    double ptMins[Nbin] = {400,450,500,550,600,700,800,1000,1200};
-   double ttbarEff[Nbin] = {0.561, 0.770, 0.820, 0.820, 0.800, 0.763, 0.729, 0.697, 0.672};
-   double STEff[Nbin] = {0.556, 0.768, 0.813, 0.820, 0.798, 0.774, 0.728, 0.716, 0.657}; 
+   double ttbarEff[Nbin] = {0.869, 0.895, 0.906, 0.913, 0.917, 0.921, 0.923, 0.926, 0.924};
+   double STEff[Nbin] = {0.861, 0.885, 0.896, 0.905, 0.905, 0.914, 0.918, 0.911, 0.892}; 
 
     double x53x53Eff[12][Nbin] = {//X53X53
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-     {0.513, 0.685, 0.742, 0.743, 0.738, 0.734, 0.715, 0.710, 0.710},//900R
-     {0.491, 0.653, 0.714, 0.729, 0.724, 0.718, 0.711, 0.701, 0.678},//1000R
-     {0.461, 0.631, 0.687, 0.703, 0.705, 0.696, 0.698, 0.691, 0.701},//1100R
-     {0.454, 0.608, 0.666, 0.680, 0.689, 0.677, 0.678, 0.689, 0.699},//1200R
-     {0.440, 0.594, 0.642, 0.656, 0.659, 0.665, 0.659, 0.666, 0.693},//1300R
-     {0.423, 0.578, 0.627, 0.646, 0.646, 0.649, 0.645, 0.652, 0.663},//1400R
-     {0.404, 0.553, 0.595, 0.618, 0.618, 0.622, 0.633, 0.641, 0.650},//1500R
-     {0.413, 0.549, 0.599, 0.599, 0.612, 0.620, 0.623, 0.631, 0.655},//1600R
-     {0.418, 0.550, 0.586, 0.596, 0.595, 0.603, 0.610, 0.614, 0.638},//1700R
-     {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
+     {0.896, 0.919, 0.927, 0.925, 0.932, 0.937, 0.941, 0.938, 0.918},//700
+     {0.890, 0.916, 0.925, 0.934, 0.933, 0.940, 0.938, 0.929, 0.948},//800
+     {0.887, 0.913, 0.927, 0.933, 0.936, 0.933, 0.943, 0.937, 0.921},//900R
+     {0.887, 0.909, 0.918, 0.931, 0.934, 0.936, 0.938, 0.937, 0.938},//1000R
+     {0.882, 0.906, 0.918, 0.928, 0.937, 0.936, 0.940, 0.942, 0.941},//1100R
+     {0.870, 0.898, 0.912, 0.922, 0.932, 0.938, 0.938, 0.943, 0.942},//1200R
+     {0.869, 0.890, 0.906, 0.920, 0.933, 0.938, 0.943, 0.940, 0.938},//1300R
+     {0.872, 0.889, 0.905, 0.916, 0.929, 0.936, 0.940, 0.941, 0.939},//1400R
+     {0.867, 0.889, 0.901, 0.913, 0.927, 0.937, 0.940, 0.937, 0.940},//1500R
+     {0.861, 0.885, 0.895, 0.908, 0.923, 0.935, 0.940, 0.944, 0.939},//1600R
+     };
+
+    double x53x53EffH[30][Nbin] = {//X53X53
+     {0.887, 0.909, 0.920, 0.936, 0.936, 0.926, 0.951, 0.991, 0.871},
+     {0.876, 0.898, 0.914, 0.918, 0.927, 0.922, 0.932, 0.963, 0.953},
+     {0.891, 0.906, 0.921, 0.931, 0.934, 0.946, 0.957, 0.950, 1.000},
+     {0.878, 0.901, 0.910, 0.917, 0.926, 0.920, 0.944, 0.943, 0.961},
+     {0.873, 0.899, 0.914, 0.919, 0.928, 0.932, 0.944, 0.953, 0.922},
+     {0.879, 0.901, 0.911, 0.919, 0.923, 0.930, 0.931, 0.937, 0.941},
+     {0.875, 0.897, 0.910, 0.917, 0.924, 0.927, 0.937, 0.950, 0.935},
+     {0.879, 0.902, 0.906, 0.925, 0.934, 0.939, 0.939, 0.959, 0.936},
+     {0.881, 0.894, 0.910, 0.915, 0.923, 0.929, 0.930, 0.934, 0.936},
+     {0.874, 0.902, 0.912, 0.919, 0.928, 0.930, 0.930, 0.942, 0.921},
+     {0.861, 0.892, 0.906, 0.917, 0.923, 0.931, 0.940, 0.942, 0.941},
+     {0.871, 0.894, 0.907, 0.916, 0.922, 0.925, 0.933, 0.936, 0.937},
+     {0.877, 0.900, 0.916, 0.920, 0.927, 0.929, 0.934, 0.927, 0.936},
+     {0.868, 0.891, 0.901, 0.913, 0.923, 0.932, 0.944, 0.945, 0.934},
+     {0.873, 0.895, 0.913, 0.925, 0.929, 0.933, 0.951, 0.952, 0.947},
+     {0.867, 0.891, 0.902, 0.907, 0.919, 0.924, 0.927, 0.929, 0.939},
+     {0.868, 0.896, 0.910, 0.919, 0.927, 0.931, 0.934, 0.935, 0.935},
+     {0.870, 0.896, 0.907, 0.913, 0.924, 0.931, 0.932, 0.940, 0.930},
+     {0.861, 0.892, 0.907, 0.921, 0.926, 0.935, 0.942, 0.944, 0.945},     
+     {0.864, 0.888, 0.902, 0.910, 0.920, 0.925, 0.929, 0.935, 0.939},
+     {0.862, 0.890, 0.907, 0.917, 0.924, 0.933, 0.939, 0.942, 0.941},
+     {0.871, 0.892, 0.908, 0.912, 0.924, 0.930, 0.936, 0.941, 0.921},
+     {0.861, 0.886, 0.897, 0.910, 0.921, 0.931, 0.935, 0.941, 0.929},
+     {0.864, 0.887, 0.910, 0.915, 0.927, 0.940, 0.940, 0.946, 0.946},
+     {0.855, 0.877, 0.890, 0.902, 0.913, 0.926, 0.930, 0.934, 0.936},
+     {0.841, 0.870, 0.892, 0.904, 0.919, 0.929, 0.934, 0.938, 0.935},
+     {0.850, 0.879, 0.894, 0.913, 0.923, 0.929, 0.934, 0.939, 0.933},
+     {0.858, 0.882, 0.896, 0.912, 0.921, 0.930, 0.935, 0.937, 0.925},
+     {0.852, 0.876, 0.898, 0.905, 0.919, 0.928, 0.936, 0.940, 0.928},
      };
 
     for(int ibin = Nbin-1; ibin >= 0; ibin--){
@@ -1613,7 +1735,8 @@ void HardcodedConditions::GetTtaggingEff2018(double pt, double *eff, std::string
     		else if (sample=="ttbar") {*eff=ttbarEff[ibin];}
     		else if (sample=="singletop") {*eff=STEff[ibin];}
     		else if (sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
-    		else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetTtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+    		else if (sample=="x53x53H") {*eff=x53x53EffH[massIndex][ibin];}
+    		else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetTtaggingEff2018! Aborting ..." << std::endl; std::abort();}
     		break;
     		}
     	}
@@ -1646,30 +1769,56 @@ void HardcodedConditions::GetWtaggingSF(double pt, double *PNsf, double *PNsfup,
 
 // haven't been updated yet
 void HardcodedConditions::GetWtaggingSF2016APV(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
-  *PNsf = 1.0;
-  *PNsfup = 1.0;
-  *PNsfdn = 1.0;
+  if ( pt >= 200.0 and pt <= 300.0 ) {
+    *PNsf   = 1.0112160124733622;
+    *PNsfdn = 1.0112160124733622-1.0112160124733622;
+    *PNsfup = 1.0112160124733622+0.005465987283177598; }
+  else if ( pt > 300.0 and pt <= 400.0 ) {
+    *PNsf   = 1.0030071418307132;
+    *PNsfdn = 1.0030071418307132-0.0938784945034159;
+    *PNsfup = 1.0030071418307132+0.10313623868572142; }
+  else if ( pt > 400.0 and pt <= 800.0 ) {
+    *PNsf   =1.0529715854028163 ;
+    *PNsfdn =1.0529715854028163-0.10026392476050128;
+    *PNsfup =1.0529715854028163+0.1004798066677628; }
+  else {
+    *PNsf   = 1.;
+    *PNsfup = 1.;
+    *PNsfdn = 1.; }
 }
 
 void HardcodedConditions::GetWtaggingSF2016(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
-  *PNsf = 1.0;
-  *PNsfup = 1.0;
-  *PNsfdn = 1.0;
+  if ( pt >= 200.0 and pt <= 300.0 ) {
+    *PNsf   = 1.1277146862875185;
+    *PNsfdn = 1.1277146862875185-0.06347493639596635;
+    *PNsfup = 1.1277146862875185+0.06355513497258214; }
+  else if ( pt > 300.0 and pt <= 400.0 ) {
+    *PNsf   = 1.0836717298969585;
+    *PNsfdn = 1.0836717298969585-0.049694041648482346;
+    *PNsfup = 1.0836717298969585+0.0456811845094115; }
+  else if ( pt > 400.0 and pt <= 800.0 ) {
+    *PNsf   = 1.155322907991434;
+    *PNsfdn = 1.155322907991434-0.13837723466132212;
+    *PNsfup = 1.155322907991434+0.07985775972577314; }
+  else {
+    *PNsf   = 1.;
+    *PNsfup = 1.;
+    *PNsfdn = 1.; }
 }
 
 void HardcodedConditions::GetWtaggingSF2017(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
   if ( pt >= 200.0 and pt <= 300.0 ) {
     *PNsf   = 0.9587246533669983;
-    *PNsfup = 0.9587246533669983+0.040422897033849936;
-    *PNsfdn = 0.9587246533669983-0.04680109244747821; }
+    *PNsfdn = 0.9587246533669983-0.040422897033849936;
+    *PNsfup = 0.9587246533669983+0.04680109244747821; }
   else if ( pt > 300.0 and pt <= 400.0 ) {
     *PNsf   = 0.9439519374013672;
-    *PNsfup = 0.9439519374013672+0.052956710009177455;
-    *PNsfdn = 0.9439519374013672-0.08460017084174382; }
+    *PNsfdn = 0.9439519374013672-0.052956710009177455;
+    *PNsfup = 0.9439519374013672+0.08460017084174382; }
   else if ( pt > 400.0 and pt <= 800.0 ) {
     *PNsf   = 0.7885701617038146;
-    *PNsfup = 0.7885701617038146+0.09584342583997385;
-    *PNsfdn = 0.7885701617038146-0.1244672628782863; }
+    *PNsfdn = 0.7885701617038146-0.09584342583997385;
+    *PNsfup = 0.7885701617038146+0.1244672628782863; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
@@ -1679,16 +1828,16 @@ void HardcodedConditions::GetWtaggingSF2017(double pt, double *PNsf, double *PNs
 void HardcodedConditions::GetWtaggingSF2018(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
   if ( pt >= 200.0 and pt <= 300.0 ) {
     *PNsf   = 1.0207719507098578;
-    *PNsfup = 0.02690925331582794;
-    *PNsfdn = 0.022482432399033303; }
+    *PNsfdn = 1.0207719507098578-0.02690925331582794;
+    *PNsfup = 1.0207719507098578+0.022482432399033303; }
   else if ( pt > 300.0 and pt <= 400.0 ) {
     *PNsf   = 0.9662561264360947;
-    *PNsfup = 0.05594758980276515;
-    *PNsfdn = 0.05535242117725969; }
+    *PNsfdn = 0.9662561264360947-0.05594758980276515;
+    *PNsfup = 0.9662561264360947+0.05535242117725969; }
   else if ( pt > 400.0 and pt <= 800.0 ) {
     *PNsf   = 1.0342599879066012;
-    *PNsfup = 0.1560764591233591;
-    *PNsfdn = 0.059018250935544414; }
+    *PNsfdn = 1.0342599879066012-0.1560764591233591;
+    *PNsfup = 1.0342599879066012+0.059018250935544414; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
@@ -1719,108 +1868,104 @@ void HardcodedConditions::GetWtaggingEff(double pt, double *eff, std::string yea
 
 // not updated for UL yet
 void HardcodedConditions::GetWtaggingEff2016APV(double pt, double *eff, std::string sample, int massIndex){
-    const int NbinB = 12;
-    const int NbinS = 14;
-    double ptMinsB[NbinB] = {175,200,250,300,350,400,450,500,550,600,700,800};
-    double ptMinsS[NbinS] = {175,200,250,300,350,400,450,500,550,600,700,800,1000,1200};
-    double ttbarEff[NbinB]= {0.721, 0.851, 0.860, 0.837, 0.815, 0.793, 0.773, 0.753, 0.735, 0.716, 0.685, 0.657}; // ttbar
-    double STtEff[NbinB]  = {0.726, 0.854, 0.863, 0.837, 0.815, 0.783, 0.767, 0.743, 0.722, 0.698, 0.717, 0.583}; // single top (s and t channel had 0 boosted tops)
-    double STtWEff[NbinB] = {0.718, 0.857, 0.873, 0.857, 0.847, 0.834, 0.828, 0.821, 0.814, 0.811, 0.805, 0.777}; // single top (s and t channel had 0 boosted tops)
-    double WVEff[NbinB]   = {0.744, 0.865, 0.874, 0.853, 0.836, 0.832, 0.818, 0.809, 0.804, 0.784, 0.787, 0.720}; // WW, WZ, etc. 
-
-    double x53x53Eff[12][NbinS] = {//X53X53
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-       {0.731, 0.859, 0.867, 0.855, 0.843, 0.831, 0.822, 0.812, 0.804, 0.796, 0.775, 0.759, 0.718, 0.680},//900R
-       {0.730, 0.866, 0.869, 0.856, 0.844, 0.835, 0.825, 0.823, 0.817, 0.804, 0.790, 0.763, 0.733, 0.721},//1000R
-       {0.721, 0.863, 0.867, 0.855, 0.843, 0.838, 0.828, 0.817, 0.816, 0.804, 0.787, 0.770, 0.752, 0.712},//1100R
-       {0.756, 0.866, 0.868, 0.853, 0.844, 0.835, 0.829, 0.823, 0.817, 0.809, 0.795, 0.778, 0.758, 0.724},//1200R
-       {0.756, 0.865, 0.871, 0.857, 0.843, 0.825, 0.826, 0.826, 0.820, 0.807, 0.796, 0.773, 0.762, 0.737},//1300R
-       {0.767, 0.873, 0.871, 0.859, 0.847, 0.838, 0.826, 0.817, 0.817, 0.810, 0.801, 0.778, 0.766, 0.758},//1400R
-       {0.753, 0.856, 0.857, 0.833, 0.818, 0.818, 0.803, 0.795, 0.794, 0.793, 0.780, 0.763, 0.740, 0.734},//1500R
-       {0.759, 0.876, 0.882, 0.853, 0.845, 0.838, 0.818, 0.821, 0.818, 0.811, 0.800, 0.786, 0.769, 0.758},//1600R
-       {0.760, 0.866, 0.871, 0.856, 0.849, 0.836, 0.829, 0.807, 0.813, 0.813, 0.800, 0.792, 0.774, 0.771},//1700R
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
-
-      };     
-    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp"){
-    	for(int ibin = NbinS-1; ibin >= 0; ibin--){
-    		if(pt > ptMinsS[ibin]){
-    			if(sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
-    			else if(sample=="TpTp") {*eff=1;}
-    			else if(sample=="BpBp") {*eff=1;}
-    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
-    			break;
-    			}
-    		}
-    	}
-    else{
-    	for(int ibin = NbinB-1; ibin >= 0; ibin--){
-    		if(pt > ptMinsB[ibin]){
-    			if(sample=="tttt") {*eff=1;}
-    			else if(sample=="ttbar") {*eff=ttbarEff[ibin];}
-    			else if(sample=="singletopt") {*eff=STtEff[ibin];}
-    			else if(sample=="singletoptW") {*eff=STtWEff[ibin];}
-    			else if(sample=="WV") {*eff=WVEff[ibin];}
-    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
-    			break;
-    			}
-    		}
-    	}
+    *eff = 1.0;
+//    const int NbinB = 12;
+//    const int NbinS = 14;
+//    double ptMinsB[NbinB] = {175,200,250,300,350,400,450,500,550,600,700,800};
+//    double ptMinsS[NbinS] = {175,200,250,300,350,400,450,500,550,600,700,800,1000,1200};
+//    double ttbarEff[NbinB]= {}; // ttbar
+//    double STtEff[NbinB]  = {};
+//    double STtWEff[NbinB] = {};
+//    double WVEff[NbinB]   = {}; // WW, WZ, etc. 
+//
+//    double x53x53Eff[12][NbinS] = {//X53X53
+//       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
+//       {},//800
+//       {},//900R
+//       {},//1000R
+//       {},//1100R
+//       {},//1200R
+//       {},//1300R
+//       {},//1400R
+//       {},//1500R
+//       {},//1600R
+//      };     
+//    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp"){
+//    	for(int ibin = NbinS-1; ibin >= 0; ibin--){
+//    		if(pt > ptMinsS[ibin]){
+//    			if(sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
+//    			else if(sample=="TpTp") {*eff=1;}
+//    			else if(sample=="BpBp") {*eff=1;}
+//    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+//    			break;
+//    			}
+//    		}
+//    	}
+//    else{
+//    	for(int ibin = NbinB-1; ibin >= 0; ibin--){
+//    		if(pt > ptMinsB[ibin]){
+//    			if(sample=="tttt") {*eff=1;}
+//    			else if(sample=="ttbar") {*eff=ttbarEff[ibin];}
+//    			else if(sample=="singletopt") {*eff=STtEff[ibin];}
+//    			else if(sample=="singletoptW") {*eff=STtWEff[ibin];}
+//    			else if(sample=="WV") {*eff=WVEff[ibin];}
+//    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+//    			break;
+//    			}
+//    		}
+//    	}
  
 }
 
 void HardcodedConditions::GetWtaggingEff2016(double pt, double *eff, std::string sample, int massIndex){
-    const int NbinB = 12;
-    const int NbinS = 14;
-    double ptMinsB[NbinB] = {175,200,250,300,350,400,450,500,550,600,700,800};
-    double ptMinsS[NbinS] = {175,200,250,300,350,400,450,500,550,600,700,800,1000,1200};
-    double ttbarEff[NbinB]= {0.721, 0.851, 0.860, 0.837, 0.815, 0.793, 0.773, 0.753, 0.735, 0.716, 0.685, 0.657}; // ttbar
-    double STtEff[NbinB]  = {0.726, 0.854, 0.863, 0.837, 0.815, 0.783, 0.767, 0.743, 0.722, 0.698, 0.717, 0.583}; // single top (s and t channel had 0 boosted tops)
-    double STtWEff[NbinB] = {0.718, 0.857, 0.873, 0.857, 0.847, 0.834, 0.828, 0.821, 0.814, 0.811, 0.805, 0.777}; // single top (s and t channel had 0 boosted tops)
-    double WVEff[NbinB]   = {0.744, 0.865, 0.874, 0.853, 0.836, 0.832, 0.818, 0.809, 0.804, 0.784, 0.787, 0.720}; // WW, WZ, etc. 
-
-
-    double x53x53Eff[12][NbinS] = {//X53X53
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-       {0.731, 0.859, 0.867, 0.855, 0.843, 0.831, 0.822, 0.812, 0.804, 0.796, 0.775, 0.759, 0.718, 0.680},//900R
-       {0.730, 0.866, 0.869, 0.856, 0.844, 0.835, 0.825, 0.823, 0.817, 0.804, 0.790, 0.763, 0.733, 0.721},//1000R
-       {0.721, 0.863, 0.867, 0.855, 0.843, 0.838, 0.828, 0.817, 0.816, 0.804, 0.787, 0.770, 0.752, 0.712},//1100R
-       {0.756, 0.866, 0.868, 0.853, 0.844, 0.835, 0.829, 0.823, 0.817, 0.809, 0.795, 0.778, 0.758, 0.724},//1200R
-       {0.756, 0.865, 0.871, 0.857, 0.843, 0.825, 0.826, 0.826, 0.820, 0.807, 0.796, 0.773, 0.762, 0.737},//1300R
-       {0.767, 0.873, 0.871, 0.859, 0.847, 0.838, 0.826, 0.817, 0.817, 0.810, 0.801, 0.778, 0.766, 0.758},//1400R
-       {0.753, 0.856, 0.857, 0.833, 0.818, 0.818, 0.803, 0.795, 0.794, 0.793, 0.780, 0.763, 0.740, 0.734},//1500R
-       {0.759, 0.876, 0.882, 0.853, 0.845, 0.838, 0.818, 0.821, 0.818, 0.811, 0.800, 0.786, 0.769, 0.758},//1600R
-       {0.760, 0.866, 0.871, 0.856, 0.849, 0.836, 0.829, 0.807, 0.813, 0.813, 0.800, 0.792, 0.774, 0.771},//1700R
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
-
-      };     
-    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp"){
-    	for(int ibin = NbinS-1; ibin >= 0; ibin--){
-    		if(pt > ptMinsS[ibin]){
-    			if(sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
-    			else if(sample=="TpTp") {*eff=1;}
-    			else if(sample=="BpBp") {*eff=1;}
-    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
-    			break;
-    			}
-    		}
-    	}
-    else{
-    	for(int ibin = NbinB-1; ibin >= 0; ibin--){
-    		if(pt > ptMinsB[ibin]){
-    			if(sample=="tttt") {*eff=1;}
-    			else if(sample=="ttbar") {*eff=ttbarEff[ibin];}
-    			else if(sample=="singletopt") {*eff=STtEff[ibin];}
-    			else if(sample=="singletoptW") {*eff=STtWEff[ibin];}
-    			else if(sample=="WV") {*eff=WVEff[ibin];}
-    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
-    			break;
-    			}
-    		}
-    	}
- 
+    *eff = 1.0;
+//    const int NbinB = 12;
+//    const int NbinS = 14;
+//    double ptMinsB[NbinB] = {175,200,250,300,350,400,450,500,550,600,700,800};
+//    double ptMinsS[NbinS] = {175,200,250,300,350,400,450,500,550,600,700,800,1000,1200};
+//    double ttbarEff[NbinB]= {}; // ttbar
+//    double STtEff[NbinB]  = {}; // single top (s and t channel had 0 boosted tops)
+//    double STtWEff[NbinB] = {}; // single top (s and t channel had 0 boosted tops)
+//    double WVEff[NbinB]   = {}; // WW, WZ, etc.  
+//
+//
+//    double x53x53Eff[12][NbinS] = {//X53X53
+//       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
+//       {},//800
+//       {},//900R
+//       {},//1000R
+//       {},//1100R
+//       {},//1200R
+//       {},//1300R
+//       {},//1400R
+//       {},//1500R
+//       {},//1600R
+//      };     
+//    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp"){
+//    	for(int ibin = NbinS-1; ibin >= 0; ibin--){
+//    		if(pt > ptMinsS[ibin]){
+//    			if(sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
+//    			else if(sample=="TpTp") {*eff=1;}
+//    			else if(sample=="BpBp") {*eff=1;}
+//    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+//    			break;
+//    			}
+//    		}
+//    	}
+//    else{
+//    	for(int ibin = NbinB-1; ibin >= 0; ibin--){
+//    		if(pt > ptMinsB[ibin]){
+//    			if(sample=="tttt") {*eff=1;}
+//    			else if(sample=="ttbar") {*eff=ttbarEff[ibin];}
+//    			else if(sample=="singletopt") {*eff=STtEff[ibin];}
+//    			else if(sample=="singletoptW") {*eff=STtWEff[ibin];}
+//    			else if(sample=="WV") {*eff=WVEff[ibin];}
+//    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+//    			break;
+//    			}
+//    		}
+//    	}
+// 
 }
 
 void HardcodedConditions::GetWtaggingEff2017(double pt, double *eff, std::string sample, int massIndex){
@@ -1828,31 +1973,63 @@ void HardcodedConditions::GetWtaggingEff2017(double pt, double *eff, std::string
     const int NbinS = 14;
     double ptMinsB[NbinB] = {175,200,250,300,350,400,450,500,550,600,700,800};
     double ptMinsS[NbinS] = {175,200,250,300,350,400,450,500,550,600,700,800,1000,1200};
-    double ttbarEff[NbinB]= {0.721, 0.851, 0.860, 0.837, 0.815, 0.793, 0.773, 0.753, 0.735, 0.716, 0.685, 0.657}; // ttbar
-    double STtEff[NbinB]  = {0.726, 0.854, 0.863, 0.837, 0.815, 0.783, 0.767, 0.743, 0.722, 0.698, 0.717, 0.583}; // single top (s and t channel had 0 boosted tops)
-    double STtWEff[NbinB] = {0.718, 0.857, 0.873, 0.857, 0.847, 0.834, 0.828, 0.821, 0.814, 0.811, 0.805, 0.777}; // single top (s and t channel had 0 boosted tops)
-    double WVEff[NbinB]   = {0.744, 0.865, 0.874, 0.853, 0.836, 0.832, 0.818, 0.809, 0.804, 0.784, 0.787, 0.720}; // WW, WZ, etc. 
+    double ttbarEff[NbinB]= {0.574, 0.684, 0.659, 0.628, 0.611, 0.601, 0.594, 0.586, 0.585, 0.571, 0.563, 0.541}; // ttbar
+    double STtEff[NbinB]  = {0.617, 0.712, 0.679, 0.642, 0.622, 0.604, 0.592, 0.593, 0.602, 0.573, 0.488, 0.600}; // single top (s and t channel had 0 boosted tops)
+    double STtWEff[NbinB] = {0.616, 0.727, 0.710, 0.692, 0.687, 0.687, 0.696, 0.697, 0.699, 0.720, 0.721, 0.759}; // single top (s and t channel had 0 boosted tops)
+    double WVEff[NbinB]   = {0.643, 0.726, 0.683, 0.646, 0.625, 0.611, 0.604, 0.607, 0.614, 0.612, 0.621, 0.603}; // WW, WZ, etc. 
 
 
     double x53x53Eff[12][NbinS] = {//X53X53
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-       {0.731, 0.859, 0.867, 0.855, 0.843, 0.831, 0.822, 0.812, 0.804, 0.796, 0.775, 0.759, 0.718, 0.680},//900R
-       {0.730, 0.866, 0.869, 0.856, 0.844, 0.835, 0.825, 0.823, 0.817, 0.804, 0.790, 0.763, 0.733, 0.721},//1000R
-       {0.721, 0.863, 0.867, 0.855, 0.843, 0.838, 0.828, 0.817, 0.816, 0.804, 0.787, 0.770, 0.752, 0.712},//1100R
-       {0.756, 0.866, 0.868, 0.853, 0.844, 0.835, 0.829, 0.823, 0.817, 0.809, 0.795, 0.778, 0.758, 0.724},//1200R
-       {0.756, 0.865, 0.871, 0.857, 0.843, 0.825, 0.826, 0.826, 0.820, 0.807, 0.796, 0.773, 0.762, 0.737},//1300R
-       {0.767, 0.873, 0.871, 0.859, 0.847, 0.838, 0.826, 0.817, 0.817, 0.810, 0.801, 0.778, 0.766, 0.758},//1400R
-       {0.753, 0.856, 0.857, 0.833, 0.818, 0.818, 0.803, 0.795, 0.794, 0.793, 0.780, 0.763, 0.740, 0.734},//1500R
-       {0.759, 0.876, 0.882, 0.853, 0.845, 0.838, 0.818, 0.821, 0.818, 0.811, 0.800, 0.786, 0.769, 0.758},//1600R
-       {0.760, 0.866, 0.871, 0.856, 0.849, 0.836, 0.829, 0.807, 0.813, 0.813, 0.800, 0.792, 0.774, 0.771},//1700R
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
-
+       {0.472, 0.608, 0.611, 0.622, 0.637, 0.652, 0.664, 0.678, 0.686, 0.692, 0.696, 0.683, 0.650, 0.645},//700
+       {0.460, 0.596, 0.596, 0.606, 0.628, 0.643, 0.664, 0.675, 0.689, 0.701, 0.707, 0.709, 0.721, 0.661},//800
+       {0.446, 0.590, 0.581, 0.590, 0.616, 0.636, 0.655, 0.670, 0.683, 0.698, 0.710, 0.717, 0.716, 0.704},//900R
+       {0.450, 0.583, 0.574, 0.575, 0.601, 0.622, 0.646, 0.669, 0.683, 0.697, 0.717, 0.728, 0.740, 0.730},//1000R
+       {0.468, 0.584, 0.568, 0.567, 0.587, 0.618, 0.639, 0.658, 0.672, 0.689, 0.713, 0.733, 0.737, 0.754},//1100R
+       {0.474, 0.587, 0.562, 0.561, 0.575, 0.603, 0.633, 0.647, 0.665, 0.694, 0.711, 0.727, 0.747, 0.747},//1200R
+       {0.480, 0.589, 0.563, 0.550, 0.570, 0.594, 0.618, 0.640, 0.662, 0.684, 0.704, 0.726, 0.744, 0.754},//1300R
+       {0.462, 0.590, 0.558, 0.548, 0.560, 0.580, 0.608, 0.631, 0.654, 0.674, 0.699, 0.723, 0.745, 0.761},//1400R
+       {0.474, 0.591, 0.561, 0.543, 0.557, 0.570, 0.594, 0.621, 0.642, 0.666, 0.698, 0.721, 0.742, 0.755},//1500R
+       {0.480, 0.587, 0.556, 0.543, 0.548, 0.567, 0.598, 0.619, 0.636, 0.669, 0.690, 0.716, 0.741, 0.759},//1600R
       };     
-    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp"){
+ 
+    double x53x53EffH[30][NbinS] = {//X53X53
+     {0.394, 0.494, 0.469, 0.444, 0.408, 0.385, 0.354, 0.329, 0.280, 0.277, 0.315, 0.259, 0.000, 0.000},//MX500 MH 200
+     {0.388, 0.500, 0.498, 0.491, 0.481, 0.481, 0.473, 0.452, 0.451, 0.445, 0.419, 0.360, 0.278, 0.200},//MX600 MH200
+     {0.243, 0.336, 0.322, 0.306, 0.285, 0.263, 0.286, 0.281, 0.250, 0.212, 0.205, 0.400, 0.000, 0.000},//MX600 MH400
+     {0.341, 0.475, 0.480, 0.475, 0.489, 0.496, 0.502, 0.498, 0.496, 0.505, 0.497, 0.476, 0.250, 0.500},//MX700 MH200
+     {0.326, 0.439, 0.433, 0.409, 0.394, 0.394, 0.368, 0.333, 0.355, 0.311, 0.265, 0.302, 0.333, 0.000},//MX700 MH400
+     {0.329, 0.445, 0.453, 0.455, 0.469, 0.482, 0.483, 0.507, 0.506, 0.491, 0.468, 0.488, 0.390, 0.444},//MX800 MH200
+     {0.340, 0.479, 0.475, 0.470, 0.470, 0.464, 0.474, 0.454, 0.424, 0.407, 0.352, 0.272, 0.320, 0.000},//MX800 MH400
+     {0.245, 0.365, 0.376, 0.364, 0.372, 0.364, 0.376, 0.374, 0.352, 0.348, 0.312, 0.276, 0.300, 0.000},//MX800 MH600
+     {0.314, 0.429, 0.430, 0.432, 0.440, 0.450, 0.461, 0.480, 0.480, 0.496, 0.504, 0.488, 0.514, 0.297},
+     {0.329, 0.471, 0.472, 0.482, 0.491, 0.490, 0.511, 0.496, 0.475, 0.454, 0.465, 0.431, 0.303, 0.167},
+     {0.284, 0.407, 0.400, 0.391, 0.387, 0.393, 0.392, 0.389, 0.420, 0.374, 0.407, 0.406, 0.200, 1.000},
+     {0.306, 0.417, 0.406, 0.407, 0.423, 0.437, 0.446, 0.467, 0.470, 0.483, 0.470, 0.490, 0.472, 0.418},
+     {0.310, 0.463, 0.464, 0.471, 0.476, 0.491, 0.510, 0.513, 0.516, 0.513, 0.509, 0.487, 0.401, 0.484},
+     {0.289, 0.431, 0.436, 0.426, 0.428, 0.432, 0.446, 0.430, 0.432, 0.437, 0.427, 0.388, 0.405, 0.333},
+     {0.243, 0.374, 0.375, 0.383, 0.392, 0.406, 0.393, 0.409, 0.413, 0.423, 0.391, 0.352, 0.347, 0.429},
+     {0.308, 0.402, 0.390, 0.389, 0.403, 0.428, 0.429, 0.444, 0.455, 0.475, 0.462, 0.464, 0.452, 0.484},
+     {0.302, 0.449, 0.448, 0.451, 0.466, 0.480, 0.488, 0.503, 0.513, 0.519, 0.511, 0.505, 0.460, 0.390},
+     {0.291, 0.439, 0.440, 0.437, 0.454, 0.463, 0.456, 0.465, 0.481, 0.457, 0.439, 0.456, 0.364, 0.316},
+     {0.266, 0.387, 0.382, 0.380, 0.385, 0.396, 0.405, 0.405, 0.403, 0.406, 0.432, 0.405, 0.356, 0.455},     
+     {0.281, 0.406, 0.391, 0.380, 0.382, 0.396, 0.411, 0.415, 0.435, 0.442, 0.457, 0.446, 0.434, 0.441},
+     {0.280, 0.442, 0.434, 0.430, 0.444, 0.465, 0.484, 0.498, 0.500, 0.505, 0.519, 0.503, 0.472, 0.333},
+     {0.291, 0.435, 0.437, 0.439, 0.455, 0.470, 0.477, 0.485, 0.489, 0.483, 0.482, 0.450, 0.345, 0.265},
+     {0.271, 0.406, 0.400, 0.405, 0.404, 0.414, 0.419, 0.417, 0.420, 0.434, 0.426, 0.397, 0.357, 0.343},
+     {0.229, 0.366, 0.372, 0.375, 0.380, 0.395, 0.409, 0.410, 0.415, 0.425, 0.438, 0.408, 0.371, 0.294},
+     {0.296, 0.409, 0.370, 0.355, 0.342, 0.346, 0.360, 0.377, 0.375, 0.389, 0.398, 0.413, 0.394, 0.401},
+     {0.237, 0.406, 0.386, 0.386, 0.389, 0.400, 0.422, 0.442, 0.453, 0.473, 0.482, 0.487, 0.504, 0.477},
+     {0.293, 0.447, 0.437, 0.426, 0.416, 0.430, 0.456, 0.463, 0.461, 0.485, 0.491, 0.488, 0.469, 0.380},
+     {0.279, 0.423, 0.418, 0.407, 0.414, 0.427, 0.445, 0.456, 0.469, 0.470, 0.475, 0.434, 0.434, 0.352},
+     {0.253, 0.404, 0.393, 0.389, 0.393, 0.403, 0.412, 0.421, 0.420, 0.423, 0.412, 0.421, 0.454, 0.409},
+     };
+
+
+    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp" || sample=="x53x53H"){
     	for(int ibin = NbinS-1; ibin >= 0; ibin--){
     		if(pt > ptMinsS[ibin]){
     			if(sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
+    			if(sample=="x53x53H") {*eff=x53x53EffH[massIndex][ibin];}
     			else if(sample=="TpTp") {*eff=1;}
     			else if(sample=="BpBp") {*eff=1;}
     			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
@@ -1882,33 +2059,64 @@ void HardcodedConditions::GetWtaggingEff2018(double pt, double *eff, std::string
     const int NbinS = 14;
     double ptMinsB[NbinB] = {175,200,250,300,350,400,450,500,550,600,700,800};
     double ptMinsS[NbinS] = {175,200,250,300,350,400,450,500,550,600,700,800,1000,1200};
-    double ttbarEff[NbinB]= {0.707, 0.828, 0.829, 0.808, 0.785, 0.761, 0.745, 0.728, 0.709, 0.689, 0.668, 0.636}; // ttbar
-    double STtEff[NbinB]  = {0.710, 0.834, 0.835, 0.808, 0.782, 0.755, 0.735, 0.721, 0.682, 0.674, 0.659, 0.500}; // single top (s and t channel had 0 boosted tops)
-    double STtWEff[NbinB] = {0.704, 0.839, 0.848, 0.835, 0.821, 0.812, 0.806, 0.802, 0.795, 0.789, 0.782, 0.763}; // single top (s and t channel had 0 boosted tops)
-    double WVEff[NbinB]   = {0.730, 0.849, 0.852, 0.826, 0.818, 0.794, 0.774, 0.773, 0.775, 0.749, 0.759, 0.720}; // WW, WZ, etc. 
+    double ttbarEff[NbinB]= {0.569, 0.691, 0.669, 0.641, 0.625, 0.619, 0.616, 0.615, 0.609, 0.601, 0.585, 0.559}; // ttbar
+    double STtEff[NbinB]  = {0.595, 0.716, 0.688, 0.649, 0.632, 0.617, 0.607, 0.599, 0.583, 0.576, 0.521, 0.565}; // single top (s and t channel had 0 boosted tops)
+    double STtWEff[NbinB] = {0.599, 0.728, 0.719, 0.698, 0.694, 0.694, 0.693, 0.701, 0.720, 0.733, 0.735, 0.772}; // single top (s and t channel had 0 boosted tops)
+    double WVEff[NbinB]   = {0.616, 0.724, 0.688, 0.657, 0.637, 0.622, 0.617, 0.610, 0.629, 0.608, 0.624, 0.588}; // WW, WZ, etc. 
 
     double x53x53Eff[12][NbinS] = {//X53X53
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//700
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//800
-       {0.731, 0.859, 0.867, 0.855, 0.843, 0.831, 0.822, 0.812, 0.804, 0.796, 0.775, 0.759, 0.718, 0.680},//900R
-       {0.730, 0.866, 0.869, 0.856, 0.844, 0.835, 0.825, 0.823, 0.817, 0.804, 0.790, 0.763, 0.733, 0.721},//1000R
-       {0.721, 0.863, 0.867, 0.855, 0.843, 0.838, 0.828, 0.817, 0.816, 0.804, 0.787, 0.770, 0.752, 0.712},//1100R
-       {0.756, 0.866, 0.868, 0.853, 0.844, 0.835, 0.829, 0.823, 0.817, 0.809, 0.795, 0.778, 0.758, 0.724},//1200R
-       {0.756, 0.865, 0.871, 0.857, 0.843, 0.825, 0.826, 0.826, 0.820, 0.807, 0.796, 0.773, 0.762, 0.737},//1300R
-       {0.767, 0.873, 0.871, 0.859, 0.847, 0.838, 0.826, 0.817, 0.817, 0.810, 0.801, 0.778, 0.766, 0.758},//1400R
-       {0.753, 0.856, 0.857, 0.833, 0.818, 0.818, 0.803, 0.795, 0.794, 0.793, 0.780, 0.763, 0.740, 0.734},//1500R
-       {0.759, 0.876, 0.882, 0.853, 0.845, 0.838, 0.818, 0.821, 0.818, 0.811, 0.800, 0.786, 0.769, 0.758},//1600R
-       {0.760, 0.866, 0.871, 0.856, 0.849, 0.836, 0.829, 0.807, 0.813, 0.813, 0.800, 0.792, 0.774, 0.771},//1700R
-       {1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000},//1800
+       {0.473, 0.609, 0.621, 0.631, 0.649, 0.663, 0.673, 0.687, 0.699, 0.696, 0.681, 0.686, 0.668, 0.608},//700
+       {0.454, 0.601, 0.599, 0.614, 0.631, 0.653, 0.674, 0.684, 0.693, 0.706, 0.714, 0.730, 0.707, 0.642},//800
+       {0.458, 0.587, 0.590, 0.598, 0.625, 0.645, 0.662, 0.681, 0.687, 0.712, 0.729, 0.732, 0.742, 0.717},//900R
+       {0.456, 0.590, 0.581, 0.586, 0.607, 0.632, 0.659, 0.672, 0.685, 0.706, 0.724, 0.734, 0.746, 0.736},//1000R
+       {0.455, 0.593, 0.569, 0.573, 0.595, 0.620, 0.645, 0.667, 0.681, 0.698, 0.718, 0.735, 0.753, 0.758},//1100R
+       {0.481, 0.588, 0.572, 0.566, 0.586, 0.614, 0.639, 0.659, 0.674, 0.691, 0.718, 0.738, 0.750, 0.758},//1200R
+       {0.461, 0.591, 0.568, 0.561, 0.575, 0.599, 0.628, 0.649, 0.668, 0.689, 0.710, 0.731, 0.756, 0.762},//1300R
+       {0.469, 0.592, 0.569, 0.552, 0.566, 0.587, 0.615, 0.640, 0.663, 0.686, 0.709, 0.732, 0.749, 0.763},//1400R
+       {0.474, 0.593, 0.564, 0.549, 0.567, 0.585, 0.604, 0.626, 0.652, 0.677, 0.703, 0.726, 0.746, 0.772},//1500R
+       {0.500, 0.596, 0.571, 0.554, 0.558, 0.577, 0.594, 0.622, 0.643, 0.666, 0.696, 0.722, 0.748, 0.766},//1600R
+      };    
 
-      };     
-    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp"){
+    double x53x53EffH[30][NbinS] = {//X53X53
+     {0.345, 0.455, 0.416, 0.377, 0.337, 0.310, 0.293, 0.259, 0.217, 0.200, 0.163, 0.108, 0.045, 0.000},
+     {0.309, 0.427, 0.416, 0.397, 0.387, 0.370, 0.370, 0.354, 0.320, 0.295, 0.253, 0.252, 0.090, 0.286},
+     {0.230, 0.309, 0.288, 0.266, 0.235, 0.221, 0.209, 0.171, 0.180, 0.150, 0.194, 0.164, 0.000, 0.000},
+     {0.257, 0.376, 0.376, 0.365, 0.361, 0.363, 0.355, 0.354, 0.346, 0.332, 0.304, 0.251, 0.217, 0.109},
+     {0.287, 0.398, 0.377, 0.348, 0.315, 0.295, 0.284, 0.271, 0.228, 0.229, 0.181, 0.169, 0.042, 0.143},
+     {0.208, 0.325, 0.327, 0.326, 0.326, 0.330, 0.330, 0.339, 0.336, 0.334, 0.331, 0.293, 0.263, 0.178},
+     {0.265, 0.392, 0.391, 0.375, 0.366, 0.353, 0.334, 0.333, 0.309, 0.290, 0.261, 0.188, 0.188, 0.000},
+     {0.208, 0.311, 0.310, 0.300, 0.291, 0.278, 0.260, 0.243, 0.245, 0.223, 0.223, 0.190, 0.175, 0.158},
+     {0.173, 0.281, 0.284, 0.284, 0.290, 0.300, 0.298, 0.315, 0.320, 0.318, 0.309, 0.300, 0.254, 0.214},
+     {0.226, 0.358, 0.363, 0.360, 0.355, 0.360, 0.348, 0.352, 0.347, 0.330, 0.290, 0.246, 0.186, 0.158},
+     {0.191, 0.304, 0.294, 0.281, 0.281, 0.283, 0.290, 0.301, 0.300, 0.302, 0.306, 0.289, 0.257, 0.207},
+     {0.143, 0.242, 0.252, 0.252, 0.258, 0.270, 0.277, 0.287, 0.287, 0.294, 0.301, 0.284, 0.249, 0.225},
+     {0.188, 0.321, 0.327, 0.324, 0.334, 0.342, 0.338, 0.346, 0.344, 0.341, 0.325, 0.301, 0.232, 0.142},
+     {0.215, 0.339, 0.339, 0.327, 0.326, 0.315, 0.313, 0.316, 0.295, 0.287, 0.274, 0.257, 0.170, 0.103},
+     {0.178, 0.280, 0.284, 0.278, 0.272, 0.275, 0.281, 0.279, 0.267, 0.260, 0.233, 0.228, 0.212, 0.074},
+     {0.126, 0.213, 0.219, 0.215, 0.233, 0.249, 0.251, 0.258, 0.265, 0.274, 0.272, 0.263, 0.237, 0.201},
+     {0.167, 0.287, 0.292, 0.294, 0.302, 0.312, 0.322, 0.316, 0.325, 0.332, 0.322, 0.310, 0.268, 0.207},
+     {0.187, 0.317, 0.323, 0.318, 0.316, 0.322, 0.323, 0.318, 0.324, 0.303, 0.283, 0.256, 0.178, 0.128},
+     {0.186, 0.292, 0.289, 0.276, 0.273, 0.273, 0.281, 0.270, 0.277, 0.284, 0.280, 0.241, 0.202, 0.134},     
+     {0.103, 0.186, 0.195, 0.199, 0.204, 0.215, 0.226, 0.234, 0.240, 0.247, 0.252, 0.257, 0.236, 0.197},
+     {0.151, 0.262, 0.268, 0.263, 0.270, 0.282, 0.291, 0.304, 0.306, 0.308, 0.312, 0.290, 0.265, 0.206},
+     {0.165, 0.286, 0.297, 0.291, 0.293, 0.303, 0.311, 0.314, 0.311, 0.307, 0.292, 0.261, 0.225, 0.135},
+     {0.179, 0.290, 0.295, 0.285, 0.283, 0.283, 0.283, 0.279, 0.278, 0.273, 0.270, 0.237, 0.204, 0.167},
+     {0.156, 0.254, 0.254, 0.250, 0.246, 0.254, 0.256, 0.255, 0.260, 0.259, 0.249, 0.229, 0.170, 0.129},
+     {0.073, 0.140, 0.144, 0.143, 0.147, 0.152, 0.161, 0.173, 0.181, 0.189, 0.198, 0.196, 0.194, 0.175},
+     {0.109, 0.197, 0.201, 0.193, 0.199, 0.208, 0.217, 0.227, 0.238, 0.247, 0.252, 0.256, 0.243, 0.205},
+     {0.124, 0.229, 0.231, 0.228, 0.228, 0.234, 0.248, 0.261, 0.263, 0.270, 0.280, 0.265, 0.227, 0.186},
+     {0.126, 0.229, 0.242, 0.239, 0.244, 0.256, 0.260, 0.270, 0.276, 0.277, 0.276, 0.252, 0.213, 0.162},
+     {0.132, 0.248, 0.247, 0.246, 0.253, 0.252, 0.256, 0.261, 0.258, 0.252, 0.254, 0.240, 0.187, 0.131},
+     };
+
+    if(sample=="x53x53" || sample=="TpTp" || sample=="BpBp" || sample=="x53x53H"){
     	for(int ibin = NbinS-1; ibin >= 0; ibin--){
     		if(pt > ptMinsS[ibin]){
     			if(sample=="x53x53") {*eff=x53x53Eff[massIndex][ibin];}
+    			if(sample=="x53x53H") {*eff=x53x53EffH[massIndex][ibin];}
     			else if(sample=="TpTp") {*eff=1;}
     			else if(sample=="BpBp") {*eff=1;}
-    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2018! Aborting ..." << std::endl; std::abort();}
     			break;
     			}
     		}
@@ -1921,7 +2129,7 @@ void HardcodedConditions::GetWtaggingEff2018(double pt, double *eff, std::string
     			else if(sample=="singletopt") {*eff=STtEff[ibin];}
     			else if(sample=="singletoptW") {*eff=STtWEff[ibin];}
     			else if(sample=="WV") {*eff=WVEff[ibin];}
-    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2017! Aborting ..." << std::endl; std::abort();}
+    			else{ std::cerr << "The sample " << sample << " not coded into HardcodedConditions::GetWtaggingEff2018! Aborting ..." << std::endl; std::abort();}
     			break;
     			}
     		}

@@ -58,6 +58,7 @@ vector<double>* topbEnergy_TTbarMassCalc,
 int& num_GD_trijet,
 int& num_BD_trijet
 ){
+
     std::string bitmask(3,1);
     bitmask.resize(v_allJets.size(),0);
     std::vector<double> v_deltalR; 
@@ -66,7 +67,7 @@ int& num_BD_trijet
     TLorentzVector tempGenTopWd1, tempGenTopWd2;    
     TLorentzVector tempGenTopb;
     int idx_minDR = -10;
-           
+          
     do {
         v_trijet.clear();
         v_DCSV_trijet.clear();
@@ -77,6 +78,7 @@ int& num_BD_trijet
                 v_DCSV_trijet.push_back(v_DCSV_allJets[njet]);
             } 
         }
+
         bitset<9> tempbit9set;        
         std::vector<bitset<9>> v_bit9set;
         std::vector<Double_t> v_flipDeltaR;
@@ -117,8 +119,10 @@ int& num_BD_trijet
             v_GD_DCSV_jets.push_back(v_DCSV_trijet[1]);                        
             v_GD_DCSV_jets.push_back(v_DCSV_trijet[2]);                                                
             num_GD_trijet++;
+
         }
         else {
+
             num_BD_trijet++;
             v_BD_Trijets.push_back(v_trijet[0]+v_trijet[1]+v_trijet[2]);
             v_BD_jets.push_back(v_trijet[0]);
@@ -401,10 +405,12 @@ void step2::Loop()
    TBranch *b_M_woBESTjet               = outputTree->Branch("M_woBESTjet",&M_woBESTjet,"M_woBESTjet/F");      
    TBranch *b_M_allJet_W                = outputTree->Branch("M_allJet_W",&M_allJet_W,"M_allJet_W/F");      
    TBranch *b_W_PtdM                    = outputTree->Branch("W_PtdM",&W_PtdM,"W_PtdM/F");         
-   TBranch *b_ratio_HTdHT4leadjets      = outputTree->Branch("ratio_HTdHT4leadjets",&ratio_HTdHT4leadjets,"ratio_HTdHT4leadjets/F");      
+//   TBranch *b_ratio_HTdHT4leadjets      = outputTree->Branch("ratio_HTdHT4leadjets",&ratio_HTdHT4leadjets,"ratio_HTdHT4leadjets/F");      
+   TBranch *b_ratio_HTdHT3leadjets      = outputTree->Branch("ratio_HTdHT3leadjets",&ratio_HTdHT3leadjets,"ratio_HTdHT3leadjets/F");      
+
    TBranch *b_pTjet5_6                  = outputTree->Branch("pTjet5_6",&pTjet5_6,"pTjet5_6/F");         
    TBranch *b_pt3HT                     = outputTree->Branch("pt3HT",&pt3HT,"pt3HT/F");         
-   TBranch *b_pt4HT                     = outputTree->Branch("pt4HT",&pt4HT,"pt4HT/F");            
+//   TBranch *b_pt4HT                     = outputTree->Branch("pt4HT",&pt4HT,"pt4HT/F");            
    TBranch *b_mean_csv                  = outputTree->Branch("mean_csv",&mean_csv,"mean_csv/F");               
 
    TBranch *b_pT_3rdcsvJet              = outputTree->Branch("pT_3rdcsvJet",&pT_3rdcsvJet,"pT_3rdcsvJet/F");         
@@ -565,7 +571,54 @@ void step2::Loop()
    if(isCHM2000)   sampleType = "CHM2000";
    if(isCHM2500)   sampleType = "CHM2500";
    if(isCHM3000)   sampleType = "CHM3000";
+   if(isX53RHM600MH200)   sampleType = "X53RHM600MH200";
+   if(isX53RHM600MH400)   sampleType = "X53RHM600MH400";
+   if(isX53RHM700MH200)   sampleType = "X53RHM700MH200";
+   if(isX53RHM700MH400)   sampleType = "X53RHM700MH400";
+   if(isX53RHM800MH200)   sampleType = "X53RHM800MH200";
+   if(isX53RHM800MH400)   sampleType = "X53RHM800MH400";
+   if(isX53RHM800MH600)   sampleType = "X53RHM800MH600";
+   if(isX53RHM900MH200)   sampleType = "X53RHM900MH200";
+   if(isX53RHM900MH400)   sampleType = "X53RHM900MH400";
+   if(isX53RHM900MH600)   sampleType = "X53RHM900MH600";
+   if(isX53RHM1000MH200)   sampleType = "X53RHM1000MH200";
+   if(isX53RHM1000MH400)   sampleType = "X53RHM1000MH400";
+   if(isX53RHM1000MH600)   sampleType = "X53RHM1000MH600";
+   if(isX53RHM1000MH800)   sampleType = "X53RHM1000MH800";
+   if(isX53RHM1100MH200)   sampleType = "X53RHM1100MH200";
+   if(isX53RHM1100MH400)   sampleType = "X53RHM1100MH400";
+   if(isX53RHM1100MH600)   sampleType = "X53RHM1100MH600";
+   if(isX53RHM1100MH800)   sampleType = "X53RHM1100MH800";
+   if(isX53RHM1200MH200)   sampleType = "X53RHM1200MH200";
+   if(isX53RHM1200MH400)   sampleType = "X53RHM1200MH400";
+   if(isX53RHM1200MH600)   sampleType = "X53RHM1200MH600";
+   if(isX53RHM1200MH800)   sampleType = "X53RHM1200MH800";
+   if(isX53RHM1200MH1000)   sampleType = "X53RHM1200MH1000";
+   if(isX53RHM1500MH200)   sampleType = "X53RHM1500MH200";
+   if(isX53RHM1500MH400)   sampleType = "X53RHM1500MH400";
+   if(isX53RHM1500MH600)   sampleType = "X53RHM1500MH600";
+   if(isX53RHM1500MH800)   sampleType = "X53RHM1500MH800";
+   if(isX53RHM1500MH1000)   sampleType = "X53RHM1500MH1000";
+   if(isX53RHM1600)   sampleType = "X53RHM1600";
+   if(isX53RHM1500)   sampleType = "X53RHM1500";
+   if(isX53RHM1400)   sampleType = "X53RHM1400";
+   if(isX53RHM1300)   sampleType = "X53RHM1300";
+   if(isX53RHM1200)   sampleType = "X53RHM1200";
+   if(isX53RHM1100)   sampleType = "X53RHM1100";
+   if(isX53RHM1000)   sampleType = "X53RHM1000";
+   if(isX53RHM900)   sampleType = "X53RHM900";
+   if(isX53RHM800)   sampleType = "X53RHM800";
+   if(isX53RHM700)   sampleType = "X53RHM700";
    if(isHT500)     sampleType = "HT500" + sampleType;
+   if(isTTToHad0)   sampleType = "TTToHad0";
+   if(isTTToHad700)   sampleType = "TTToHad700";
+   if(isTTToHad1000)   sampleType = "TTToHad1000";
+   if(isTTToSemiLep0)   sampleType = "TTToSemiLep0";
+   if(isTTToSemiLep700)   sampleType = "TTToSemiLep700";
+   if(isTTToSemiLep1000)   sampleType = "TTToSemiLep1000";
+   if(isTTToLNu0)   sampleType = "TTToLNu0";
+   if(isTTToLNu700)   sampleType = "TTToLNu700";
+   if(isTTToLNu1000)   sampleType = "TTToLNu1000";
 
    std::cout<<sampleType<<std::endl;
          
@@ -668,7 +721,8 @@ void step2::Loop()
      double maxBBdeta = 0;
      double totalJetPt = 0; //this is mainly HT
      double totalJetE  = 0; 
-     double HT_4jets = 0; //for ratio of HT(j1,2,3,4)/HT(other jets)     
+//     double HT_4jets = 0; //for ratio of HT(j1,2,3,4)/HT(other jets)     
+     double HT_3jets = 0; //for ratio of HT(j1,2,3)/HT(other jets) 
      double HT_other = 0; //for ratio of HT(j1,2,3,4)/HT(other jets)          
      double npairs = 0;     
      double BjetSecondPt = 0;
@@ -689,6 +743,7 @@ void step2::Loop()
         if(theJetPt_JetSubCalc_PtOrdered->at(ijet)>=120) nhjets_pt120+=1;
     } 
     
+    std::cout << "NJets_JetSubCalc is "<<NJets_JetSubCalc << std::endl;
      
     //btagDeepJet2DWeight = hardcodedConditions.GetDeepJetRenorm2DSF(nljets, nhjets, sampleType);   
     //btagDeepJet2DWeight_Pt120 = hardcodedConditions.GetDeepJetRenorm2DSF_Pt120(nljets_pt120, nhjets_pt120, sampleType);  
@@ -711,19 +766,27 @@ void step2::Loop()
     btagDeepJet2DWeight_HTnj_lfstats1dn     = hardcodedConditions.GetDeepJetRenorm2DSF_HTnj(AK4HT, NJets_JetSubCalc, sampleType, "_lfstats1dn");
     btagDeepJet2DWeight_HTnj_lfstats2up     = hardcodedConditions.GetDeepJetRenorm2DSF_HTnj(AK4HT, NJets_JetSubCalc, sampleType, "_lfstats2up");
     btagDeepJet2DWeight_HTnj_lfstats2dn     = hardcodedConditions.GetDeepJetRenorm2DSF_HTnj(AK4HT, NJets_JetSubCalc, sampleType, "_lfstats2dn");
-   // std::cout<<nljets<<","<<nhjets<<","<<btagDeepJet2DWeight_Pt120<<std::endl; 
+    std::cout<<nljets<<","<<nhjets<<","<<btagDeepJet2DWeight_Pt120<<std::endl; 
 //////////////////////////////////////////////////////////////////
 // build BB PAIR variables, aveCSVpt, HT_bjets, HT_ratio, HT_2m //
 //////////////////////////////////////////////////////////////////
 
-     HT_4jets = theJetPt_JetSubCalc_PtOrdered->at(0)+theJetPt_JetSubCalc_PtOrdered->at(1)+theJetPt_JetSubCalc_PtOrdered->at(2)+theJetPt_JetSubCalc_PtOrdered->at(3);
-     for(unsigned int ijet = 4; ijet < theJetPt_JetSubCalc_PtOrdered->size(); ijet++){
+//     HT_4jets = theJetPt_JetSubCalc_PtOrdered->at(0)+theJetPt_JetSubCalc_PtOrdered->at(1)+theJetPt_JetSubCalc_PtOrdered->at(2)+theJetPt_JetSubCalc_PtOrdered->at(3);
+     HT_3jets = theJetPt_JetSubCalc_PtOrdered->at(0)+theJetPt_JetSubCalc_PtOrdered->at(1)+theJetPt_JetSubCalc_PtOrdered->at(2);
+
+//     for(unsigned int ijet = 4; ijet < theJetPt_JetSubCalc_PtOrdered->size(); ijet++){
+     for(unsigned int ijet = 3; ijet < theJetPt_JetSubCalc_PtOrdered->size(); ijet++){
          HT_other += theJetPt_JetSubCalc_PtOrdered->at(ijet);
      }
-     if (NJets_JetSubCalc >= 4){  // was >
-         HT_ratio = HT_4jets/HT_other;
-         ratio_HTdHT4leadjets = AK4HT/HT_4jets;
+//     if (NJets_JetSubCalc >= 4){  // was >
+//         HT_ratio = HT_4jets/HT_other;
+//         ratio_HTdHT4leadjets = AK4HT/HT_4jets;
+//     }
+     if (NJets_JetSubCalc >= 3){  // was >
+         HT_ratio = HT_3jets/HT_other;
+         ratio_HTdHT3leadjets = AK4HT/HT_3jets;
      }
+
 
      corr_met = (float) corr_met_MultiLepCalc;
      theJetLeadPt = theJetPt_JetSubCalc_PtOrdered->at(0);
@@ -777,7 +840,7 @@ void step2::Loop()
      pT_4thcsvJet = 0;
      W_PtdM = -1;
      pt3HT = -10;
-     pt4HT = -10;     
+     //pt4HT = -10;     
      pTjet5_6 = -10;
      invM_jet34 = -10;
      invM_jet35 = -10;     
@@ -1028,7 +1091,7 @@ void step2::Loop()
      }  // jet loop     
      
 
-//     cout << " End of jet loop ";
+     cout << " End of jet loop ";
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////HT without the best jet where best jet is the one used in leptonic top reconstruction//////////////////////////
@@ -1126,11 +1189,13 @@ void step2::Loop()
             if((tempGenWd1.Pt()>30 && tempGenWd2.Pt()>30 && tempGenb.Pt()>30) && (tempGenWd1.Eta()<2.4 && tempGenWd2.Eta()<2.4 && tempGenb.Eta()<2.4)){num_genJets_passCuts++;}
         }        
     }
-//    std::cout<<"is_genMissingDaughter : "<<is_genMissingDaughter<<std::endl;
+
+    std::cout<<"is_genMissingDaughter : "<<is_genMissingDaughter<<std::endl;
 //    std::cout<<"is_genFourTopsOnelepton : "<<is_genFourTopsOnelepton<<std::endl;    
 //    std::cout<<"num_genJets_passCuts : "<<num_genJets_passCuts<<std::endl;        
 //    std::cout<<"WfromTop : "<<WfromTop<<std::endl;            
     if (!is_genMissingDaughter && is_genFourTopsOnelepton && num_genJets_passCuts>0 && (WfromTop)){
+
         TLorentzVector tempGenTop;
         TLorentzVector tempGenTopWd1, tempGenTopWd2;    
         TLorentzVector tempGenTopb;
@@ -1204,6 +1269,7 @@ void step2::Loop()
                     testGenb.SetPtEtaPhiE(topbPt_TTbarMassCalc->at(nTop),topbEta_TTbarMassCalc->at(nTop),topbPhi_TTbarMassCalc->at(nTop),topbEnergy_TTbarMassCalc->at(nTop));
                 }
             }
+
             BestTOPjet1 = v_GD_jets[tempBestTrijetIdx*3];
             BestTOPjet2 = v_GD_jets[tempBestTrijetIdx*3+1];
             BestTOPjet3 = v_GD_jets[tempBestTrijetIdx*3+2];
@@ -1304,6 +1370,7 @@ void step2::Loop()
         }
     }
     else{
+
         GD_pTrat.clear();
         GD_Ttrijet_TopMass.clear();
         GD_DCSV_jetNotdijet.clear();
@@ -1322,7 +1389,7 @@ void step2::Loop()
      firstcsvb_bb = v_DCSV_allJets.at(0);
      secondcsvb_bb = v_DCSV_allJets.at(1);
      thirdcsvb_bb = v_DCSV_allJets.at(2);
-     fourthcsvb_bb = v_DCSV_allJets.at(3);
+     fourthcsvb_bb = 0;//v_DCSV_allJets.at(3);
 
 //     std::sort(v_DCSV_jettype_allJets.rbegin(), v_DCSV_jettype_allJets.rend());
 //     if (v_DCSV_jettype_allJets[2].second ==1) {
@@ -1344,7 +1411,6 @@ void step2::Loop()
 //////////////////////////////////////////
 // build centrality //
 //////////////////////////////////////////
-
       if(npairs!=0){aveBBdr = (aveBBdr+1)/npairs;}
       if(njetscsv!=0){
       	aveCSV = (aveCSV+1)/njetscsv;
@@ -1390,10 +1456,14 @@ void step2::Loop()
 	  W_PtdM = (jet1_W+jet2_W).Pt()/(jet1_W+jet2_W).M();
 
       sort(v_pair_jet_CSV.begin(), v_pair_jet_CSV.end(), compareFunc);  
+
+      if (NJets_JetSubCalc > 3){
+
       invM_jet34 = (v_pair_jet_CSV[2].first+v_pair_jet_CSV[3].first).M();
       pT_3rdcsvJet = v_pair_jet_CSV[2].first.Pt();
       pT_4thcsvJet = v_pair_jet_CSV[3].first.Pt();
-      
+     }
+
       double totalCSV = 0;
       for (unsigned int ind = 0; ind < v_pair_jet_CSV.size(); ind++){
         if (v_pair_jet_CSV[ind].second>0){
@@ -1413,19 +1483,20 @@ void step2::Loop()
           invM_jet46 = (v_pair_jet_CSV[3].first+v_pair_jet_CSV[5].first).M();
           invM_jet56 = (v_pair_jet_CSV[4].first+v_pair_jet_CSV[5].first).M();                                      
       }      
-      
+ 
 	  jet1.SetPtEtaPhiE(theJetPt_JetSubCalc_PtOrdered->at(0),theJetEta_JetSubCalc_PtOrdered->at(0),theJetPhi_JetSubCalc_PtOrdered->at(0),theJetEnergy_JetSubCalc_PtOrdered->at(0));
 	  jet2.SetPtEtaPhiE(theJetPt_JetSubCalc_PtOrdered->at(1),theJetEta_JetSubCalc_PtOrdered->at(1),theJetPhi_JetSubCalc_PtOrdered->at(1),theJetEnergy_JetSubCalc_PtOrdered->at(1));
 	  jet3.SetPtEtaPhiE(theJetPt_JetSubCalc_PtOrdered->at(2),theJetEta_JetSubCalc_PtOrdered->at(2),theJetPhi_JetSubCalc_PtOrdered->at(2),theJetEnergy_JetSubCalc_PtOrdered->at(2));	  
 	  
 	  pt3HT = theJetPt_JetSubCalc_PtOrdered->at(2)/AK4HT;
-	  pt4HT = theJetPt_JetSubCalc_PtOrdered->at(3)/AK4HT;
+	  //pt4HT = theJetPt_JetSubCalc_PtOrdered->at(3)/AK4HT;
 	  	  
       deltaPhi_j1j2 = (jet1).DeltaPhi(jet2);
       alphaT = TMath::Sqrt( (theJetPt_JetSubCalc_PtOrdered->at(1)/theJetPt_JetSubCalc_PtOrdered->at(0)) / (2.0*(1.0-TMath::Cos(deltaPhi_j1j2))) );
       mass_lepJets0 = (lep+jet1).M();
       mass_lepJets1 = (lep+jet2).M();
       mass_lepJets2 = (lep+jet3).M();
+
 /////////////////////////
 // build JJJ variables //
 /////////////////////////
@@ -1723,6 +1794,7 @@ void step2::Loop()
 
 
      }  // end of top loop
+    std::cout<<"end of top loop"<<std::endl;
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1905,7 +1977,8 @@ void step2::Loop()
       b_PT_woBESTjet->Fill();	  
       b_M_woBESTjet->Fill();
       b_M_allJet_W->Fill();
-      b_ratio_HTdHT4leadjets->Fill();
+//      b_ratio_HTdHT4leadjets->Fill();
+      b_ratio_HTdHT3leadjets->Fill();
       b_W_PtdM->Fill();	 
       b_pTjet5_6->Fill(); 
       b_mean_csv->Fill();
@@ -1920,7 +1993,7 @@ void step2::Loop()
       b_pT_3rdcsvJet->Fill(); //added 31 March 2019
       b_pT_4thcsvJet->Fill(); //added 31 March 2019
       b_pt3HT->Fill();       // added 31 March 2019
-      b_pt4HT->Fill();      // added 31 March 2019
+      //b_pt4HT->Fill();      // added 31 March 2019
       b_MT2bb->Fill();     // added 31 March 2019
       b_minMleppJetnew->Fill(); //added 31 March 2019 //this is minimum lep jet mass for any jet, not specifically light
       b_nGD_trijet->Fill();

@@ -1,9 +1,9 @@
 eosUserName = "fsimpson" # EDIT ME
-postfix = "X53" # EDIT ME
+postfix = "" # EDIT ME
 years = [ "16APV", "16", "17", "18" ]
 
 sampleDir = {
-  year: "FWLJMET106XUL_singleLep20{}UL_RunIISummer20_X53X53".format( year ) for year in years
+  year: "FWLJMET106XUL_singleLep20{}UL_RunIISummer20v2{}".format( year, postfix ) for year in years
 }
 
 ljmetDir = {
@@ -24,7 +24,7 @@ step1Dir = {
 # store step1's on your personal space on an analysis basis
 haddDir = {
   year: {
-    "LPC": "/eos/uscms/store/user/{}/{}_{}_step1hadds".format( eosUserName, sampleDir[ year ], postfix ),
+    "LPC": "/eos/uscms/store/user/{}/{}_step1hadds".format( eosUserName, sampleDir[ year ], postfix ),
     "BRUX": "/isilon/hadoop/store/user/{}/{}_step1hadds".format( eosUserName, sampleDir[ year ] ) 
   } for year in years
 }
@@ -171,8 +171,8 @@ samples = {
     "TTBAR": [
       "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8",
       "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
-      "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
-      "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
+      "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+#      "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
     ],
     "TTBAR_SHIFTS": [
       "TTToSemiLeptonic_hdampUP_TuneCP5_13TeV-powheg-pythia8",
@@ -478,17 +478,21 @@ samples = {
       "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8"
     ],
 
+    "TTMT": [
+      "TT_Mtt-700to1000_TuneCP5_13TeV-powheg-pythia8",
+      "TT_Mtt-1000toInf_TuneCP5_13TeV-powheg-pythia8"
+    ],
 
     "TTTX": [
-      "TTTT_TuneCP5_13TeV-amcatnlo-pythia8",
-      #"TTTJ_TuneCP5_13TeV-madgraph-pythia8",
+      #"TTTT_TuneCP5_13TeV-amcatnlo-pythia8",
+      "TTTJ_TuneCP5_13TeV-madgraph-pythia8",
       "TTTW_TuneCP5_13TeV-madgraph-pythia8"
     ],
     "TTBAR": [
       "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8",
       "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
       "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
-      "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
+      #"TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
     ],
     "TTBAR_SHIFTS": [
       "TTToSemiLeptonic_hdampUP_TuneCP5_13TeV-powheg-pythia8",
@@ -636,15 +640,15 @@ samples = {
       "PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8"
     ],
     "TTTX": [
-      "TTTT_TuneCP5_13TeV-amcatnlo-pythia8",
+      #"TTTT_TuneCP5_13TeV-amcatnlo-pythia8",
       "TTTJ_TuneCP5_13TeV-madgraph-pythia8",
       "TTTW_TuneCP5_13TeV-madgraph-pythia8"
     ],
     "TTBAR": [
       "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8",
-      "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
-      "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
-      "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
+#      "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
+#      "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
+#      "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
     ],
     "TTBAR_SHIFTS": [
       "TTToSemiLeptonic_hdampUP_TuneCP5_13TeV-powheg-pythia8",
@@ -711,6 +715,10 @@ samples = {
       "ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8",
       "ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8",
       "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8"
+    ],
+    "TTMT": [
+      "TT_Mtt-700to1000_TuneCP5_13TeV-powheg-pythia8",
+      "TT_Mtt-1000toInf_TuneCP5_13TeV-powheg-pythia8"
     ],
     "EWK": [
       "WW_TuneCP5_13TeV-pythia8",

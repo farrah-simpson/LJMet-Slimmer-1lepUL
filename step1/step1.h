@@ -37,6 +37,7 @@ public :
    Bool_t          isTpTp=false;
    Bool_t          isBpBp=false;
    Bool_t          isXX=false;
+   Bool_t          isXXH=false;
    Bool_t          isTOP=false;
    Bool_t          isMadgraphBkg=false;
    Bool_t          isMC=false;
@@ -1341,26 +1342,54 @@ step1::step1( TString inputFileName, TString outputFileName, TString Year_, TStr
 
   Year = Year_;
   Syst = Syst_;
-  isSig  = ( inputFileName.Contains("TTTJ") || inputFileName.Contains("TTTW") || inputFileName.Contains("prime") || inputFileName.Contains("X53") || inputFileName.Contains("ChargedHiggs_Hplus"));
+  isSig  = ( inputFileName.Contains("TTTJ") || inputFileName.Contains("TTTW") || inputFileName.Contains("prime") || inputFileName.Contains("x53") || inputFileName.Contains("ChargedHiggs_Hplus"));
   if(isSig){
     if(inputFileName.Contains("Tprime")) isTpTp = true;
     else if(inputFileName.Contains("Bprime")) isBpBp = true;
-    else if(inputFileName.Contains("x53")) isXX = true;
+    else if(inputFileName.Contains("x53_tW")) isXX = true;
+    else if(inputFileName.Contains("x53_tH")) isXXH = true;
     else if(inputFileName.Contains("TTT")) isTTTX = true;
 
-    if(inputFileName.Contains("_M700") or inputFileName.Contains("_MX700")) SigMass = 0; 
-    else if(inputFileName.Contains("_M800") or inputFileName.Contains("_MX800")) SigMass = 1;
-    else if(inputFileName.Contains("_M900") or inputFileName.Contains("_MX900")) SigMass = 2;
-    else if(inputFileName.Contains("_M1000")  or inputFileName.Contains("_MX1000")) SigMass = 3;
-    else if(inputFileName.Contains("_M1100") or inputFileName.Contains("_MX1100")) SigMass = 4;
-    else if(inputFileName.Contains("_M1200") or inputFileName.Contains("_MX1200")) SigMass = 5;
-    else if(inputFileName.Contains("_M1300")  or inputFileName.Contains("_MX1300")) SigMass = 6;
-    else if(inputFileName.Contains("_M1400")  or inputFileName.Contains("_MX1400")) SigMass = 7;
-    else if(inputFileName.Contains("_M1500") or  inputFileName.Contains("_MX1500")) SigMass = 8;
-    else if(inputFileName.Contains("_M1600")  or inputFileName.Contains("_MX1600")) SigMass = 9;
-    else if(inputFileName.Contains("_M1700")  or inputFileName.Contains("_MX1700")) SigMass = 10;
-    else if(inputFileName.Contains("_M1800")  or inputFileName.Contains("_MX1800")) SigMass = 11;
-    else SigMass = -1;
+    if(inputFileName.Contains("_M700"))  SigMass = 0; 
+    else if(inputFileName.Contains("_M800") ) SigMass = 1;
+    else if(inputFileName.Contains("_M900") ) SigMass = 2;
+    else if(inputFileName.Contains("_M1000")) SigMass = 3;
+    else if(inputFileName.Contains("_M1100")) SigMass = 4;
+    else if(inputFileName.Contains("_M1200")) SigMass = 5;
+    else if(inputFileName.Contains("_M1300")) SigMass = 6;
+    else if(inputFileName.Contains("_M1400")) SigMass = 7;
+    else if(inputFileName.Contains("_M1500")) SigMass = 8;
+    else if(inputFileName.Contains("_M1600")) SigMass = 9;
+    else if(inputFileName.Contains("_M1700")) SigMass = 10;
+
+    if(inputFileName.Contains("_MX500") && inputFileName.Contains("MH200"))  SigMass = 0; 
+    else if(inputFileName.Contains("_MX600") && inputFileName.Contains("MH200")) SigMass = 1;
+    else if(inputFileName.Contains("_MX700") && inputFileName.Contains("MH200")) SigMass = 2;
+    else if(inputFileName.Contains("_MX700") && inputFileName.Contains("MH400")) SigMass = 3;
+    else if(inputFileName.Contains("_MX800") && inputFileName.Contains("MH200")) SigMass = 4;
+    else if(inputFileName.Contains("_MX800") && inputFileName.Contains("MH400")) SigMass = 5;
+    else if(inputFileName.Contains("_MX800") && inputFileName.Contains("MH600")) SigMass = 6;
+    else if(inputFileName.Contains("_MX900") && inputFileName.Contains("MH200")) SigMass = 7;
+    else if(inputFileName.Contains("_MX900") && inputFileName.Contains("MH400")) SigMass = 8;
+    else if(inputFileName.Contains("_MX900") && inputFileName.Contains("MH600")) SigMass = 9;
+    else if(inputFileName.Contains("_MX1000") && inputFileName.Contains("MH200")) SigMass = 10;
+    else if(inputFileName.Contains("_MX1000") && inputFileName.Contains("MH400")) SigMass = 11;
+    else if(inputFileName.Contains("_MX1000") && inputFileName.Contains("MH600")) SigMass = 12;
+    else if(inputFileName.Contains("_MX1000") && inputFileName.Contains("MH800")) SigMass = 13;
+    else if(inputFileName.Contains("_MX1100") && inputFileName.Contains("MH200")) SigMass = 14;
+    else if(inputFileName.Contains("_MX1100") && inputFileName.Contains("MH400")) SigMass = 15;
+    else if(inputFileName.Contains("_MX1100") && inputFileName.Contains("MH600")) SigMass = 16;
+    else if(inputFileName.Contains("_MX1100") && inputFileName.Contains("MH800")) SigMass = 17;
+    else if(inputFileName.Contains("_MX1200") && inputFileName.Contains("MH200")) SigMass = 18;
+    else if(inputFileName.Contains("_MX1200") && inputFileName.Contains("MH400")) SigMass = 19;
+    else if(inputFileName.Contains("_MX1200") && inputFileName.Contains("MH600")) SigMass = 20;
+    else if(inputFileName.Contains("_MX1200") && inputFileName.Contains("MH800")) SigMass = 21;
+    else if(inputFileName.Contains("_MX1200") && inputFileName.Contains("MH1000")) SigMass = 22;
+    else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH200")) SigMass = 23;
+    else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH400")) SigMass = 24;
+    else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH600")) SigMass = 25;
+    else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH800")) SigMass = 26;
+    else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH1000")) SigMass = 27;
   }
   else SigMass = -1;
   

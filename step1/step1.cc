@@ -780,7 +780,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
    float metCut=80;
    float htCut=500;
    int   nAK8jetsCut=0;
-   float lepPtCut=60.0;
+   float lepPtCut=20.0; //60
    float elEtaCut=2.5;
    float muEtaCut=2.4;
    int   njetsCut=3;
@@ -873,7 +873,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   cout << "Era = " << Era << endl;
   cout << "isMC = " << isMC << ", isSig = " << isSig << ", SigMass = " << SigMass << endl;
   cout << "isHad =" << isHad << ", isSE =" << isSE << ", isSM =" << isSM << endl;
-  cout << "isTTTT = " << isTTTT << ", isXX = " << isXX << ", isTpTp = " << isTpTp << ", isBpBp = " << isBpBp << endl;
+  cout << "isTTTT = " << isTTTT << ", isXX = " << isXX << ", isXXH = " << isXXH << ", isTpTp = " << isTpTp << ", isBpBp = " << isBpBp << endl;
   cout << "For W's: isTT = " << isTT << ", isSTt = " << isSTt << ", isSTtW = " << isSTtW << endl;
   cout << "For jets & PDF: isTOP = " << isTOP << ", isMadgraphBkg = " << isMadgraphBkg << endl;
   cout << "For HOTTagger Efficiencies: isTTV = " << isTTV << ", isTTHbb = " << isTTHbb << ", isTTHnonbb = " << isTTHnonbb << ", isTTTX = " << isTTTX << endl;
@@ -1028,6 +1028,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     else if (sample.find("DYJetsToLL_") != std::string::npos) sampleType = "ZJets";
     else if (sample.find("QCD_") != std::string::npos) sampleType = "qcd";
     else if (isXX) sampleType = "x53x53";
+    else if (isXXH) sampleType = "x53x53H";
 
     // ----------------------------------------------------------------------------
     // ttHF weight calculation
@@ -2315,11 +2316,11 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       // W & top tagging on MC
       // ----------------------------------------------------------------------------
     
-      float PN_TvsQCDWP = 0.490; //WP from https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetTopTagging#13_TeV_Working_Points_and_Scale
-      float PN_WvsQCDWP = 0.935; //WP5 from https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetTopTagging#13_TeV_Working_Points_and_Scale
+      float PN_TvsQCDWP = 0.490; //1% mist. rate 0.490 BCDEF from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf 
+      float PN_WvsQCDWP = 0.935; //1% mist. rate 0.935 BCDEF from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
       if( Year == "2016" ) {
-        float PN_TvsQCDWP = 0.490; //1% mist. rate 0.490 BCDEF, 0.495 FGH from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
-        float PN_WvsQCDWP = 0.935; //1% mist. rate 0.935 BCDEF, 0.934 FGH from  https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+        float PN_TvsQCDWP = 0.495; //1% mist. rate 0.495 FGH from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
+        float PN_WvsQCDWP = 0.934; //1% mist. rate 0.934 FGH, 0.934 FGH from  https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
       }
       else if( Year == "2017" ) {
         float PN_TvsQCDWP = 0.581; //1% mist. rate from https://indico.cern.ch/event/1221195/contributions/5141581/attachments/2556595/4514497/Top_W_Calibration_Updated.pdf
@@ -2389,7 +2390,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         if(isWmatched || isZmatched || isHmatched || isTmatched) theJetAK8MatchedPt_JetSubCalc_PtOrdered.push_back(matchedPt);
         else theJetAK8MatchedPt_JetSubCalc_PtOrdered.push_back(-99.0);
 
-        if (not (isWmatched && matchedPt > 200) && not (isZmatched && matchedPt > 200) && not (isTmatched && matchedPt > 300) && not (isHmatched && matchedPt > 300)) {
+        if (not (isWmatched && matchedPt >= 200) && not (isZmatched && matchedPt > 200) && not (isTmatched && matchedPt >= 200) && not (isHmatched && matchedPt > 300)) {
           int firstsub = theJetAK8SDSubjetIndex_JetSubCalc_PtOrdered.at(ijet);
           int nsubs = theJetAK8SDSubjetSize_JetSubCalc_PtOrdered.at(ijet);
           for(int isub = firstsub; isub < firstsub + nsubs; isub++){
@@ -2399,10 +2400,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         }
 
         if(isJmatched) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(0);
-        if(isTmatched && matchedPt > 300) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(1);
+        if(isTmatched && matchedPt >= 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(1);
         if(isHmatched && matchedPt > 300) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(2);
         if(isZmatched && matchedPt > 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(3);
-        if(isWmatched && matchedPt > 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(4);
+        if(isWmatched && matchedPt >= 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(4);
         if(isBmatched) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(5);
 
         // ------------------------------------------------------------------------------------------------------------------
@@ -2423,16 +2424,24 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
           // Use matched T to find the efficiency -- EWK/QCD will almost never pass here (use ttbar eff when they do)
           if(isTTTT) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "tttt");}
           else if(isXX) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "x53x53",SigMass);}		
+          else if(isXXH) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "x53x53H",SigMass);}		
+//          else if(isTT or isTTV or isTTVV or isTTHbb or isTTVV or isTTHnonbb) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "ttbar");} //check this!!
           else if(isTT) {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "ttbar");}
           else {hardcodedConditions.GetTtaggingEff(matchedPt, &PNteff, Year, "singletop");}
         }
       
         // Set the initial tagged/untagged state
-        bool isTtagged = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
-        bool isTtagged_JMSup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
-        bool isTtagged_JMSdn = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
-        bool isTtagged_JMRup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
-	bool isTtagged_JMRdn = ( PN_TvsQCD < PN_TvsQCDWP ) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
+        bool isTtagged = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isTtagged_JMSup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isTtagged_JMSdn = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isTtagged_JMRup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+	    bool isTtagged_JMRdn = ( PN_TvsQCD < PN_TvsQCDWP ) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+
+//        bool isTtagged = (massSD > 105) && (massSD < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+//        bool isTtagged_JMSup = (massSD_JMSup > 105) && (massSD_JMSup < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+//        bool isTtagged_JMSdn = (massSD_JMSdn > 105) && (massSD_JMSdn < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+//        bool isTtagged_JMRup = (massSD_JMRup > 105) && (massSD_JMRup < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+//        bool isTtagged_JMRdn = (massSD_JMRdn > 105) && (massSD_JMRdn < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
 
         // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
         int tag_top = applySF(isTtagged,PNTSF,PNteff);
@@ -2468,14 +2477,16 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         double PN_WvsQCDSFdn = 1.0;
         double PN_WvsQCDeff = 1.0;
 
-
-        if(isWmatched && matchedPt >= 175 && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200){	    
+//W+jets?
+        if(isWmatched && matchedPt >= 200 && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200){	    
           hardcodedConditions.GetWtaggingSF(theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet), &PNWSF, &PNWSFup, &PNWSFdn, Year);
           // Use matched W to find the efficiency -- EWK/QCD will almost never pass here (use ttbar eff when they do)
           if(isXX) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "x53x53",SigMass);}
+          else if(isXXH) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "x53x53H",SigMass);}
           else if(isTpTp) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "TpTp",SigMass);}
           else if(isBpBp) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "BpBp",SigMass);}
           else if(isTTTT) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "tttt");}
+          //else if(isTT or isTTV or isTTVV or isTTHbb or isTTVV or isTTHnonbb) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "ttbar");}
           else if(isTT) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "ttbar");}
           else if(isSTt) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "singletopt");}
           else if(isSTtW) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "singletoptW");}
@@ -2484,12 +2495,18 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       
         // Set the initial tagged/untagged state
         bool isWtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMSup = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMSdn = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isWtagged_JMSup = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200); //CHECK!!
+        bool isWtagged_JMSdn = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200); //CHECK!! and for below and top tagging
         bool isWtagged_JMRup = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
         bool isWtagged_JMRdn = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
         if(isWtagged) { theJetAK8Indx_Wtagged.push_back(ijet); }
    
+//        bool isWtagged = (massSD > 65) && (massSD < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+//        bool isWtagged_JMSup = (massSD_JMSup > 65) && (massSD_JMSup < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+//        bool isWtagged_JMSdn = (massSD_JMSdn > 65) && (massSD_JMSdn < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+//        bool isWtagged_JMRup = (massSD_JMRup > 65) && (massSD_JMRup < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+//        bool isWtagged_JMRdn = (massSD_JMRdn > 65) && (massSD_JMRdn < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+
         // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
         int tag_W = applySF(isWtagged,PNWSF,PNWeff);
         int tag_W_PNWup = applySF(isWtagged,PNWSFup,PNWeff);
@@ -2646,6 +2663,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         else if(isTTHnonbb) sample_hot = "ttHToNonbb";
         else if(isTTHbb) sample_hot = "ttHTobb";
         else if(isXX) sample_hot = "x53x53";
+        else if(isXXH) sample_hot = "x53x53H";
 
         hardcodedConditions.GetHOTtaggingEff(topPt_HOTTaggerCalc->at(itop), &TopTagEff1p, Year, sample_hot, isGenMatched, "1pfake");
         hardcodedConditions.GetHOTtaggingEff(topPt_HOTTaggerCalc->at(itop), &TopTagEff2p, Year, sample_hot, isGenMatched, "2pfake");

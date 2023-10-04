@@ -5,7 +5,7 @@ execfile( "step1/config.py" )
 # this script is to be used while on BRUX and transferring step1hadds from the LPC eos area
 parser = ArgumentParser()
 parser.add_argument( "-y", "--year", required = True )
-parser.add_argument( "-t", "--tag", default = "X53" )
+parser.add_argument( "-t", "--tag", default = "" )
 parser.add_argument( "-g", "--groups", nargs = "+", required = True )
 parser.add_argument( "-s", "--step", required = True, help = "1hadds,2,3,ABCDnn" )
 parser.add_argument( "-o", "--outpath", required = True, help = "/isilon/hadoop/store/<outpath>" )
