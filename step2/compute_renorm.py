@@ -12,8 +12,18 @@ args = parser.parse_args()
 from ROOT import TFile, TTree, TH2F
 
 labels = {
-  "TTTW": "TTTW_TuneCP5_13TeV-madgraph-pythia8_hadd.root", 
-  "TTTJ": "TTTJ_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "TTTX": "TTTX_renorm.root",
+  #"TTNOBB": "TTNOBB_renorm.root",
+  #"TTBB": "TTBB_renorm.root",
+  #"TTNOBBHT500": "TTNOBBHT500_renorm.root",
+  #"TTBBHT500": "TTBBHT500_renorm.root",
+  "ST": "ST_renorm.root",
+  "TTH": "TTH_renorm.root",
+  "QCD": "QCD_renorm.root",
+  "TTXY": "TTXY_renorm.root",
+  "EWK": "EWK_renorm.root"
+#  "TTTW": "TTTW_TuneCP5_13TeV-madgraph-pythia8_hadd.root", 
+#  "TTTJ": "TTTJ_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
 #  "TTTT": "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_1_hadd.root",
   "TTToSemiLep1000": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_hadd.root",
   "TTToSemiLep700": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_hadd.root",
@@ -34,17 +44,15 @@ labels = {
   #"HT500ttcc": "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8_ttcc_hadd.root",
   #"HT500tt2b": "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8_tt2b_hadd.root",
   #"HT500tt1b": "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8_tt1b_hadd.root",
-  "STs": "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8_hadd.root",
-  "STtW": "ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8_hadd.root",
-  "STt": "ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8_hadd.root", 
-  "WJets": "WJetsToLNu_HT_renorm.root",
-  "QCD": "QCD_HT_renorm.root",
-  "DYM": "DYJetsToLL_M-50_renorm.root",
-  "TTHBB": "ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8_hadd.root",
-  "TTHnonBB": "ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8_hadd.root",
-  "TTHH": "TTHH_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
-  "TTXY": "TTXY_renorm.root",
-  "EWK": "EWK_renorm.root",
+#  "STs": "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8_hadd.root",
+#  "STtW": "ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8_hadd.root",
+#  "STt": "ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8_hadd.root", 
+#  "WJets": "WJetsToLNu_HT_renorm.root",
+#  "QCD": "QCD_HT_renorm.root",
+#  "DYM": "DYJetsToLL_M-50_renorm.root",
+#  "TTHBB": "ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8_hadd.root",
+#  "TTHnonBB": "ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8_hadd.root",
+#  "TTHH": "TTHH_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM700":"PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8_hadd.root",        
   "X53RHM800":"PairVLQ_x53x53_tWtW_narrow_RH_M800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM900":"PairVLQ_x53x53_tWtW_narrow_RH_M900_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
@@ -94,8 +102,8 @@ elif args.location == "BRUX":
   haddPath = config.haddPath[ args.year ][ "BRUX" ] + "/nominal/"
 
 limits = {
-  "NJ": [3,4,7],
-  "HT": [10,350,4000]
+  "NJ": [4,4,8],
+  "HT": [50,350,4000]
 }
 
 for label in labels:
@@ -150,7 +158,7 @@ for label in labels:
     if not ( ttree.MCPastTriggerX ): continue 
     njet = getattr( ttree, "NJets_JetSubCalc" ) 
     HT = getattr( ttree, "AK4HT" )
-    if njet > 7: njet = 7
+    if njet > 8: njet = 8
 
     h2D[ "origin" ][ "nominal" ].Fill( njet, HT ) # this gets cloned by the other systematics
     h2D[ "weight" ][ "nominal" ].Fill( njet, HT, getattr( ttree, "btagDeepJetWeight" ) )

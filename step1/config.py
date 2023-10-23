@@ -51,38 +51,46 @@ JEC_files = {
   "18": "btag_sf/RegroupedV2_Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt"
 }
 
+JEC_files_reduced = {
+  "16APV": "btag_sf/RegroupedV2_Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt",
+  "16": "btag_sf/RegroupedV2_Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt",
+  "17": "btag_sf/RegroupedV2_Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
+  "18": "btag_sf/RegroupedV2_Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt"
+}
+
 JES_shifts = {
   "JER": True,
   "JEC": True, # fully de-correlated, corresponds to total JEC from LJMet
-  "FlavorQCD": False,
-  "FlavorPureGluon": False,
-  "FlavorPureQuark": False,
-  "FlavorPureCharm": False,
-  "FlavorPureBottom": False,
-  "RelativeBal": False,
-  "RelativeSample_Era": False,
-  "HF": False,
-  "HF_Era": False,
-  "BBEC1": False,
-  "BBEC1_Era": False,
-  "EC2": False,
-  "EC2_Era": False,
-  "Absolute": False,
-  "Absolute_Era": False
+  "FlavorQCD": True,
+  "FlavorPureGluon": True,
+  "FlavorPureQuark": True,
+  "FlavorPureCharm": True,
+  "FlavorPureBottom": True,
+  "RelativeBal": True,
+  "RelativeSample_Era": True,
+  "HF": True,
+  "HF_Era": True,
+  "BBEC1": True,
+  "BBEC1_Era": True,
+  "EC2": True,
+  "EC2_Era": True,
+  "Absolute": True,
+  "Absolute_Era": True
 }
 
 selection = {
   "leptonPt_MultiLepCalc": { "VALUE": [ 20 ], "CONDITION": [ ">" ] },
   "leptonEta_MultiLepCalc": { "VALUE": [ 2.5 ], "CONDITION": [ "<" ] },
   "AK4HT": { "VALUE": [ 350. ], "CONDITION": [ ">" ] },
-  "NJets_JetSubCalc": { "VALUE": [ 4 ], "CONDITION": [ ">=" ] },
-  "NJetsCSV_JetSubCalc": { "VALUE": [ 2 ], "CONDITION": [ ">=" ] },
+  "NJets_JetSubCalc": { "VALUE": [ 5 ], "CONDITION": [ "<=" ] },
+  "NJetsCSV_JetSubCalc": { "VALUE": [ 0 ], "CONDITION": [ ">=" ] },
   "corr_met_MultiLepCalc": { "VALUE": [ 20. ], "CONDITION": [ ">" ] },
 }
 
 triggerX_bins = {
-  "PT": [ 25., 30., 35., 40., 45., 50., 60., 70., 100. ],
-  "ETA": [ 0.8, 1.4442, 1.566, 2.0 ]
+  "PT": [ 25., 30., 35., 40., 45., 50., 60., 70., 100., 200. ],
+  "ETA": [ 0.8, 1.4442, 1.566, 2.0 ],
+  "HT": [ 400., 500., 1000., 2000. ]
 }
 
 outputPath = "/store/user/{}/".format( eosUserName ),
@@ -328,9 +336,9 @@ samples = {
     ],
     "TTBAR": [
       "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8",
-      "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
-      "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
-      "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
+      #"TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
+      #"TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
+      #"TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
     ],
     "TTBAR_SHIFTS": [
       "TTToSemiLeptonic_hdampUP_TuneCP5_13TeV-powheg-pythia8",
@@ -646,9 +654,9 @@ samples = {
     ],
     "TTBAR": [
       "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8",
-#      "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
-#      "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
-#      "TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
+      "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",
+      "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",
+      #"TTToSemiLepton_HT500Njet9_TuneCP5_13TeV-powheg-pythia8"
     ],
     "TTBAR_SHIFTS": [
       "TTToSemiLeptonic_hdampUP_TuneCP5_13TeV-powheg-pythia8",

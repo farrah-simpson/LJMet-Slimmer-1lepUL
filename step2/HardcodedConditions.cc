@@ -29,6 +29,16 @@ HardcodedConditions::HardcodedConditions( std::string year ) {
 
   std::string SYSs[19] = { "", "_HFup", "_HFdn", "_LFup", "_LFdn", "_jesup", "_jesdn", "_hfstats1up", "_hfstats1dn", "_hfstats2up", "_hfstats2dn", "_cferr1up", "_cferr1dn", "_cferr2up", "_cferr2dn", "_lfstats1up", "_lfstats1dn", "_lfstats2up", "_lfstats2dn" };  
   for( size_t i = 0; i < 19; i++ ){
+    hscale_TTTX[SYSs[i]]         = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTTX"+SYSs[i]).c_str())->Clone();
+    hscale_TTNOBB[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTNOBB"+SYSs[i]).c_str())->Clone();
+    hscale_TTBB[SYSs[i]]         = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTBB"+SYSs[i]).c_str())->Clone();
+    hscale_TTNOBBHT500[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTNOBBHT500"+SYSs[i]).c_str())->Clone();
+    hscale_TTBBHT500[SYSs[i]]    = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTBBHT500"+SYSs[i]).c_str())->Clone();
+    hscale_ST[SYSs[i]]           = (TH2F*)tfile_HTNJ_SF->Get(("hscale_ST"+SYSs[i]).c_str())->Clone();
+    hscale_QCD[SYSs[i]]          = (TH2F*)tfile_HTNJ_SF->Get(("hscale_QCD"+SYSs[i]).c_str())->Clone();
+    hscale_TTH[SYSs[i]]          = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTH"+SYSs[i]).c_str())->Clone();
+    hscale_TTXY[SYSs[i]]         = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTXY"+SYSs[i]).c_str())->Clone();
+    hscale_EWK[SYSs[i]]          = (TH2F*)tfile_HTNJ_SF->Get(("hscale_EWK"+SYSs[i]).c_str())->Clone();
     //hscale_tttw[SYSs[i]]      = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTTW"+SYSs[i]).c_str())->Clone();
     //hscale_tttj[SYSs[i]]      = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTTJ"+SYSs[i]).c_str())->Clone();  
     //hscale_tttt[SYSs[i]]      = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTTT"+SYSs[i]).c_str())->Clone();
@@ -51,42 +61,31 @@ HardcodedConditions::HardcodedConditions( std::string year ) {
     hscale_TTToLNu0[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTToLNu0"+SYSs[i]).c_str())->Clone();
     hscale_TTToLNu700[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTToLNu700"+SYSs[i]).c_str())->Clone();
     hscale_TTToLNu1000[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTToLNu1000"+SYSs[i]).c_str())->Clone();
-    hscale_STs[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_STs"+SYSs[i]).c_str())->Clone();
-    hscale_STtW[SYSs[i]]      = (TH2F*)tfile_HTNJ_SF->Get(("hscale_STtW"+SYSs[i]).c_str())->Clone();
-    hscale_STt[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_STt"+SYSs[i]).c_str())->Clone();
-    hscale_WJets[SYSs[i]]     = (TH2F*)tfile_HTNJ_SF->Get(("hscale_WJets"+SYSs[i]).c_str())->Clone();
-    hscale_QCD[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_QCD"+SYSs[i]).c_str())->Clone();
-    hscale_DYM[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_DYM"+SYSs[i]).c_str())->Clone();
-    hscale_TTHBB[SYSs[i]]     = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTHBB"+SYSs[i]).c_str())->Clone();
-    hscale_TTHnonBB[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTHnonBB"+SYSs[i]).c_str())->Clone();
-    hscale_TTHH[SYSs[i]]      = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTHH"+SYSs[i]).c_str())->Clone();
-    hscale_TTXY[SYSs[i]]      = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTXY"+SYSs[i]).c_str())->Clone();
-    hscale_EWK[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_EWK"+SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM600MH200[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM600MH200"+SYSs[i]).c_str())->Clone();   
-//    hscale_X53RHM600MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM600MH400"+SYSs[i]).c_str())->Clone();  
-//    hscale_X53RHM700MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM700MH400"+SYSs[i]).c_str())->Clone();  
-//    hscale_X53RHM800MH200[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM800MH200"+SYSs[i]).c_str())->Clone();  
-//    hscale_X53RHM800MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM800MH400"+SYSs[i]).c_str())->Clone();  
-//    hscale_X53RHM800MH600[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM800MH600"+SYSs[i]).c_str())->Clone();  
-//    hscale_X53RHM900MH200[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM900MH200"+SYSs[i]).c_str())->Clone();  
-//    hscale_X53RHM900MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM900MH400"+SYSs[i]).c_str())->Clone();  
-//    hscale_X53RHM1000MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1000MH200" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1000MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1000MH400" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1000MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1000MH800" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1100MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH200" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1100MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH400" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1100MH600[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH600" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1100MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH800" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1200MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH200" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1200MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH400" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1200MH600[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH600" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1200MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH800" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1200MH1000[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH1000"+SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1500MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH200" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1500MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH400" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1500MH600[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH600" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1500MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH800" +SYSs[i]).c_str())->Clone();
-//    hscale_X53RHM1500MH1000[SYSs[i]]= (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH1000"+SYSs[i]).c_str())->Clone();
+    hscale_X53RHM600MH200[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM600MH200"+SYSs[i]).c_str())->Clone();   
+    hscale_X53RHM600MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM600MH400"+SYSs[i]).c_str())->Clone();  
+    hscale_X53RHM700MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM700MH400"+SYSs[i]).c_str())->Clone();  
+    hscale_X53RHM800MH200[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM800MH200"+SYSs[i]).c_str())->Clone();  
+    hscale_X53RHM800MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM800MH400"+SYSs[i]).c_str())->Clone();  
+    hscale_X53RHM800MH600[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM800MH600"+SYSs[i]).c_str())->Clone();  
+    hscale_X53RHM900MH200[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM900MH200"+SYSs[i]).c_str())->Clone();  
+    hscale_X53RHM900MH400[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM900MH400"+SYSs[i]).c_str())->Clone();  
+    hscale_X53RHM1000MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1000MH200" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1000MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1000MH400" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1000MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1000MH800" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1100MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH200" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1100MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH400" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1100MH600[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH600" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1100MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1100MH800" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1200MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH200" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1200MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH400" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1200MH600[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH600" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1200MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH800" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1200MH1000[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1200MH1000"+SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1500MH200[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH200" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1500MH400[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH400" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1500MH600[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH600" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1500MH800[SYSs[i]] = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH800" +SYSs[i]).c_str())->Clone();
+    hscale_X53RHM1500MH1000[SYSs[i]]= (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM1500MH1000"+SYSs[i]).c_str())->Clone();
     hscale_X53RHM700[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM700"+SYSs[i]).c_str())->Clone();  
     hscale_X53RHM800[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM800"+SYSs[i]).c_str())->Clone();  
     hscale_X53RHM900[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_X53RHM900"+SYSs[i]).c_str())->Clone();  
@@ -103,150 +102,151 @@ HardcodedConditions::HardcodedConditions( std::string year ) {
 HardcodedConditions::~HardcodedConditions() {}
 
 float HardcodedConditions::GetDeepJetRenorm2DSF_HTnj( float HT, int njets, std::string sampleType, std::string sysType ){
-  if( hscale_TTToLNu700.find( sysType ) == hscale_TTToLNu700.end() ) return 1.0;
+  if( hscale_TTNOBB.find( sysType ) == hscale_TTNOBB.end() ) return 1.0;
   if( sampleType == "" ) return 1.0;
   int njets_idx = njets;
-  if( njets_idx > 7 ) njets_idx = 7;
-//  std::cout << "njets is "<<njets << std::endl;
+  if( njets_idx > 8 ) njets_idx = 8;
 
-  if( sampleType == "STs" ){
-    return hscale_STs[ sysType ]->GetBinContent( hscale_STs[ sysType ]->FindBin( njets_idx, HT ) );
+  if( sampleType == "TTTW" || sampleType == "TTTJ" || sampleType == "TTTT" ){
+    return hscale_TTTX[ sysType ]->GetBinContent( hscale_TTTX[ sysType ]->FindBin( njets_idx, HT ) );
+  }
+
+  if( sampleType == "ttjj" || sampleType == "ttcc" || sampleType == "tt2b" || sampleType == "tt1b" ){
+    return hscale_TTNOBB[ sysType ]->GetBinContent( hscale_TTNOBB[ sysType ]->FindBin( njets_idx, HT ) );
+  }  
+
+  if( sampleType == "ttbb" ){
+    return hscale_TTBB[ sysType ]->GetBinContent( hscale_TTBB[ sysType ]->FindBin( njets_idx, HT ) );
+  }  
+
+  if( sampleType == "HT500ttjj" || sampleType == "HT500ttcc" || sampleType == "HT500tt2b" || sampleType == "HT500tt1b" ){
+    return hscale_TTNOBBHT500[ sysType ]->GetBinContent( hscale_TTNOBBHT500[ sysType ]->FindBin( njets_idx, HT ) );
+  }  
+
+  if( sampleType == "HT500ttbb" ){
+    return hscale_TTBBHT500[ sysType ]->GetBinContent( hscale_TTBBHT500[ sysType ]->FindBin( njets_idx, HT ) );
+  }  
+
+  if( sampleType == "ST" ){
+    return hscale_ST[ sysType ]->GetBinContent( hscale_ST[ sysType ]->FindBin( njets_idx, HT ) );
   } 
 
-  if( sampleType == "STt" ){
-    return hscale_STt[ sysType ]->GetBinContent( hscale_STt[ sysType ]->FindBin( njets_idx, HT ) );
-  }
-
-  if( sampleType == "STtW" ){
-    return hscale_STtW[ sysType ]->GetBinContent( hscale_STtW[ sysType ]->FindBin( njets_idx, HT ) );
-  }
-
-  if( sampleType == "WJets" ){
-    return hscale_WJets[ sysType ]->GetBinContent( hscale_WJets[ sysType ]->FindBin( njets_idx, HT ) );
-  }
-  
   if( sampleType == "QCD" ){
     return hscale_QCD[ sysType ]->GetBinContent( hscale_QCD[ sysType ]->FindBin( njets_idx, HT ) );
   }
-  if( sampleType == "DYM" ){
-    return hscale_DYM[ sysType ]->GetBinContent( hscale_DYM[ sysType ]->FindBin( njets_idx, HT ) );
+
+  if( sampleType == "ttHTobb" || sampleType == "ttHToNonbb" ){
+    return hscale_TTH[ sysType ]->GetBinContent( hscale_TTH[ sysType ]->FindBin( njets_idx, HT ) );
   }
-  if( sampleType == "ttHTobb" ){
-    return hscale_TTHBB[ sysType ]->GetBinContent( hscale_TTHBB[ sysType ]->FindBin( njets_idx, HT ) );
-  }
-  if( sampleType == "ttHToNonbb" ){
-    return hscale_TTHnonBB[ sysType ]->GetBinContent( hscale_TTHnonBB[ sysType ]->FindBin( njets_idx, HT ) );
-  }
-  if( sampleType == "TTHH" ){
-    return hscale_TTHH[ sysType ]->GetBinContent( hscale_TTHH[ sysType ]->FindBin( njets_idx, HT ) );
-  }
-  if( sampleType == "TTXY" ){
+
+  if( sampleType == "TTXY" || sampleType == "TTHH" ){
     return hscale_TTXY[ sysType ]->GetBinContent( hscale_TTXY[ sysType ]->FindBin( njets_idx, HT ) );
   }
-  if( sampleType == "EWK" ){
+
+  if( sampleType == "EWK" || sampleType == "WJets" || sampleType == "DYM" ){
     return hscale_EWK[ sysType ]->GetBinContent( hscale_EWK[ sysType ]->FindBin( njets_idx, HT ) );
   }
 
-//  if (sampleType == "X53RHM600MH200"){
-//        return hscale_X53RHM600MH200[sysType]->GetBinContent(hscale_X53RHM600MH200[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM600MH400"){
-//        return hscale_X53RHM600MH400[sysType]->GetBinContent(hscale_X53RHM600MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM700MH400"){
-//        return hscale_X53RHM700MH400[sysType]->GetBinContent(hscale_X53RHM700MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM800MH200"){
-//        return hscale_X53RHM800MH200[sysType]->GetBinContent(hscale_X53RHM800MH200[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM800MH400"){
-//        return hscale_X53RHM800MH400[sysType]->GetBinContent(hscale_X53RHM800MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM800MH600"){
-//        return hscale_X53RHM800MH600[sysType]->GetBinContent(hscale_X53RHM800MH600[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM900MH200"){
-//        return hscale_X53RHM900MH200[sysType]->GetBinContent(hscale_X53RHM900MH200[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM900MH400"){
-//        return hscale_X53RHM900MH400[sysType]->GetBinContent(hscale_X53RHM900MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//
-//  if (sampleType == "X53RHM1000MH200"){
-//        return hscale_X53RHM1000MH200[sysType]->GetBinContent(hscale_X53RHM1000MH200[sysType]->FindBin(njets_idx, HT));
-//  }
-// 
-//  if (sampleType == "X53RHM1000MH400"){
-//        return hscale_X53RHM1000MH400[sysType]->GetBinContent(hscale_X53RHM1000MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1000MH800"){
-//        return hscale_X53RHM1000MH800[sysType]->GetBinContent(hscale_X53RHM1000MH800[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1100MH200"){
-//        return hscale_X53RHM1100MH200[sysType]->GetBinContent(hscale_X53RHM1100MH200[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1100MH400"){
-//        return hscale_X53RHM1100MH400[sysType]->GetBinContent(hscale_X53RHM1100MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1100MH600"){
-//        return hscale_X53RHM1100MH600[sysType]->GetBinContent(hscale_X53RHM1100MH600[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1100MH800"){
-//        return hscale_X53RHM1100MH800[sysType]->GetBinContent(hscale_X53RHM1100MH800[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1200MH200"){
-//        return hscale_X53RHM1200MH200[sysType]->GetBinContent(hscale_X53RHM1200MH200[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1200MH400"){
-//        return hscale_X53RHM1200MH400[sysType]->GetBinContent(hscale_X53RHM1200MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1200MH600"){
-//        return hscale_X53RHM1200MH600[sysType]->GetBinContent(hscale_X53RHM1200MH600[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1200MH800"){
-//        return hscale_X53RHM1200MH800[sysType]->GetBinContent(hscale_X53RHM1200MH800[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1200MH1000"){
-//        return hscale_X53RHM1200MH1000[sysType]->GetBinContent(hscale_X53RHM1200MH1000[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1500MH200"){
-//        return hscale_X53RHM1500MH200[sysType]->GetBinContent(hscale_X53RHM1500MH200[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1500MH400"){
-//        return hscale_X53RHM1500MH400[sysType]->GetBinContent(hscale_X53RHM1500MH400[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1500MH600"){
-//        return hscale_X53RHM1500MH600[sysType]->GetBinContent(hscale_X53RHM1500MH600[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1500MH800"){
-//        return hscale_X53RHM1500MH800[sysType]->GetBinContent(hscale_X53RHM1500MH800[sysType]->FindBin(njets_idx, HT));
-//  }
-//
-//  if (sampleType == "X53RHM1500MH1000"){
-//        return hscale_X53RHM1500MH1000[sysType]->GetBinContent(hscale_X53RHM1500MH1000[sysType]->FindBin(njets_idx, HT));
-//  }
+  if (sampleType == "X53RHM600MH200"){
+        return hscale_X53RHM600MH200[sysType]->GetBinContent(hscale_X53RHM600MH200[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM600MH400"){
+        return hscale_X53RHM600MH400[sysType]->GetBinContent(hscale_X53RHM600MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM700MH400"){
+        return hscale_X53RHM700MH400[sysType]->GetBinContent(hscale_X53RHM700MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM800MH200"){
+        return hscale_X53RHM800MH200[sysType]->GetBinContent(hscale_X53RHM800MH200[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM800MH400"){
+        return hscale_X53RHM800MH400[sysType]->GetBinContent(hscale_X53RHM800MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM800MH600"){
+        return hscale_X53RHM800MH600[sysType]->GetBinContent(hscale_X53RHM800MH600[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM900MH200"){
+        return hscale_X53RHM900MH200[sysType]->GetBinContent(hscale_X53RHM900MH200[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM900MH400"){
+        return hscale_X53RHM900MH400[sysType]->GetBinContent(hscale_X53RHM900MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+
+  if (sampleType == "X53RHM1000MH200"){
+        return hscale_X53RHM1000MH200[sysType]->GetBinContent(hscale_X53RHM1000MH200[sysType]->FindBin(njets_idx, HT));
+  }
+ 
+  if (sampleType == "X53RHM1000MH400"){
+        return hscale_X53RHM1000MH400[sysType]->GetBinContent(hscale_X53RHM1000MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1000MH800"){
+        return hscale_X53RHM1000MH800[sysType]->GetBinContent(hscale_X53RHM1000MH800[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1100MH200"){
+        return hscale_X53RHM1100MH200[sysType]->GetBinContent(hscale_X53RHM1100MH200[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1100MH400"){
+        return hscale_X53RHM1100MH400[sysType]->GetBinContent(hscale_X53RHM1100MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1100MH600"){
+        return hscale_X53RHM1100MH600[sysType]->GetBinContent(hscale_X53RHM1100MH600[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1100MH800"){
+        return hscale_X53RHM1100MH800[sysType]->GetBinContent(hscale_X53RHM1100MH800[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1200MH200"){
+        return hscale_X53RHM1200MH200[sysType]->GetBinContent(hscale_X53RHM1200MH200[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1200MH400"){
+        return hscale_X53RHM1200MH400[sysType]->GetBinContent(hscale_X53RHM1200MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1200MH600"){
+        return hscale_X53RHM1200MH600[sysType]->GetBinContent(hscale_X53RHM1200MH600[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1200MH800"){
+        return hscale_X53RHM1200MH800[sysType]->GetBinContent(hscale_X53RHM1200MH800[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1200MH1000"){
+        return hscale_X53RHM1200MH1000[sysType]->GetBinContent(hscale_X53RHM1200MH1000[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1500MH200"){
+        return hscale_X53RHM1500MH200[sysType]->GetBinContent(hscale_X53RHM1500MH200[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1500MH400"){
+        return hscale_X53RHM1500MH400[sysType]->GetBinContent(hscale_X53RHM1500MH400[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1500MH600"){
+        return hscale_X53RHM1500MH600[sysType]->GetBinContent(hscale_X53RHM1500MH600[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1500MH800"){
+        return hscale_X53RHM1500MH800[sysType]->GetBinContent(hscale_X53RHM1500MH800[sysType]->FindBin(njets_idx, HT));
+  }
+
+  if (sampleType == "X53RHM1500MH1000"){
+        return hscale_X53RHM1500MH1000[sysType]->GetBinContent(hscale_X53RHM1500MH1000[sysType]->FindBin(njets_idx, HT));
+  }
 
   if (sampleType == "X53RHM700"){
         return hscale_X53RHM700[sysType]->GetBinContent(hscale_X53RHM700[sysType]->FindBin(njets_idx, HT));
@@ -343,14 +343,14 @@ float HardcodedConditions::GetCrossSectionEfficiency( TString inputFileName, std
 
   }
   else if( Year == "2016" ){
-    if( inputFileName.Contains( "TTToSemiLeptonic_TuneCP5" ) && inputFileName.Contains( "HT0Njet0" ) ) return 0.041101;
-    else if( inputFileName.Contains( "TTToSemiLepton_HT500Njet9_TuneCP5" ) ) return 0.008219;
-    else if( inputFileName.Contains( "TTToSemiLeptonic_TuneCP5" ) ) return 0.000255;
-    else if( inputFileName.Contains( "TTToHadronic_TuneCP5" ) ) return 0.03084;
-    else if( inputFileName.Contains( "TTTo2L2Nu_TuneCP5" ) ) return 0.03114;
-    else if( inputFileName.Contains( "TTTT" ) ) return 0.0000884;
-    else if( inputFileName.Contains( "TTTW" ) ) return 0.0000809;
-    else if( inputFileName.Contains( "TTTJ" ) ) return 0.0000395;
+    if( inputFileName.Contains( "TTToSemiLeptonic_TuneCP5" ) && inputFileName.Contains( "HT0Njet0" ) ) return 0.04090;
+    else if( inputFileName.Contains( "TTToSemiLepton_HT500Njet9_TuneCP5" ) ) return 0.00818;
+    else if( inputFileName.Contains( "TTToSemiLeptonic_TuneCP5" ) ) return 0.00025;
+    else if( inputFileName.Contains( "TTToHadronic_TuneCP5" ) ) return 0.03069;
+    else if( inputFileName.Contains( "TTTo2L2Nu_TuneCP5" ) ) return 0.03099;
+    else if( inputFileName.Contains( "TTTT" ) ) return 0.00009;
+    else if( inputFileName.Contains( "TTTW" ) ) return 0.00007;
+    else if( inputFileName.Contains( "TTTJ" ) ) return 0.00004;
     else return 1.0;
   }
   else if( Year == "2017" ){

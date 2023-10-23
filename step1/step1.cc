@@ -9,9 +9,11 @@
 #include <TCanvas.h>
 #include <TRandom.h>
 #include <TRandom3.h>
+#include <TMath.h>
 #include <sstream>
 #include <string>
 #include <vector>
+#include <numeric>
 #include <TH3.h>
 #include "HardcodedConditions.h"
 #include "BTagCalibForLJMet.h"
@@ -101,11 +103,19 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   string bSyst = "nominal";
   if( isMC && !( Syst == "nominal" || Syst == "JECup" || Syst == "JECdown" || Syst == "JERup" || Syst == "JERdown" ) ){
     // select the corresponding file for the year
-    string fJEC( "RegroupedV2_Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt" );
-    if( Year == "2016" ) fJEC = "RegroupedV2_Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt";
-    else if( Year == "2017" ) fJEC = "RegroupedV2_Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt";
-    else if( Year == "2018" ) fJEC = "RegroupedV2_Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt";
-
+    string fJEC;
+    if( Syst.Contains( "FlavorPure" ) ){
+      fJEC = "Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt";
+      if( Year == "2016" ) fJEC = "Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt";
+      else if( Year == "2017" ) fJEC = "Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt";
+      else if( Year == "2018" ) fJEC = "Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt";
+    }
+    else{
+      fJEC = "RegroupedV2_Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt";
+      if( Year == "2016" ) fJEC = "RegroupedV2_Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt";
+      else if( Year == "2017" ) fJEC = "RegroupedV2_Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt";
+      else if( Year == "2018" ) fJEC = "RegroupedV2_Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt";
+    }
     cout << ">> Syst: " << Syst << endl;
     if( Syst.EndsWith( "up" ) ) shiftUp = true;
     else if( Syst.EndsWith( "down" ) ) shiftUp = false;
@@ -143,10 +153,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   else if( bSyst == "EC2" ) btag_syst.push_back( btag_prefix + "jesEC2" );
   else if( bSyst == "EC2_" + bYear ) btag_syst.push_back( btag_prefix + "jesEC2_" + bYear );
   else if( bSyst == "FlavorQCD" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" );
-  else if( bSyst == "FlavorPureGluon" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" ); // no FlavorPureGluon shift in deepJet systematics as of 03/09/2023
-  else if( bSyst == "FlavorPureQuark" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" ); // no FlavorPureQuark shift in deepJet systematics as of 03/09/2023
-  else if( bSyst == "FlavorPureCharm" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" ); // no FlavorPureCharm shift in deepJet systematics as of 03/09/2023
-  else if( bSyst == "FlavorPureBottom" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" ); // no FlavorPureBottom shift in deepJet systematics as of 03/09/2023
+  else if( bSyst == "FlavorPureGluon" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" );   // no FlavorPureGluon shift in deepJet systematics as of 03/09/2023
+  else if( bSyst == "FlavorPureQuark" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" );   // no FlavorPureQuark shift in deepJet systematics as of 03/09/2023
+  else if( bSyst == "FlavorPureCharm" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" );   // no FlavorPureCharm shift in deepJet systematics as of 03/09/2023
+  else if( bSyst == "FlavorPureBottom" ) btag_syst.push_back( btag_prefix + "jesFlavorQCD" );  // no FlavorPureBottom shift in deepJet systematics as of 03/09/2023
   else if( bSyst == "RelativeBal" ) btag_syst.push_back( btag_prefix + "jesRelativeBal" );
   else if( bSyst == "RelativeSample_" + bYear ) btag_syst.push_back( btag_prefix + "jesRelativeSample_" + bYear );
 
@@ -191,7 +201,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   inputTree->SetBranchStatus("event_CommonCalc",1);
   inputTree->SetBranchStatus("run_CommonCalc",1);
   inputTree->SetBranchStatus("lumi_CommonCalc",1);
-  //   inputTree->SetBranchStatus("nPV_MultiLepCalc",1);
+  inputTree->SetBranchStatus("nPV_MultiLepCalc",1);
+  //inputTree->SetBranchStatus("nPileupInteractions_MultiLepCalc",1);
   inputTree->SetBranchStatus("nTrueInteractions_MultiLepCalc",1);
   inputTree->SetBranchStatus("MCWeight_MultiLepCalc",1);
   inputTree->SetBranchStatus("evtWeightsMC_MultiLepCalc",1);
@@ -219,6 +230,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   inputTree->SetBranchStatus("viSelTriggersMu_MultiLepCalc",1);
 
   //electrons
+  inputTree->SetBranchStatus("elCharge_MultiLepCalc",1);
   inputTree->SetBranchStatus("elPt_MultiLepCalc",1);
   inputTree->SetBranchStatus("elEta_MultiLepCalc",1);
   inputTree->SetBranchStatus("elPhi_MultiLepCalc",1);
@@ -229,6 +241,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   inputTree->SetBranchStatus("elNumberOfMothers_MultiLepCalc",1);
    
   //muons
+  inputTree->SetBranchStatus("muCharge_MultiLepCalc",1);
   inputTree->SetBranchStatus("muPt_MultiLepCalc",1);
   inputTree->SetBranchStatus("muEta_MultiLepCalc",1);
   inputTree->SetBranchStatus("muPhi_MultiLepCalc",1);
@@ -416,6 +429,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("run_CommonCalc",&run_CommonCalc,"run_CommonCalc/I");
   outputTree->Branch("lumi_CommonCalc",&lumi_CommonCalc,"lumi_CommonCalc/I");
   outputTree->Branch("nTrueInteractions_MultiLepCalc",&nTrueInteractions_MultiLepCalc,"nTrueInteractions_MultiLepCalc/I");
+  outputTree->Branch("nPV_MultiLepCalc",&nPV_MultiLepCalc,"nPV_MultiLepCalc/I");
   outputTree->Branch("isElectron",&isElectron,"isElectron/I");
   outputTree->Branch("isMuon",&isMuon,"isMuon/I");
   outputTree->Branch("MCPastTriggerX",&MCPastTriggerX,"MCPastTriggerX/I");
@@ -460,6 +474,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("renormWeights",&renormWeights);
   outputTree->Branch("renormPSWeights",&renormPSWeights);
   outputTree->Branch("pdfWeights",&pdfWeights);
+  outputTree->Branch("alphaSWeights",&alphaSWeights);
   outputTree->Branch("pdfNewWeights",&pdfNewWeights);
   outputTree->Branch("pdfNewNominalWeight",&pdfNewNominalWeight,"pdfNewNominalWeight/F");
   outputTree->Branch("pileupJetIDWeight",&pileupJetIDWeight,"pileupJetIDWeight/F");
@@ -476,7 +491,11 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("HTSF_PolDn",&HTSF_PolDn,"HTSF_PolDn/F");
   outputTree->Branch("topPtWeight13TeV",&topPtWeight13TeV,"topPtWeight13TeV/F");          
   outputTree->Branch("EGammaGsfSF",&EGammaGsfSF,"EGammaGsfSF/F");
+  outputTree->Branch("EGammaGsfSF_up",&EGammaGsfSF_up,"EGammaGsfSF_up/F");
+  outputTree->Branch("EGammaGsfSF_down",&EGammaGsfSF_down,"EGammaGsfSF_down/F");
   outputTree->Branch("lepIdSF",&lepIdSF,"lepIdSF/F");
+  outputTree->Branch("lepIdSF_up",&lepIdSF_up,"lepIdSF_up/F");
+  outputTree->Branch("lepIdSF_down",&lepIdSF_down,"lepIdSF_down/F");
   outputTree->Branch("triggerSF",&triggerSF,"triggerSF/F");
   outputTree->Branch("triggerHadSF",&triggerHadSF,"triggerHadSF/F");
   outputTree->Branch("triggerXSF",&triggerXSF,"triggerXSF/F");
@@ -508,12 +527,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("btagDeepJetWeight_lfstats2up", &btagDeepJetWeight_lfstats2up, "btagDeepJetWeight_lfstats2up/F");
   outputTree->Branch("btagDeepJetWeight_lfstats2dn", &btagDeepJetWeight_lfstats2dn, "btagDeepJetWeight_lfstats2dn/F");
 
-
   outputTree->Branch("njetsWeight",&njetsWeight,"njetsWeight/F");
   outputTree->Branch("njetsWeightUp",&njetsWeightUp,"njetsWeightUp/F");
   outputTree->Branch("njetsWeightDown",&njetsWeightDown,"njetsWeightDown/F");
   outputTree->Branch("tthfWeight",&tthfWeight,"tthfWeight/F");
-  outputTree->Branch("btagCSVRenormWeight",&btagCSVRenormWeight,"btagCSVRenormWeight/F");
 
   //ttbar generator
   outputTree->Branch("ttbarMass_TTbarMassCalc",&ttbarMass_TTbarMassCalc,"ttbarMass_TTbarMassCalc/D");
@@ -541,6 +558,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("corr_met_phi_MultiLepCalc",&corr_met_phi_MultiLepCalc,"corr_met_phi_MultiLepCalc/D");
   outputTree->Branch("corr_metmod_MultiLepCalc",&corr_metmod_MultiLepCalc,"corr_metmod_MultiLepCalc/D");
   outputTree->Branch("corr_metmod_phi_MultiLepCalc",&corr_metmod_phi_MultiLepCalc,"corr_metmod_phi_MultiLepCalc/D");
+  outputTree->Branch("leptonCharge_MultiLepCalc",&leptonCharge_MultiLepCalc,"leptonCharge_MultiLepCalc/F");
   outputTree->Branch("leptonPt_MultiLepCalc",&leptonPt_MultiLepCalc,"leptonPt_MultiLepCalc/F");
   outputTree->Branch("leptonEta_MultiLepCalc",&leptonEta_MultiLepCalc,"leptonEta_MultiLepCalc/F");
   outputTree->Branch("leptonPhi_MultiLepCalc",&leptonPhi_MultiLepCalc,"leptonPhi_MultiLepCalc/F");
@@ -600,6 +618,22 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("theJetHFlav_JetSubCalc_PtOrdered",&theJetHFlav_JetSubCalc_PtOrdered);
   outputTree->Branch("theJetPFlav_JetSubCalc_PtOrdered",&theJetPFlav_JetSubCalc_PtOrdered);
   outputTree->Branch("theJetBTag_JetSubCalc_PtOrdered",&theJetBTag_JetSubCalc_PtOrdered);
+  outputTree->Branch("theJetEtaAverage_JetSubCalc",&theJetEtaAverage_JetSubCalc,"theJetEtaAverage_JetSubCalc/F");
+  outputTree->Branch("theJetEtaPtWeighted_JetSubCalc",&theJetEtaPtWeighted_JetSubCalc,"theJetEtaPtWeighted_JetSubCalc/F");
+  outputTree->Branch("theJetEtaAverageNotBJet_JetSubCalc",&theJetEtaAverageNotBJet_JetSubCalc,"theJetEtaAverageNotBJet_JetSubCalc/F");
+  outputTree->Branch("theJetEta_JetNotBJetMaxPt_JetSubCalc",&theJetEta_JetNotBJetMaxPt_JetSubCalc,"theJetEta_JetNotBJetMaxPt_JetSubCalc/F");
+  outputTree->Branch("theJetEta0_JetSubCalc",&theJetEta0_JetSubCalc,"theJetEta0_JetSubCalc/F");
+  outputTree->Branch("theJetEta1_JetSubCalc",&theJetEta1_JetSubCalc,"theJetEta1_JetSubCalc/F");
+  outputTree->Branch("theJetEta2_JetSubCalc",&theJetEta2_JetSubCalc,"theJetEta2_JetSubCalc/F");
+  //outputTree->Branch("theJetEta3_JetSubCalc",&theJetEta3_JetSubCalc,"theJetEta3_JetSubCalc/F");
+  outputTree->Branch("theJetPhi0_JetSubCalc",&theJetPhi0_JetSubCalc,"theJetPhi0_JetSubCalc/F");
+  outputTree->Branch("theJetPhi1_JetSubCalc",&theJetPhi1_JetSubCalc,"theJetPhi1_JetSubCalc/F");
+  outputTree->Branch("theJetPhi2_JetSubCalc",&theJetPhi2_JetSubCalc,"theJetPhi2_JetSubCalc/F");
+  //outputTree->Branch("theJetPhi3_JetSubCalc",&theJetPhi3_JetSubCalc,"theJetPhi3_JetSubCalc/F");
+  outputTree->Branch("theForwardJetPt_JetSubCalc",&theForwardJetPt_JetSubCalc,"theForwardJetPt_JetSubCalc/F");
+  outputTree->Branch("theForwardJetEta_JetSubCalc",&theForwardJetEta_JetSubCalc,"theForwardJetEta_JetSubCalc/F");
+  outputTree->Branch("theForwardJetPhi_JetSubCalc",&theForwardJetPhi_JetSubCalc,"theForwardJetPhi_JetSubCalc/F");
+  outputTree->Branch("theForwardJetCSV_JetSubCalc",&theForwardJetCSV_JetSubCalc,"theForwardJetCSV_JetSubCalc/F");
   outputTree->Branch("AK4HTpMETpLepPt",&AK4HTpMETpLepPt,"AK4HTpMETpLepPt/F");
   outputTree->Branch("AK4HT",&AK4HT,"AK4HT/F");
   outputTree->Branch("NJets_JetSubCalc",&NJets_JetSubCalc,"NJets_JetSubCalc/I");
@@ -765,18 +799,6 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   // ----------------------------------------------------------------------------
 
   // basic cuts
-//  float metCut=20;
-//  float htCut=350;
-//  int   nAK8jetsCut=0;
-//  float lepPtCut=20.0;
-//  float elEtaCut=2.5;
-//  float muEtaCut=2.4;
-//  int   njetsCut=4;
-//  int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
-//  float jetPtCut=30;
-//  float jetEtaCut=2.4;
-//  float ak8EtaCut=2.4;
-//  float ak8PtCut=200;
    float metCut=80;
    float htCut=500;
    int   nAK8jetsCut=0;
@@ -784,12 +806,12 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
    float elEtaCut=2.5;
    float muEtaCut=2.4;
    int   njetsCut=3;
-   int   nbjetsCut=1; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
+   int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
+   int   nbjetsCut_shift=1; // syst shift samples aren't used to calculate weights, so can exclude these events for pre-selection 
    float jetPtCut=30;
    float jetEtaCut=2.4;
    float ak8EtaCut=2.4;
    float ak8PtCut=200;
-
 
   // counters
   int npass_trigger   = 0;
@@ -804,6 +826,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   int Nelectrons      = 0;
   int Nmuons          = 0;
   int NrelIsoFail     = 0;
+  int jetveto         = 0;
+  int jettotal        = 0;
 
   // Lorentz vectors
   TLorentzVector jet_lv;
@@ -1002,7 +1026,9 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       hardcodedConditions.GetPileupWeight(nTrueInteractions_MultiLepCalc, &pileupWeight, &pileupWeightUp, &pileupWeightDown, Year);
     }
 
-     
+    // apply MET xy corrections
+    hardcodedConditions.GetMETPhiCorrection( &corr_met_MultiLepCalc, &corr_met_phi_MultiLepCalc, nPV_MultiLepCalc, run_CommonCalc, Year, isMC );
+
     // PU Jet ID weights are determined later based on AK4 jet properties
     pileupJetIDWeight = 1.0;
     pileupJetIDWeightUp = 1.0;
@@ -1010,8 +1036,6 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     pileupJetIDWeight_tag = 1.0;
     pileupJetIDWeightUp_tag = 1.0;
     pileupJetIDWeightDown_tag = 1.0;
-
-    btagCSVRenormWeight = 1.0;
 
     std::string sampleType = "";
     if (isTTTT) sampleType = "tttt";
@@ -1075,6 +1099,22 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     NJets_JetSubCalc = 0;
     NJetsPU_JetSubCalc = 0;
     NJetsForward_JetSubCalc = 0;
+    
+    theJetEtaAverage_JetSubCalc = 0;
+    theJetEtaPtWeighted_JetSubCalc = 0;
+    theJetEtaAverageNotBJet_JetSubCalc = 0;
+    theJetEta_JetNotBJetMaxPt_JetSubCalc = 0;
+
+    theForwardJetPt_JetSubCalc = 0;
+    theForwardJetEta_JetSubCalc = 0;
+    theForwardJetPhi_JetSubCalc = 0;
+    theForwardJetCSV_JetSubCalc = 0;
+
+    double jetEtaSum = 0;
+    double jetEtaPtWeightedSum = 0;
+    double jetEtaSumNotBJet = 0; 
+    double NJetsNotBJet = 0;
+
     AK4HT = 0;
     vector<pair<double,int>> jetptindpair;
     vector<double> jetPUIDsf;
@@ -1108,7 +1148,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     btagDeepJetWeight_lfstats1dn = 1.0;
     btagDeepJetWeight_lfstats2up = 1.0;
     btagDeepJetWeight_lfstats2dn = 1.0;
-    
+
     double MET_corr_px = corr_met_MultiLepCalc * cos( corr_met_phi_MultiLepCalc );
     double MET_corr_py = corr_met_MultiLepCalc * sin( corr_met_phi_MultiLepCalc );
 
@@ -1116,7 +1156,13 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     if( debug == 1 ) cout << "[DEBUG] Looping through jets" << endl;
     for( unsigned int ijet=0; ijet < theJetPt_JetSubCalc->size(); ijet++){
       // For MC reduced JEC shifts, propagate the uncertainty to each jet before other calculations
-      if( isMC && !( Syst == "nominal" || Syst == "JECup" || Syst == "JECdown" || Syst == "JERup" || Syst == "JERdown") ){
+      if ( abs(theJetEta_JetSubCalc->at(ijet)) > abs(theForwardJetEta_JetSubCalc) ){
+        theForwardJetEta_JetSubCalc = theJetEta_JetSubCalc->at(ijet);
+        theForwardJetPt_JetSubCalc = theJetPt_JetSubCalc->at(ijet);
+        theForwardJetPhi_JetSubCalc = theJetPhi_JetSubCalc->at(ijet);
+        theForwardJetCSV_JetSubCalc = theJetDeepFlavB_JetSubCalc->at(ijet);
+      }
+      if ( isMC && !( Syst == "nominal" || Syst == "JECup" || Syst == "JECdown" || Syst == "JERup" || Syst == "JERdown") ){
         jet_lv.SetPtEtaPhiE( theJetPt_JetSubCalc->at(ijet), theJetEta_JetSubCalc->at(ijet), theJetPhi_JetSubCalc->at(ijet), theJetEnergy_JetSubCalc->at(ijet) );
         jet_jec = jet_lv;
         jecUnc->setJetEta( theJetEta_JetSubCalc->at(ijet) );
@@ -1153,15 +1199,23 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         theJetEnergy_JetSubCalc->at(ijet) = jet_jec.Energy();
       }
       
-      
-      
       // ----------------------------------------------------------------------------
       // Basic cuts
       // ----------------------------------------------------------------------------
 
-      if( theJetPt_JetSubCalc->at(ijet) < jetPtCut || fabs(theJetEta_JetSubCalc->at(ijet)) > jetEtaCut ) continue;
       double ijetPt = theJetPt_JetSubCalc->at(ijet);
       double ijetEta = theJetEta_JetSubCalc->at(ijet);
+      
+      if( ijetPt < jetPtCut || fabs(ijetEta) > jetEtaCut ) continue; // jet pt and eta cut
+      if ( hardcodedConditions.GetJetVetoMap( theJetEta_JetSubCalc->at(ijet), theJetPhi_JetSubCalc->at(ijet), Year ) == true ){ // jet veto map
+        jetveto += 1;
+        continue;
+      } 
+      jettotal += 1;
+      
+      jetEtaSum+=fabs(ijetEta);
+      jetEtaPtWeightedSum+=ijetPt*fabs(ijetEta);
+
       double ijetPhi = theJetPhi_JetSubCalc->at(ijet);
       double ijetEng = theJetEnergy_JetSubCalc->at(ijet);
       bool ijetPUIDTight = theJetPileupJetTight_JetSubCalc->at(ijet);
@@ -1299,7 +1353,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         else if( bSyst == "FlavorPureQuark" ) djetWgt = reader_dj.eval_auto_bounds( csv_prefix + "jesFlavorQCD", csv_flav, jetaForBtag, jptForBtag, deepjet );
         else if( bSyst == "FlavorPureGluon" ) djetWgt = reader_dj.eval_auto_bounds( csv_prefix + "jesFlavorQCD", csv_flav, jetaForBtag, jptForBtag, deepjet );
         else if( bSyst == "FlavorPureCharm" ) djetWgt = reader_dj.eval_auto_bounds( csv_prefix + "jesFlavorQCD", csv_flav, jetaForBtag, jptForBtag, deepjet );
-        else if( bSyst == "FlavorPureBottom" ) djetWgt = reader_dj.eval_auto_bounds( csv_prefix + "jesRelativeBal", csv_flav, jetaForBtag, jptForBtag, deepjet );
+        else if( bSyst == "FlavorPureBottom" ) djetWgt = reader_dj.eval_auto_bounds( csv_prefix + "jesFlavorQCD", csv_flav, jetaForBtag, jptForBtag, deepjet );
+        else if( bSyst == "RelativeBal" ) djetWgt = reader_dj.eval_auto_bounds( csv_prefix + "jesRelativeBal", csv_flav, jetaForBtag, jptForBtag, deepjet );
         else if( bSyst == "RelativeSample_" + bYear ) djetWgt = reader_dj.eval_auto_bounds( csv_prefix + "jesRelativeSample_" + bYear, csv_flav, jetaForBtag, jptForBtag, deepjet );
         else{
           if( jentry == 0 && ijet == 0 ) cout << "[INFO] Defaulting to central deepJet weight for: " << bSyst << endl;
@@ -1428,12 +1483,16 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
 
       jetptindpair.push_back(std::make_pair(theJetPt_JetSubCalc->at(ijet),ijet));
       NJets_JetSubCalc+=1;
-      AK4HT += theJetPt_JetSubCalc->at(ijet);
       if( fabs(ijetEta) > 2.4 ) NJetsForward_JetSubCalc+=1;
+      AK4HT += theJetPt_JetSubCalc->at(ijet);
     }
     if( debug == 1 ) cout << "[DEBUG] Done looping through jets" << endl;
     
+    theJetEtaAverage_JetSubCalc = jetEtaSum / NJets_JetSubCalc;
+    theJetEtaPtWeighted_JetSubCalc = jetEtaPtWeightedSum / AK4HT;
+    
     // Correct MET for JEC
+    if( debug == 1 ) cout << "[DEBUG] Correcting MET" << endl;
     
     if( isMC && !( Syst == "nominal" || Syst == "JECup" || Syst == "JECdown" || Syst == "JERup" || Syst == "JERdown" ) ) {
       MET_corr_p4.SetPxPyPzE( MET_corr_px, MET_corr_py, 0, sqrt( MET_corr_px * MET_corr_px + MET_corr_py * MET_corr_py ) ); 
@@ -1451,10 +1510,6 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       pileupJetIDWeightUp_tag   = compute_SFWeight( jetPUIDsfUp, jetPUIDEff, jetPUIDTag_tag );
       pileupJetIDWeightDown_tag = compute_SFWeight( jetPUIDsfDn, jetPUIDEff, jetPUIDTag_tag );
     }
-
-    if (isMC) {
-      btagCSVRenormWeight = hardcodedConditions.GetCSVRenormSF(Year, isElectron, NJets_JetSubCalc, sampleType);  
-    }	
 
     // ----------------------------------------------------------------------------
     // nJets weight calculation
@@ -1495,7 +1550,11 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     DataHadPastTrigger = 0;
     MCHadPastTrigger = 0;
     EGammaGsfSF = 1.0;
+    EGammaGsfSF_up = 1.0;
+    EGammaGsfSF_down = 1.0;
     lepIdSF = 1.0;
+    lepIdSF_up = 1.0;
+    lepIdSF_down = 1.0;
     triggerSF = 1.0;
     triggerHadSF = 1.0;
     triggerXSF = 1.0;
@@ -1604,14 +1663,17 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
           }
         }
         
-        EGammaGsfSF = hardcodedConditions.GetEGammaGsfSF( leppt, lepeta, Year );
-        lepIdSF = hardcodedConditions.GetElectronIdSF( leppt, lepeta, Year );
+        EGammaGsfSF      = hardcodedConditions.GetEGammaGsfSF( leppt, lepeta, Year, "nominal" );
+        EGammaGsfSF_up   = hardcodedConditions.GetEGammaGsfSF( leppt, lepeta, Year, "up" );
+        EGammaGsfSF_down = hardcodedConditions.GetEGammaGsfSF( leppt, lepeta, Year, "down" );
+        lepIdSF      = hardcodedConditions.GetElectronIdSF( leppt, lepeta, Year, "nominal" );
+        lepIdSF_up   = hardcodedConditions.GetElectronIdSF( leppt, lepeta, Year, "up" );
+        lepIdSF_down = hardcodedConditions.GetElectronIdSF( leppt, lepeta, Year, "down" ); 
         isoSF = hardcodedConditions.GetElectronIsoSF( leppt, lepeta, Year );
-        if( Year == "2016APV" ){ // there are no centrally maintained 2016APV SF, so use the SF separately
+        if( Year == "2016APV" || Year == "2016" ){ // there are no centrally maintained 2016preVFP and 2016postVFP UL SF, so use the SF separately
           triggerSF = hardcodedConditions.GetElectronTriggerSF( leppt, lepeta, Year );
-          triggerXSF = hardcodedConditions.GetElectronTriggerXSF( leppt, lepeta, Year );
+          triggerXSF = hardcodedConditions.GetElectronTriggerXSF( AK4HT, leppt, lepeta, Year );
           triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
-
         }
         else if( MCLepPastTrigger == 1 && MCPastTriggerX == 1 ){ // defaults to using the single-object trigger if available
           triggerSF = hardcodedConditions.GetElectronTriggerSF( leppt, lepeta, Year );
@@ -1620,12 +1682,12 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         }
         else if( MCLepPastTrigger == 0 && MCPastTriggerX == 1 ){ 
           triggerSF = 1.0;
-          triggerXSF = hardcodedConditions.GetElectronTriggerXSF( leppt, lepeta, Year );
+          triggerXSF = hardcodedConditions.GetElectronTriggerXSF( AK4HT, leppt, lepeta, Year );
           triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
         }
         else{ 
           triggerSF = hardcodedConditions.GetElectronTriggerSF(leppt, lepeta, Year);
-          triggerXSF = hardcodedConditions.GetElectronTriggerXSF(leppt, lepeta, Year);
+          triggerXSF = hardcodedConditions.GetElectronTriggerXSF( AK4HT, leppt, lepeta, Year);
           triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
         }
         
@@ -1648,9 +1710,15 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
             if(vsSelMCTriggersMu_MultiLepCalc->at(itrig).find(mutriggersX.at(jtrig)) != std::string::npos && viSelMCTriggersMu_MultiLepCalc->at(itrig) > 0) MCPastTriggerX = 1;
           }
         }
-        lepIdSF = hardcodedConditions.GetMuonIdSF(leppt, lepeta, Year);
+        lepIdSF = hardcodedConditions.GetMuonIdSF(leppt, lepeta, Year, "nominal");
+        lepIdSF_up = hardcodedConditions.GetMuonIdSF( leppt, lepeta, Year, "up" );
+        lepIdSF_down = hardcodedConditions.GetMuonIdSF( leppt, lepeta, Year, "down" );
         isoSF = hardcodedConditions.GetMuonIsoSF(leppt, lepeta, Year);
         
+        if( Year == "2016APV" || Year == "2016" ){ // there are no centrally maintained 2016preVFP and 2016postVFP UL SF, so use the SF separately
+          triggerSF = hardcodedConditions.GetMuonTriggerSF( leppt, lepeta, Year );
+          triggerXSF = hardcodedConditions.GetMuonTriggerXSF( AK4HT, leppt, lepeta, Year );
+        }
         if( MCLepPastTrigger == 1 && MCPastTriggerX == 1 ){ // defaults to using the single-object trigger if available
           triggerSF = hardcodedConditions.GetMuonTriggerSF( leppt, lepeta, Year );
           triggerXSF = 1.0; 
@@ -1659,15 +1727,13 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         }
         else if( MCLepPastTrigger == 0 && MCPastTriggerX == 1 ){ 
           triggerSF = 1.0;
-          triggerXSF = hardcodedConditions.GetMuonTriggerXSF( leppt, lepeta, Year );
+          triggerXSF = hardcodedConditions.GetMuonTriggerXSF( AK4HT, leppt, lepeta, Year );
           triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
-
         }
         else{ 
           triggerSF = hardcodedConditions.GetMuonTriggerSF(leppt, lepeta, Year);
-          triggerXSF = hardcodedConditions.GetMuonTriggerXSF(leppt, lepeta, Year);
+          triggerXSF = hardcodedConditions.GetMuonTriggerXSF( AK4HT, leppt, lepeta, Year);
           triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
-
         }
         
         //triggerHadSF = hardcodedConditions.GetIsMHadronTriggerSF(NJets_JetSubCalc, AK4HT, Year);
@@ -1735,6 +1801,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       MCLepPastTrigger = 1;
       MCHadPastTrigger = 1;
     }
+    if( debug == 1 ) cout << "[DEBUG] Done with triggers" << endl;
   
 
     if(isMC && MCPastTriggerX) npass_trigger+=1;
@@ -1815,6 +1882,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     if(isElectron){
       leptonPt_MultiLepCalc = leppt;
       leptonEta_MultiLepCalc = lepeta;
+      leptonCharge_MultiLepCalc = elCharge_MultiLepCalc->at(0);
       leptonPhi_MultiLepCalc = elPhi_MultiLepCalc->at(0);
       leptonEnergy_MultiLepCalc = elEnergy_MultiLepCalc->at(0);
       leptonMiniIso_MultiLepCalc = elMiniIso_MultiLepCalc->at(0);
@@ -1822,8 +1890,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       leptonMVAValue_MultiLepCalc = -99.9; //elMVAValue_MultiLepCalc->at(0);
     }
     if(isMuon){
+      if( debug == 1 ) cout << "[DEBUG] Lepton is muon" << endl;
       leptonPt_MultiLepCalc = leppt;
       leptonEta_MultiLepCalc = lepeta;
+      leptonCharge_MultiLepCalc = muCharge_MultiLepCalc->at(0);
       leptonPhi_MultiLepCalc = muPhi_MultiLepCalc->at(0);
       leptonEnergy_MultiLepCalc = muEnergy_MultiLepCalc->at(0);
       leptonMiniIso_MultiLepCalc = muMiniIso_MultiLepCalc->at(0);
@@ -1865,6 +1935,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     AK4JetBTag_bSFdn_MultiLepCalc_PtOrdered.clear();
     AK4JetBTag_lSFup_MultiLepCalc_PtOrdered.clear();
     AK4JetBTag_lSFdn_MultiLepCalc_PtOrdered.clear();
+
+    if( debug == 1 ) cout << "[DEBUG] Apply pT ordering to AK4 vectors" << endl;
     for(unsigned int ijet=0; ijet < jetptindpair.size(); ijet++){
       
       theJetIndex_JetSubCalc_PtOrdered.push_back(jetptindpair[ijet].second);
@@ -1949,14 +2021,27 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   //       		NJetsCSV_MultiLepCalc += 1;
   //       		}
   //       	}
+    if( debug == 1 ){ cout << "[DEBUG] PtOrdered Begin" << endl; }
 
+    double maxJetPt_NotBJet = 0;
+
+    theJetEta0_JetSubCalc = theJetEta_JetSubCalc_PtOrdered.at(0);
+    theJetEta1_JetSubCalc = theJetEta_JetSubCalc_PtOrdered.at(1);
+    theJetEta2_JetSubCalc = theJetEta_JetSubCalc_PtOrdered.at(2);
+    //theJetEta3_JetSubCalc = theJetEta_JetSubCalc_PtOrdered.at(3);
+
+    theJetPhi0_JetSubCalc = theJetPhi_JetSubCalc_PtOrdered.at(0);
+    theJetPhi1_JetSubCalc = theJetPhi_JetSubCalc_PtOrdered.at(1);
+    theJetPhi2_JetSubCalc = theJetPhi_JetSubCalc_PtOrdered.at(2);
+    //theJetPhi3_JetSubCalc = theJetPhi_JetSubCalc_PtOrdered.at(3);
+    
     for(unsigned int ijet=0; ijet < theJetPt_JetSubCalc_PtOrdered.size(); ijet++){
       jet_lv.SetPtEtaPhiE(theJetPt_JetSubCalc_PtOrdered.at(ijet),theJetEta_JetSubCalc_PtOrdered.at(ijet),theJetPhi_JetSubCalc_PtOrdered.at(ijet),theJetEnergy_JetSubCalc_PtOrdered.at(ijet));
       if((lepton_lv + jet_lv).M() < minMleppJet) {
         minMleppJet = fabs((lepton_lv + jet_lv).M());
         deltaR_lepMinMlj = jet_lv.DeltaR(lepton_lv);
       }
-
+          
       deltaR_lepJets.push_back(lepton_lv.DeltaR(jet_lv));
 
       if(AK4JetDeepCSVb_MultiLepCalc_PtOrdered.at(ijet) + AK4JetDeepCSVbb_MultiLepCalc_PtOrdered.at(ijet) > btagWPdcsv){
@@ -2016,6 +2101,13 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       if(theJetDeepFlavB_JetSubCalc_PtOrdered.at(ijet) > btagWPdjet){
         NJetsCSV_JetSubCalc += 1;
       }
+      else{
+        jetEtaSumNotBJet += fabs(theJetEta_JetSubCalc_PtOrdered.at(ijet));
+        NJetsNotBJet += 1;
+        if( theJetPt_JetSubCalc_PtOrdered.at(ijet) > maxJetPt_NotBJet ){
+          theJetEta_JetNotBJetMaxPt_JetSubCalc = theJetEta_JetSubCalc_PtOrdered.at(ijet);
+        }
+      }
       if(theJetBTag_JetSubCalc_PtOrdered.at(ijet) == 1){
         NJetsCSVwithSF_JetSubCalc += 1;	  
       }
@@ -2051,20 +2143,30 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       minDR_jetJets.push_back(minDR_jetJet);
 
     }
+    
+    if( NJetsNotBJet > 0 ){
+      theJetEtaAverageNotBJet_JetSubCalc = jetEtaSumNotBJet / NJetsNotBJet;
+    } else {
+      theJetEtaAverageNotBJet_JetSubCalc = -1; // reports absolute value, so negative indicates non-existence
+    }
 
     // ----------------------------------------------------------------------------
     // Skip events that fail # of btag requirement
     // ----------------------------------------------------------------------------  
-    if(NJetsCSVwithSF_MultiLepCalc<nbjetsCut && 
-       NJetsCSVwithSF_MultiLepCalc_bSFup<nbjetsCut && 
-       NJetsCSVwithSF_MultiLepCalc_bSFdn<nbjetsCut && 
-       NJetsCSVwithSF_MultiLepCalc_lSFup<nbjetsCut && 
-       NJetsCSVwithSF_MultiLepCalc_lSFdn<nbjetsCut && 
-       NJetsCSVwithSF_JetSubCalc<nbjetsCut && 
-       NJetsCSVwithSF_JetSubCalc_bSFup<nbjetsCut && 
-       NJetsCSVwithSF_JetSubCalc_bSFdn<nbjetsCut && 
-       NJetsCSVwithSF_JetSubCalc_lSFup<nbjetsCut && 
-       NJetsCSVwithSF_JetSubCalc_lSFdn<nbjetsCut) continue;
+    int nbjetsCut_apply = nbjetsCut;
+    if( bSyst != "nominal" ){
+      nbjetsCut_apply = nbjetsCut_shift;
+    }
+    if(NJetsCSVwithSF_MultiLepCalc<nbjetsCut_apply && 
+       NJetsCSVwithSF_MultiLepCalc_bSFup<nbjetsCut_apply && 
+       NJetsCSVwithSF_MultiLepCalc_bSFdn<nbjetsCut_apply && 
+       NJetsCSVwithSF_MultiLepCalc_lSFup<nbjetsCut_apply && 
+       NJetsCSVwithSF_MultiLepCalc_lSFdn<nbjetsCut_apply && 
+       NJetsCSVwithSF_JetSubCalc<nbjetsCut_apply && 
+       NJetsCSVwithSF_JetSubCalc_bSFup<nbjetsCut_apply && 
+       NJetsCSVwithSF_JetSubCalc_bSFdn<nbjetsCut_apply && 
+       NJetsCSVwithSF_JetSubCalc_lSFup<nbjetsCut_apply && 
+       NJetsCSVwithSF_JetSubCalc_lSFdn<nbjetsCut_apply) continue;
 
     // ----------------------------------------------------------------------------
     // 13TeV Top pT reweighting -- TTbarMassCalc top vectors are the wrong tops....
@@ -2074,6 +2176,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     genAntiTopPt = -999;
     topPtWeight13TeV = 1.0;
         
+    if( debug == 1 ){ cout << "[DEBUG] Top pT Reweighting" << endl; }
+
     if(isTT){
       int top1index = -1;
       int top2index = -1;
@@ -2107,6 +2211,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     // W --> l nu with mass constraint
     // ----------------------------------------------------------------------------
 
+    if( debug == 1 ){ cout << "[DEBUG] W to l nu with mass constraint" << endl; }
     double metpx = corr_met_MultiLepCalc*cos(corr_met_phi_MultiLepCalc);
     double metpy = corr_met_MultiLepCalc*sin(corr_met_phi_MultiLepCalc);
     double metpt = corr_met_MultiLepCalc;
@@ -2229,6 +2334,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     theJetParticleNetWvsQCD_JetSubCalc_PtOrdered.clear();
     theJetParticleNetTvsQCD_JetSubCalc_PtOrdered.clear();
 
+    if( debug == 1 ){ cout << "[DEBUG] Pt ordering for AK8 jets" << endl; }
     for(unsigned int ijet=0; ijet < jetak8ptindpair.size(); ijet++){
       maxProb_JetSubCalc_PtOrdered.push_back(maxProb_JetSubCalc->at(jetak8ptindpair[ijet].second));
       theJetAK8DoubleB_JetSubCalc_PtOrdered.push_back(theJetAK8DoubleB_JetSubCalc->at(jetak8ptindpair[ijet].second));
@@ -2290,6 +2396,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       NJetsTtagged_shifts.push_back(0);
     }
 
+    if( debug == 1 ){ cout << "[DEBUG] AK8 jet-lepton associations" << endl; }
     for(unsigned int ijet=0; ijet < theJetAK8Pt_JetSubCalc_PtOrdered.size(); ijet++){
 
       // ----------------------------------------------------------------------------
@@ -2517,7 +2624,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         int tag_W_JMRdn = applySF(isWtagged_JMRdn,PNWSF,PNWeff);
 
         // Now increase the tag count in the right variable	  
-        NJetsWtagged += tag_W;
+        NJetsWtagged += tag_W; //check
         NJetsWtagged_shifts[0] += tag_W_PNWup;
         NJetsWtagged_shifts[1] += tag_W_PNWdn;
         NJetsWtagged_shifts[2] += tag_W_JMSup;
@@ -2554,6 +2661,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     // HOT TAGGER -- SCALE FACTORS TO BE ADDED!!!
     // !!!! THIS SHOULD BE UPDATED WHEN FWLJMET NTUPLES ARE AVAILABLE WITH UPDATED HOTTAGGERCALC; i.e., WITH getBestGenTopMatch !!!!!!!
     // ----------------------------------------------------------------------------
+    if( debug == 1 ){ cout << "[DEBUG] HOT Tagger Start" << endl; }
     NresolvedTops1pFakeNoSF = 0;
     NresolvedTops2pFakeNoSF = 0;
     NresolvedTops5pFakeNoSF = 0;
@@ -2765,6 +2873,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     renormWeights.clear();
     renormPSWeights.clear();
     pdfWeights.clear();
+    alphaSWeights.clear();
     pdfNewWeights.clear();
     pdfNewNominalWeight = 1.0;
 
@@ -2795,6 +2904,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
 
     //std::cout<<"yes 2"<<std::endl;
     //ME-PS
+    if( debug == 1 ){ cout << "[DEBUG] Adding theory weights" << endl; }
     if(isSig && !isSig && !isTTTT){
       pdfNewNominalWeight = NewPDFweights_MultiLepCalc->at(0);
       // SEEMS TO APPLY TO ALL B2G MG+PYTHIA SIGNALS. NNLO 4-FLAVOR PDF
@@ -2878,6 +2988,9 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         pdfWeights.push_back(1.0);
       }
     }
+    if(alphaSWeights.size() == 0){
+      alphaSWeights.push_back(1.0);
+    }
 
     // ----------------------------------------------------------------------------
     // DONE!! Write the tree
@@ -2890,6 +3003,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   std::cout<<"Nmuons          = "<<Nmuons<<" / "<<nentries<<std::endl;
   std::cout<<"NrelIsoFail     = "<<NrelIsoFail<<" / "<<nentries<<std::endl;
   std::cout<<"Npassed_MuEta   = "<<npass_MuEta<<" / "<<nentries<<std::endl;
+  std::cout<<"Jets vetoed     = "<<jetveto<<" / "<<jettotal<<std::endl;
   std::cout<<"Npassed_nAK8Jets= "<<npass_nAK8jets<<" / "<<nentries<<std::endl;
   std::cout<<"Npassed_Trigger = "<<npass_trigger<<" / "<<nentries<<std::endl;
   std::cout<<"Npassed_MET     = "<<npass_met<<" / "<<nentries<<std::endl;

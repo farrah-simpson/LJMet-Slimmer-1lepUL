@@ -134,8 +134,12 @@ public :
    Float_t         TrigEffWeightUncert;
    Float_t         isoSF;
    Float_t         lepIdSF;
+   Float_t         lepIdSF_up;
+   Float_t         lepIdSF_down;
    Float_t         MuTrkSF;
    Float_t         EGammaGsfSF;
+   Float_t         EGammaGsfSF_up;
+   Float_t         EGammaGsfSF_down;
    Float_t         triggerSF;
    Float_t         triggerHadSF;
    Float_t         triggerXSF;
@@ -169,13 +173,13 @@ public :
    Float_t         leptonPt_MultiLepCalc;
    Float_t         leptonEta_MultiLepCalc;
    Float_t         leptonPhi_MultiLepCalc;
+   Float_t         leptonCharge_MultiLepCalc;
    Float_t         leptonEnergy_MultiLepCalc;
    Float_t         leptonMVAValue_MultiLepCalc;
    Float_t         leptonMiniIso_MultiLepCalc;
    Float_t         leptonRelIso_MultiLepCalc;
    Float_t         leptonDxy_MultiLepCalc;
    Float_t         leptonDz_MultiLepCalc;
-   Int_t           leptonCharge_MultiLepCalc;
    Int_t           elTrigPresel_MultiLepCalc;
 
    Int_t           NJets_JetSubCalc;
@@ -195,6 +199,23 @@ public :
    Int_t           NJetsCSVwithSF_JetSubCalc_lSFdn;
    Int_t           NJetsCSVnotH_JetSubCalc;
    Int_t           NJetsCSVnotPH_JetSubCalc;
+
+   Float_t         theJetEtaAverage_JetSubCalc;
+   Float_t         theJetEtaPtWeighted_JetSubCalc;
+   Float_t         theJetEtaAverageNotBJet_JetSubCalc;
+   Float_t         theJetEta_JetNotBJetMaxPt_JetSubCalc;
+   Float_t         theJetEta0_JetSubCalc;
+   Float_t         theJetEta1_JetSubCalc;
+   Float_t         theJetEta2_JetSubCalc;
+   Float_t         theJetEta3_JetSubCalc;
+   Float_t         theJetPhi0_JetSubCalc;
+   Float_t         theJetPhi1_JetSubCalc;
+   Float_t         theJetPhi2_JetSubCalc;
+   Float_t         theJetPhi3_JetSubCalc;
+   Float_t         theForwardJetPt_JetSubCalc;
+   Float_t         theForwardJetEta_JetSubCalc;
+   Float_t         theForwardJetPhi_JetSubCalc;
+   Float_t         theForwardJetCSV_JetSubCalc;
 
    vector<int>     maxProb_JetSubCalc_PtOrdered;
    vector<int>     dnn_largest_BestCalc_PtOrdered;
