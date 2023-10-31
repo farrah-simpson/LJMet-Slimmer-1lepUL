@@ -499,7 +499,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("triggerSF",&triggerSF,"triggerSF/F");
   outputTree->Branch("triggerHadSF",&triggerHadSF,"triggerHadSF/F");
   outputTree->Branch("triggerXSF",&triggerXSF,"triggerXSF/F");
-  outputTree->Branch("triggerVlqXSF",&triggerVlqXSF,"triggerVlqXSF/F");
+//  outputTree->Branch("triggerVlqXSF",&triggerVlqXSF,"triggerVlqXSF/F");
   outputTree->Branch("isoSF",&isoSF,"isoSF/F");
   outputTree->Branch("btagCSVWeight",&btagCSVWeight,"btagCSVWeight/F");
   outputTree->Branch("btagCSVWeight_HFup",&btagCSVWeight_HFup,"btagCSVWeight_HFup/F");
@@ -1558,7 +1558,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     triggerSF = 1.0;
     triggerHadSF = 1.0;
     triggerXSF = 1.0;
-    triggerVlqXSF = 1.0;
+    //triggerVlqXSF = 1.0;
     isoSF = 1.0;
     std::vector<std::string> eltriggersX;
     std::vector<std::string> mutriggersX;
@@ -1673,22 +1673,22 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         if( Year == "2016APV" || Year == "2016" ){ // there are no centrally maintained 2016preVFP and 2016postVFP UL SF, so use the SF separately
           triggerSF = hardcodedConditions.GetElectronTriggerSF( leppt, lepeta, Year );
           triggerXSF = hardcodedConditions.GetElectronTriggerXSF( AK4HT, leppt, lepeta, Year );
-          triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
+          //triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
         }
         else if( MCLepPastTrigger == 1 && MCPastTriggerX == 1 ){ // defaults to using the single-object trigger if available
           triggerSF = hardcodedConditions.GetElectronTriggerSF( leppt, lepeta, Year );
           triggerXSF = 1.0; 
-          triggerVlqXSF = 1.0; 
+          //triggerVlqXSF = 1.0; 
         }
         else if( MCLepPastTrigger == 0 && MCPastTriggerX == 1 ){ 
           triggerSF = 1.0;
           triggerXSF = hardcodedConditions.GetElectronTriggerXSF( AK4HT, leppt, lepeta, Year );
-          triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
+          //triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
         }
         else{ 
           triggerSF = hardcodedConditions.GetElectronTriggerSF(leppt, lepeta, Year);
           triggerXSF = hardcodedConditions.GetElectronTriggerXSF( AK4HT, leppt, lepeta, Year);
-          triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
+          //triggerVlqXSF = hardcodedConditions.GetElectronTriggerVlqXSF( leppt, lepeta, Year );
         }
         
         //triggerHadSF = hardcodedConditions.GetIsEHadronTriggerSF(NJets_JetSubCalc, AK4HT, Year);
@@ -1722,18 +1722,18 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         if( MCLepPastTrigger == 1 && MCPastTriggerX == 1 ){ // defaults to using the single-object trigger if available
           triggerSF = hardcodedConditions.GetMuonTriggerSF( leppt, lepeta, Year );
           triggerXSF = 1.0; 
-          triggerVlqXSF = 1.0; 
+          //triggerVlqXSF = 1.0; 
 
         }
         else if( MCLepPastTrigger == 0 && MCPastTriggerX == 1 ){ 
           triggerSF = 1.0;
           triggerXSF = hardcodedConditions.GetMuonTriggerXSF( AK4HT, leppt, lepeta, Year );
-          triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
+          //triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
         }
         else{ 
           triggerSF = hardcodedConditions.GetMuonTriggerSF(leppt, lepeta, Year);
           triggerXSF = hardcodedConditions.GetMuonTriggerXSF( AK4HT, leppt, lepeta, Year);
-          triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
+          //triggerVlqXSF = hardcodedConditions.GetMuonTriggerVlqXSF(leppt, lepeta, Year); 
         }
         
         //triggerHadSF = hardcodedConditions.GetIsMHadronTriggerSF(NJets_JetSubCalc, AK4HT, Year);
