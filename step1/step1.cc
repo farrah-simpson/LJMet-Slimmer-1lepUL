@@ -799,8 +799,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   // ----------------------------------------------------------------------------
 
   // basic cuts
-   float metCut=80;
-   float htCut=500;
+   float metCut=20;
+   float htCut=350;//500
    int   nAK8jetsCut=0;
    float lepPtCut=20.0; //60
    float elEtaCut=2.5;

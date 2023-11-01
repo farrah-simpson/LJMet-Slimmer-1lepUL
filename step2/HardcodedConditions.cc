@@ -30,10 +30,10 @@ HardcodedConditions::HardcodedConditions( std::string year ) {
   std::string SYSs[19] = { "", "_HFup", "_HFdn", "_LFup", "_LFdn", "_jesup", "_jesdn", "_hfstats1up", "_hfstats1dn", "_hfstats2up", "_hfstats2dn", "_cferr1up", "_cferr1dn", "_cferr2up", "_cferr2dn", "_lfstats1up", "_lfstats1dn", "_lfstats2up", "_lfstats2dn" };  
   for( size_t i = 0; i < 19; i++ ){
     hscale_TTTX[SYSs[i]]         = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTTX"+SYSs[i]).c_str())->Clone();
-    hscale_TTNOBB[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTNOBB"+SYSs[i]).c_str())->Clone();
-    hscale_TTBB[SYSs[i]]         = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTBB"+SYSs[i]).c_str())->Clone();
-    hscale_TTNOBBHT500[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTNOBBHT500"+SYSs[i]).c_str())->Clone();
-    hscale_TTBBHT500[SYSs[i]]    = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTBBHT500"+SYSs[i]).c_str())->Clone();
+    //hscale_TTNOBB[SYSs[i]]       = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTNOBB"+SYSs[i]).c_str())->Clone();
+    //hscale_TTBB[SYSs[i]]         = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTBB"+SYSs[i]).c_str())->Clone();
+    //hscale_TTNOBBHT500[SYSs[i]]  = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTNOBBHT500"+SYSs[i]).c_str())->Clone();
+    //hscale_TTBBHT500[SYSs[i]]    = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTBBHT500"+SYSs[i]).c_str())->Clone();
     hscale_ST[SYSs[i]]           = (TH2F*)tfile_HTNJ_SF->Get(("hscale_ST"+SYSs[i]).c_str())->Clone();
     hscale_QCD[SYSs[i]]          = (TH2F*)tfile_HTNJ_SF->Get(("hscale_QCD"+SYSs[i]).c_str())->Clone();
     hscale_TTH[SYSs[i]]          = (TH2F*)tfile_HTNJ_SF->Get(("hscale_TTH"+SYSs[i]).c_str())->Clone();

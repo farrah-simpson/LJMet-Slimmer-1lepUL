@@ -42,9 +42,9 @@ public:
     void GetBtaggingEff(double pt, double *eff, std::string tagger="CSVM", int jetHFlav = 5, std::string year = "2017");
     void GetHOTtaggingSF(double pt, int njet, double *hotsf, double *hotstatunc, double *hotcspurunc, double *hotclosureunc, std::string year = "2017", bool isGenMatched=true, std::string workingpoint = "1pfake");
     void GetHOTtaggingEff(double pt, double *eff, std::string year = "2017", std::string sample = "ttbar", bool isGenMatched=true, std::string workingpoint = "1pfake", int massIndex=-1);
-    void GetTtaggingSF(double pt, double *tau32sf, double *tau32sfup, double *tau32sfdn, std::string year = "2017");
+    void GetTtaggingSF(double pt, double *PNsf, double *PNsfup, double *PNsfdn, std::string year = "2017");
     void GetTtaggingEff(double pt, double *eff, std::string year = "2017", std::string sample = "ttbar", int massIndex=-1);
-    void GetWtaggingSF(double pt, double *tau21sf, double *tau21sfup, double *tau21sfdn, double *tau21ptsfup, double *tau21ptsfdn, std::string year = "2017");
+    void GetWtaggingSF(double pt, double *PNsf, double *PNsfup, double *PNsfdn, std::string year = "2017");//, double *PNptsfup, double *PNptsfdn, std::string year = "2017");
     void GetWtaggingEff(double pt, double *eff, std::string year = "2017", std::string sample = "ttbar", int massIndex=-1);
 
 private:
@@ -101,10 +101,10 @@ private:
     double GetElectronTriggerXSF2017(double ht, double pt, double eta);
     double GetElectronTriggerXSF2018(double ht, double pt, double eta);
 
-    //double GetElectronTriggerVlqXSF2016APV(double pt, double eta);
-    //double GetElectronTriggerVlqXSF2016(double pt, double eta);
-    //double GetElectronTriggerVlqXSF2017(double pt, double eta);
-    //double GetElectronTriggerVlqXSF2018(double pt, double eta);
+    double GetElectronTriggerVlqXSF2016APV(double pt, double eta);
+    double GetElectronTriggerVlqXSF2016(double pt, double eta);
+    double GetElectronTriggerVlqXSF2017(double pt, double eta);
+    double GetElectronTriggerVlqXSF2018(double pt, double eta);
 
     double GetMuonIdSF2016APV(double pt, double eta, std::string shift);
     double GetMuonIdSF2016(double pt, double eta, std::string shift);
@@ -131,10 +131,10 @@ private:
     double GetMuonTriggerXSF2017(double ht, double pt, double eta);
     double GetMuonTriggerXSF2018(double ht, double pt, double eta);
 
-    //double GetMuonTriggerVlqXSF2016APV(double pt, double eta);
-    //double GetMuonTriggerVlqXSF2016(double pt, double eta);
-    //double GetMuonTriggerVlqXSF2017(double pt, double eta);
-    //double GetMuonTriggerVlqXSF2018(double pt, double eta);
+    double GetMuonTriggerVlqXSF2016APV( double pt, double eta);
+    double GetMuonTriggerVlqXSF2016( double pt, double eta);
+    double GetMuonTriggerVlqXSF2017( double pt, double eta);
+    double GetMuonTriggerVlqXSF2018( double pt, double eta);
 
     void GetBtaggingSF2016APV(double pt, double eta, double *btagsf, double *btagsfunc, std::string tagger="CSVM");
     void GetCtaggingSF2016APV(double pt, double eta, double *btagsf, double *btagsfunc, std::string tagger="CSVM");
@@ -179,19 +179,19 @@ private:
     void GetHOTmistagEff2017(double pt, double *eff, std::string sample = "ttbar", std::string workingpoint = "1pfake", int massIndex=-1);
     void GetHOTmistagEff2018(double pt, double *eff, std::string sample = "ttbar", std::string workingpoint = "1pfake", int massIndex=-1);
 
-    void GetTtaggingSF2016APV(double pt, double *tau32sf, double *tau32sfup, double *tau32sfdn);
-    void GetTtaggingSF2016(double pt, double *tau32sf, double *tau32sfup, double *tau32sfdn);
-    void GetTtaggingSF2017(double pt, double *tau32sf, double *tau32sfup, double *tau32sfdn);
-    void GetTtaggingSF2018(double pt, double *tau32sf, double *tau32sfup, double *tau32sfdn);
+    void GetTtaggingSF2016APV(double pt, double *PNsf, double *PNsfup, double *PNsfdn);
+    void GetTtaggingSF2016(double pt, double *PNsf, double *PNsfup, double *PNsfdn);
+    void GetTtaggingSF2017(double pt, double *PNsf, double *PNsfup, double *PNsfdn);
+    void GetTtaggingSF2018(double pt, double *PNsf, double *PNsfup, double *PNsfdn);
     void GetTtaggingEff2016APV(double pt, double *eff, std::string sample = "ttbar", int massIndex=-1);
     void GetTtaggingEff2016(double pt, double *eff, std::string sample = "ttbar", int massIndex=-1);
     void GetTtaggingEff2017(double pt, double *eff, std::string sample = "ttbar", int massIndex=-1);
     void GetTtaggingEff2018(double pt, double *eff, std::string sample = "ttbar", int massIndex=-1);
 
-    void GetWtaggingSF2016APV(double pt, double *tau21sf, double *tau21sfup, double *tau21sfdn, double *tau21ptsfup, double *tau21ptsfdn);
-    void GetWtaggingSF2016(double pt, double *tau21sf, double *tau21sfup, double *tau21sfdn, double *tau21ptsfup, double *tau21ptsfdn);
-    void GetWtaggingSF2017(double pt, double *tau21sf, double *tau21sfup, double *tau21sfdn, double *tau21ptsfup, double *tau21ptsfdn);
-    void GetWtaggingSF2018(double pt, double *tau21sf, double *tau21sfup, double *tau21sfdn, double *tau21ptsfup, double *tau21ptsfdn);
+    void GetWtaggingSF2016APV(double pt, double *PNsf, double *PNsfup, double *PNsfdn);//, double *PNptsfup, double *PNptsfdn);
+    void GetWtaggingSF2016(double pt, double *PNsf, double *PNsfup, double *PNsfdn);//, double *PNptsfup, double *PNptsfdn);
+    void GetWtaggingSF2017(double pt, double *PNsf, double *PNsfup, double *PNsfdn);//, double *PNptsfup, double *PNptsfdn);
+    void GetWtaggingSF2018(double pt, double *PNsf, double *PNsfup, double *PNsfdn);//, double *PNptsfup, double *PNptsfdn);
     void GetWtaggingEff2016APV(double pt, double *eff, std::string sample = "ttbar", int massIndex=-1);
     void GetWtaggingEff2016(double pt, double *eff, std::string sample = "ttbar", int massIndex=-1);
     void GetWtaggingEff2017(double pt, double *eff, std::string sample = "ttbar", int massIndex=-1);
