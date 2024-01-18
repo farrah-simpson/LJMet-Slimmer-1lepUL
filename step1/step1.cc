@@ -799,16 +799,16 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   // ----------------------------------------------------------------------------
 
   // basic cuts
-   float metCut=20;
+   float metCut=50;
    float htCut=350;//500
    int   nAK8jetsCut=0;
-   float lepPtCut=20.0; //60
+   float lepPtCut=10.0; //60
    float elEtaCut=2.5;
    float muEtaCut=2.4;
    int   njetsCut=3;
    int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
    int   nbjetsCut_shift=1; // syst shift samples aren't used to calculate weights, so can exclude these events for pre-selection 
-   float jetPtCut=30;
+   float jetPtCut=25;
    float jetEtaCut=2.4;
    float ak8EtaCut=2.4;
    float ak8PtCut=200;
@@ -2642,7 +2642,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         theJetAK8Tmatch_JetSubCalc_PtOrdered.push_back(0);
 
         bool isWtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isTtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+        bool isTtagged = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
 
         NJetsWtagged += isWtagged;
         NJetsTtagged += isTtagged;

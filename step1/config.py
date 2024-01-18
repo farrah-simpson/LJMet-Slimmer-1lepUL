@@ -45,10 +45,10 @@ deepJet_SF = {
 }
 
 JEC_files = {
-  "16APV": "btag_sf/RegroupedV2_Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt",
-  "16": "btag_sf/RegroupedV2_Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt",
-  "17": "btag_sf/RegroupedV2_Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
-  "18": "btag_sf/RegroupedV2_Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt"
+  "16APV": "btag_sf/Summer19UL16APV_V7_MC_UncertaintySources_AK4PFchs.txt",
+  "16": "btag_sf/Summer19UL16_V7_MC_UncertaintySources_AK4PFchs.txt",
+  "17": "btag_sf/Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
+  "18": "btag_sf/Summer19UL18_V5_MC_UncertaintySources_AK4PFchs.txt"
 }
 
 JEC_files_reduced = {
