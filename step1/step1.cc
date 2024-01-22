@@ -2538,35 +2538,17 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         }
       
         // Set the initial tagged/untagged state
-        bool isTtagged = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isTtagged_JMSup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isTtagged_JMSdn = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isTtagged_JMRup = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-	    bool isTtagged_JMRdn = ( PN_TvsQCD < PN_TvsQCDWP ) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-
-//        bool isTtagged = (massSD > 105) && (massSD < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-//        bool isTtagged_JMSup = (massSD_JMSup > 105) && (massSD_JMSup < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-//        bool isTtagged_JMSdn = (massSD_JMSdn > 105) && (massSD_JMSdn < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-//        bool isTtagged_JMRup = (massSD_JMRup > 105) && (massSD_JMRup < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-//        bool isTtagged_JMRdn = (massSD_JMRdn > 105) && (massSD_JMRdn < 210) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+        bool isTtagged = (PN_TvsQCD > PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
 
         // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
         int tag_top = applySF(isTtagged,PNTSF,PNteff);
-        int tag_top_PFup = applySF(isTtagged,PNTSFup,PNteff);
-        int tag_top_PFdn = applySF(isTtagged,PNTSFdn,PNteff);
-        int tag_top_JMSup = applySF(isTtagged_JMSup,PNTSF,PNteff);
-        int tag_top_JMSdn = applySF(isTtagged_JMSdn,PNTSF,PNteff);
-        int tag_top_JMRup = applySF(isTtagged_JMRup,PNTSF,PNteff);
-        int tag_top_JMRdn = applySF(isTtagged_JMRdn,PNTSF,PNteff);
-   
+        int tag_top_PFup = applySF(isTtagged,PNTSF+PNTSFup,PNteff);
+        int tag_top_PFdn = applySF(isTtagged,PNTSF-PNTSFdn,PNteff);
+
         // Now increase the tag count in the right variable	  
         NJetsTtagged += tag_top;
         NJetsTtagged_shifts[0] += tag_top_PFup;
         NJetsTtagged_shifts[1] += tag_top_PFdn;
-        NJetsTtagged_shifts[2] += tag_top_JMSup;
-        NJetsTtagged_shifts[3] += tag_top_JMSdn;
-        NJetsTtagged_shifts[4] += tag_top_JMRup;
-        NJetsTtagged_shifts[5] += tag_top_JMRdn;
       
         if(tag_top && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) > TJetLeadPt){ TJetLeadPt = theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet); }
 
@@ -2601,36 +2583,18 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         }
       
         // Set the initial tagged/untagged state
-        bool isWtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMSup = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200); //CHECK!!
-        bool isWtagged_JMSdn = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200); //CHECK!! and for below and top tagging
-        bool isWtagged_JMRup = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isWtagged_JMRdn = (PN_WvsQCD < PN_WvsQCDWP)&& (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isWtagged = (PN_WvsQCD > PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
         if(isWtagged) { theJetAK8Indx_Wtagged.push_back(ijet); }
    
-//        bool isWtagged = (massSD > 65) && (massSD < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-//        bool isWtagged_JMSup = (massSD_JMSup > 65) && (massSD_JMSup < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-//        bool isWtagged_JMSdn = (massSD_JMSdn > 65) && (massSD_JMSdn < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-//        bool isWtagged_JMRup = (massSD_JMRup > 65) && (massSD_JMRup < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-//        bool isWtagged_JMRdn = (massSD_JMRdn > 65) && (massSD_JMRdn < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-
         // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
         int tag_W = applySF(isWtagged,PNWSF,PNWeff);
-        int tag_W_PNWup = applySF(isWtagged,PNWSFup,PNWeff);
-        int tag_W_PNWdn = applySF(isWtagged,PNWSFdn,PNWeff);
-        int tag_W_JMSup = applySF(isWtagged_JMSup,PNWSF,PNWeff);
-        int tag_W_JMSdn = applySF(isWtagged_JMSdn,PNWSF,PNWeff);
-        int tag_W_JMRup = applySF(isWtagged_JMRup,PNWSF,PNWeff);
-        int tag_W_JMRdn = applySF(isWtagged_JMRdn,PNWSF,PNWeff);
+        int tag_W_PNWup = applySF(isWtagged,PNWSF+PNWSFup,PNWeff);
+        int tag_W_PNWdn = applySF(isWtagged,PNWSF-PNWSFdn,PNWeff);
 
         // Now increase the tag count in the right variable	  
         NJetsWtagged += tag_W; //check
         NJetsWtagged_shifts[0] += tag_W_PNWup;
         NJetsWtagged_shifts[1] += tag_W_PNWdn;
-        NJetsWtagged_shifts[2] += tag_W_JMSup;
-        NJetsWtagged_shifts[3] += tag_W_JMSdn;
-        NJetsWtagged_shifts[4] += tag_W_JMRup;
-        NJetsWtagged_shifts[5] += tag_W_JMRdn;
 
         if(tag_W && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) > WJetLeadPt){ WJetLeadPt = theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet); }
       } //end of isMC
@@ -2641,8 +2605,8 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         theJetAK8Wmatch_JetSubCalc_PtOrdered.push_back(0);
         theJetAK8Tmatch_JetSubCalc_PtOrdered.push_back(0);
 
-        bool isWtagged = (PN_WvsQCD < PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
-        bool isTtagged = (PN_TvsQCD < PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
+        bool isWtagged = (PN_WvsQCD > PN_WvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
+        bool isTtagged = (PN_TvsQCD > PN_TvsQCDWP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 300);
 
         NJetsWtagged += isWtagged;
         NJetsTtagged += isTtagged;
