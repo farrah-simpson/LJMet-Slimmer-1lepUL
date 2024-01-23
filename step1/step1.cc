@@ -2497,7 +2497,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         if(isWmatched || isZmatched || isHmatched || isTmatched) theJetAK8MatchedPt_JetSubCalc_PtOrdered.push_back(matchedPt);
         else theJetAK8MatchedPt_JetSubCalc_PtOrdered.push_back(-99.0);
 
-        if (not (isWmatched && matchedPt >= 200) && not (isZmatched && matchedPt > 200) && not (isTmatched && matchedPt >= 200) && not (isHmatched && matchedPt > 300)) {
+        if (not (isWmatched && matchedPt > 200) && not (isZmatched && matchedPt > 200) && not (isTmatched && matchedPt > 300) && not (isHmatched && matchedPt > 300)) {
           int firstsub = theJetAK8SDSubjetIndex_JetSubCalc_PtOrdered.at(ijet);
           int nsubs = theJetAK8SDSubjetSize_JetSubCalc_PtOrdered.at(ijet);
           for(int isub = firstsub; isub < firstsub + nsubs; isub++){
@@ -2507,10 +2507,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         }
 
         if(isJmatched) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(0);
-        if(isTmatched && matchedPt >= 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(1);
+        if(isTmatched && matchedPt > 300) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(1);
         if(isHmatched && matchedPt > 300) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(2);
         if(isZmatched && matchedPt > 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(3);
-        if(isWmatched && matchedPt >= 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(4);
+        if(isWmatched && matchedPt > 200) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(4);
         if(isBmatched) theJetAK8Truth_JetSubCalc_PtOrdered.push_back(5);
 
         // ------------------------------------------------------------------------------------------------------------------
@@ -2567,7 +2567,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         double PN_WvsQCDeff = 1.0;
 
 //W+jets?
-        if(isWmatched && matchedPt >= 200 && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200){	    
+        if(isWmatched && matchedPt >= 175 && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200){	    
           hardcodedConditions.GetWtaggingSF(theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet), &PNWSF, &PNWSFup, &PNWSFdn, Year);
           // Use matched W to find the efficiency -- EWK/QCD will almost never pass here (use ttbar eff when they do)
           if(isXX) {hardcodedConditions.GetWtaggingEff(matchedPt, &PNWeff, Year, "x53x53",SigMass);}

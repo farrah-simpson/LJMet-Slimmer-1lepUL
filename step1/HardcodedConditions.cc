@@ -1430,48 +1430,49 @@ void HardcodedConditions::GetTtaggingSF(double pt, double *PNsf, double *PNsfup,
 //Top,2016-RunBCDEF,Nominal,1.0,480,600,1.2321784406468166,0.16845345175872173,0.17834081774322008
 //
 //Top,2016-RunBCDEF,Nominal,1.0,600,1200,1.3823424969039724,0.3203322566182154,0.35739488023541155
-//
+
+//BCDEF
 void HardcodedConditions::GetTtaggingSF2016APV(double pt, double *PNsf, double *PNsfup, double *PNsfdn) {
   if ( pt >= 300.0 and pt <= 400.0 ) {
     *PNsf   = 1.2529632568286877;
-    *PNsfup = 1.2529632568286877+0.14893548637024145;
-    *PNsfdn = 1.2529632568286877-0.1401589562980461; }
+    *PNsfup = 0.14893548637024145;
+    *PNsfdn = 0.1401589562980461; }
   else if ( pt > 400.0 and pt <= 480.0 ) {
     *PNsf   = 1.140886941405853;
-    *PNsfup = 1.140886941405853+ 0.1453378248525864;
-    *PNsfdn = 1.140886941405853-0.11013160312991532; }
+    *PNsfup = 0.1453378248525864;
+    *PNsfdn = 0.11013160312991532; }
   else if ( pt > 480.0 and pt <= 600.0 ) {
     *PNsf   = 1.2321784406468166;
-    *PNsfup = 1.2321784406468166+0.17834081774322008;
-    *PNsfdn = 1.2321784406468166-0.16845345175872173; }
+    *PNsfup = 0.17834081774322008;
+    *PNsfdn = 0.16845345175872173; }
   else if ( pt > 600.0 and pt <= 1200.0 ) {
     *PNsf   = 1.3823424969039724;
-    *PNsfup = 1.3823424969039724+0.35739488023541155;
-    *PNsfdn = 1.3823424969039724-0.3203322566182154; }
+    *PNsfup = 0.35739488023541155;
+    *PNsfdn = 0.3203322566182154; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
     *PNsfdn = 1.; }
 }
-
+//FGH
 // Needs to be updated
 void HardcodedConditions::GetTtaggingSF2016(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
   if ( pt >= 300.0 and pt <= 400.0 ) {
     *PNsf   =1.0286204672478074;
-    *PNsfup =1.0286204672478074+0.0837428626798436;
-    *PNsfdn =1.0286204672478074-0.07738336621550035; }
+    *PNsfup =0.0837428626798436;
+    *PNsfdn =0.07738336621550035; }
   else if ( pt > 400.0 and pt <= 480.0 ) {
     *PNsf   = 0.9861968638399904;
-    *PNsfup = 0.9861968638399904+0.05284760599583793;
-    *PNsfdn = 0.9861968638399904-0.046; }
+    *PNsfup = 0.05284760599583793;
+    *PNsfdn = 0.046; }
   else if ( pt > 480.0 and pt <= 600.0 ) {
     *PNsf   = 1.1295417328901183;
-    *PNsfup = 1.1295417328901183+0.17885647825191325;
-    *PNsfdn = 1.1295417328901183-0.14011597977479784; }
+    *PNsfup = 0.17885647825191325;
+    *PNsfdn = 0.14011597977479784; }
   else if ( pt > 600.0 and pt <= 1200.0 ) {
     *PNsf   = 1.3035872134528272;
-    *PNsfup = 1.3035872134528272+0.31002043724845657;
-    *PNsfdn = 1.3035872134528272-0.2775637935767241; }
+    *PNsfup = 0.31002043724845657;
+    *PNsfdn = 0.2775637935767241; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
@@ -1482,20 +1483,20 @@ void HardcodedConditions::GetTtaggingSF2017(double pt, double *PNsf, double *PNs
 // Will be replaced by RunIISummer20UL version
   if ( pt >= 300.0 and pt <= 400.0 ) {
     *PNsf   = 1.2665423171877026;
-    *PNsfdn = 1.2665423171877026-0.12594170644336278;
-    *PNsfup = 1.2665423171877026+0.13075885577178425; }
+    *PNsfdn = 0.12594170644336278;
+    *PNsfup = 0.13075885577178425; }
   else if ( pt > 400.0 and pt <= 480.0 ) {
     *PNsf   = 1.01651719047938;
-    *PNsfdn = 1.01651719047938-0.04200062224205936;
-    *PNsfup = 1.01651719047938+0.03718799071755147; }
+    *PNsfdn = 0.04200062224205936;
+    *PNsfup = 0.03718799071755147; }
   else if ( pt > 480.0 and pt <= 600.0 ) {
     *PNsf   = 1.0563219429599855;
-    *PNsfdn = 1.0563219429599855-0.04406769273143074;
-    *PNsfup = 1.0563219429599855+0.12450427752619087; }
+    *PNsfdn = 0.04406769273143074;
+    *PNsfup = 0.12450427752619087; }
   else if ( pt > 600.0 and pt <= 1200.0 ) {
     *PNsf   = 1.004343034237564;
-    *PNsfdn = 1.004343034237564-0.05644574156991433;
-    *PNsfup = 1.004343034237564+0.06164302682382439; }
+    *PNsfdn = 0.05644574156991433;
+    *PNsfup = 0.06164302682382439; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
@@ -1506,20 +1507,20 @@ void HardcodedConditions::GetTtaggingSF2018(double pt,double *PNsf, double *PNsf
 // will be replaced by RunIISummer20UL version
   if ( pt >= 300.0 and pt <= 400.0 ) {
     *PNsf   = 1.1163204630587051;
-    *PNsfdn = 1.1163204630587051-0.08589322774156138;
-    *PNsfup = 1.1163204630587051+0.1145103421879804; }
+    *PNsfdn = 0.08589322774156138;
+    *PNsfup = 0.1145103421879804; }
   else if ( pt > 400.0 and pt <= 480.0 ) {
     *PNsf   = 0.9878718467695988;
-    *PNsfdn = 0.9878718467695988-0.03394913833483326;
-    *PNsfup = 0.9878718467695988+0.03536992757274554; }
+    *PNsfdn = 0.03394913833483326;
+    *PNsfup = 0.03536992757274554; }
   else if ( pt > 480.0 and pt <= 600.0 ) {
     *PNsf   = 0.988999891725833;
-    *PNsfdn = 0.988999891725833-0.03135142808228031;
-    *PNsfup = 0.988999891725833+0.03254552277081374; }
+    *PNsfdn = 0.03135142808228031;
+    *PNsfup = 0.03254552277081374; }
   else if ( pt > 600.0 and pt <= 1200.0 ) {
     *PNsf   = 0.9805739808831712;
-    *PNsfdn = 0.9805739808831712-0.05931408212949585;
-    *PNsfup = 0.9805739808831712+0.051187894522590094; }
+    *PNsfdn = 0.05931408212949585;
+    *PNsfup = 0.051187894522590094; }
   else {
     *PNsf   = 1.;
     *PNsfup = 1.;
@@ -1776,7 +1777,6 @@ void HardcodedConditions::GetWtaggingSF(double pt, double *PNsf, double *PNsfup,
   else if (year=="2018") GetWtaggingSF2018(pt, PNsf, PNsfup, PNsfdn);
 }//end GetWtaggingSF
 
-// haven't been updated yet
 void HardcodedConditions::GetWtaggingSF2016APV(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
   if ( pt >= 200.0 and pt <= 300.0 ) {
     *PNsf   = 1.0112160124733622;
@@ -1795,7 +1795,7 @@ void HardcodedConditions::GetWtaggingSF2016APV(double pt, double *PNsf, double *
     *PNsfup = 1.;
     *PNsfdn = 1.; }
 }
-
+//FGH
 void HardcodedConditions::GetWtaggingSF2016(double pt, double *PNsf, double *PNsfup, double *PNsfdn){
   if ( pt >= 200.0 and pt <= 300.0 ) {
     *PNsf   = 1.1277146862875185;
