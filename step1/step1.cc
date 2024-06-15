@@ -799,16 +799,16 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   // ----------------------------------------------------------------------------
 
   // basic cuts
-   float metCut=50;
+   float metCut=20;
    float htCut=350;//500
    int   nAK8jetsCut=0;
-   float lepPtCut=10.0; //60
+   float lepPtCut=20.0; //60
    float elEtaCut=2.5;
    float muEtaCut=2.4;
    int   njetsCut=3;
    int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
    int   nbjetsCut_shift=1; // syst shift samples aren't used to calculate weights, so can exclude these events for pre-selection 
-   float jetPtCut=25;
+   float jetPtCut=25; //30
    float jetEtaCut=2.4;
    float ak8EtaCut=2.4;
    float ak8PtCut=200;
@@ -1242,7 +1242,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
           }
           
           if( isPU == false ){
-            if( ijetPUIDTight == false ){ 
+            if( ijetPUIDTight == true ){ 
               jetPUIDTag.push_back( 0 ); // only apply SF to hard jets that aren't PU tagged
               jetPUIDTag_tag.push_back( 1 ); // in case it's intended to consider real tagged jets as (1-Eff*SF) and not Eff*SF
               jetPUIDsf.push_back( jetPUIDsf_ );
@@ -1255,10 +1255,17 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       }
 
       // exclude jets tagged as PU
-      if( ijetPUIDTight == true && ijetPt < 50. ){
+      if( ijetPUIDTight == false && ijetPt < 50. ){
         NJetsPU_JetSubCalc+=1;
         continue;
       }
+
+//HEM issue deltaR_lepJets cut is actually not necessary given that > 0.4 for AK4 and > 0.8 for AK8; jet pT cut above s > 30 but just for good measure I include the jet cut
+//    if !(isMC) and Year == "2018" and run_CommonCalc>=319077 and ( leptonEta_MultiLepCalc > -1.3 or ( leptonPhi_MultiLepCalc < -1.57 or leptonPhi_MultiLepCalc > -0.87 )){
+//      if (ijetPt >15) and (.chargedEmEnergyFraction()+.neutralEmEnergyFraction() < 0.9) and (isMuon and deltaR_lepJets[i]>0.2) continue
+//           }
+//if isMC and Year == "2018" and jentry%0.65 == 0 {
+
 
       // ----------------------------------------------------------------------------
       // B TAGGING fix
@@ -1565,18 +1572,30 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     if( Year == "2016APV" ){ 
       eltriggersX = { "Ele15_IsoVVVL_PFHT400", "Ele32_eta2p1_WPTight_Gsf" };
       mutriggersX = { "Mu15_IsoVVVL_PFHT400", "Mu50", "IsoMu24", "IsoTkMu24" };
+      //eltriggersX = { "Ele32_eta2p1_WPTight_Gsf" };
+      //mutriggersX = { "Mu50", "TkMu50"};
+
     }
     else if( Year == "2016" ){ 
       eltriggersX = { "Ele15_IsoVVVL_PFHT400", "Ele32_eta2p1_WPTight_Gsf" };
       mutriggersX = { "Mu15_IsoVVVL_PFHT400", "Mu50", "IsoMu24", "IsoTkMu24" };
+      //eltriggersX = { "Ele27_WPTight_Gsf","Ele32_eta2p1_WPTight_Gsf" };
+      //mutriggersX = { "TkMu50","Mu50"};
+
     }
     else if( Year == "2017" ){
       eltriggersX = { "Ele15_IsoVVVL_PFHT450", "Ele35_WPTight_Gsf" };
       mutriggersX = { "Mu15_IsoVVVL_PFHT450", "Mu50", "IsoMu27" };
+      //eltriggersX = { "Ele35_WPTight_Gsf" };
+      //mutriggersX = { "Mu50", "OldMu100", "TkMu100" };
+
     }
     else if( Year == "2018" ){
       eltriggersX = { "Ele15_IsoVVVL_PFHT450", "Ele35_WPTight_Gsf"};
       mutriggersX = { "Mu15_IsoVVVL_PFHT450", "Mu50", "IsoMu24" };
+      //eltriggersX = { "Ele35_WPTight_Gsf"};
+      //mutriggersX = { "OldMu100", "TkMu100", "Mu50"}; //both?? or just 24 or 50
+
     }
     std::string eltrigger;
     std::string mutrigger;
@@ -1823,6 +1842,12 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       if(theJetAK8NjettinessTau1_JetSubCalc->at(ijet)==0) continue;
       if(theJetAK8NjettinessTau2_JetSubCalc->at(ijet)==0) continue;
 
+//HEM correction
+///    if !(isMC) and Year == "2018" and run_CommonCalc>=319077 and ( leptonEta_MultiLepCalc > -1.3 or ( leptonPhi_MultiLepCalc < -1.57 or leptonPhi_MultiLepCalc > -0.87 )){
+ //      if (theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet) >15) and (theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet).chargedEmEnergyFraction()+theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet).neutralEmEnergyFraction() < 0.9) and  (isMuon and deltaR_lepAK8s[i]>0.2) continue
+    //if isMC and Year == "2018" and jentry%0.65 == 0 {
+
+
       // ----------------------------------------------------------------------------                                  
       // Counter and pt ordering pair                                                                                  
       // ----------------------------------------------------------------------------                                  
@@ -1968,6 +1993,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       AK4JetBTag_bSFdn_MultiLepCalc_PtOrdered.push_back(AK4JetBTag_bSFdn_MultiLepCalc->at(jetptindpair[ijet].second));
       AK4JetBTag_lSFup_MultiLepCalc_PtOrdered.push_back(AK4JetBTag_lSFup_MultiLepCalc->at(jetptindpair[ijet].second));
       AK4JetBTag_lSFdn_MultiLepCalc_PtOrdered.push_back(AK4JetBTag_lSFdn_MultiLepCalc->at(jetptindpair[ijet].second));
+//Add EM fraction??
     }
 
     // ----------------------------------------------------------------------------
@@ -2362,6 +2388,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       theJetAK8CHSTau3_JetSubCalc_PtOrdered.push_back(theJetAK8CHSTau3_JetSubCalc->at(jetak8ptindpair[ijet].second));
       theJetParticleNetTvsQCD_JetSubCalc_PtOrdered.push_back(theJetParticleNetTvsQCD_JetSubCalc->at(jetak8ptindpair[ijet].second));
       theJetParticleNetWvsQCD_JetSubCalc_PtOrdered.push_back(theJetParticleNetWvsQCD_JetSubCalc->at(jetak8ptindpair[ijet].second));
+      //add EM fraction
     }
 
     // ----------------------------------------------------------------------------
@@ -2391,7 +2418,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     TLorentzVector leadak8;
     leadak8.SetPtEtaPhiM(0,0,0,0);
 
-    for(int i = 0; i < 8; i++){
+    for(int i = 0; i < 2; i++){
       NJetsWtagged_shifts.push_back(0);
       NJetsTtagged_shifts.push_back(0);
     }
@@ -2517,14 +2544,9 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         // TOP TAGGING 
         // ------------------------------------------------------------------------------------------------------------------
         double PNTSF = 1.0;
-        double PNTSFup = 1.0;
-        double PNTSFdn = 1.0;
+        double PNTSFup = 0.0;
+        double PNTSFdn = 0.0;
         double PNteff = 1.0;
-
-        double PN_TvsQCDSF = 1.0;
-        double PN_TvsQCDSFup = 1.0;
-        double PN_TvsQCDSFdn = 1.0;
-        double PN_TvsQCDeff = 1.0;
 
         if( isTmatched && matchedPt >= 300 ){	    
           hardcodedConditions.GetTtaggingSF(matchedPt, &PNTSF, &PNTSFup, &PNTSFdn, Year);
@@ -2557,14 +2579,9 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         // ------------------------------------------------------------------------------------------------------------------
 
         double PNWSF = 1.0;
-        double PNWSFup = 1.0;
-        double PNWSFdn = 1.0;
+        double PNWSFup = 0.0;
+        double PNWSFdn = 0.0;
         double PNWeff = 1.0;
-
-        double PN_WvsQCDSF = 1.0;
-        double PN_WvsQCDSFup = 1.0;
-        double PN_WvsQCDSFdn = 1.0;
-        double PN_WvsQCDeff = 1.0;
 
 //W+jets?
         if(isWmatched && matchedPt >= 175 && theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200){	    
@@ -2956,6 +2973,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       alphaSWeights.push_back(1.0);
     }
 
+    //}
     // ----------------------------------------------------------------------------
     // DONE!! Write the tree
     // ----------------------------------------------------------------------------
