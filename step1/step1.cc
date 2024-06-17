@@ -1255,6 +1255,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       }
 
       // exclude jets tagged as PU
+      // pileup debug
       if( ijetPUIDTight == false && ijetPt < 50. ){
         NJetsPU_JetSubCalc+=1;
         continue;
