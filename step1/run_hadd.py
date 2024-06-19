@@ -74,7 +74,7 @@ for shift in shifts:
         for fs_key in [ "ttjj", "ttbb", "tt2b", "tt1b", "ttcc" ]:
           outList.append( "{}_{}".format( HT_key, fs_key ) )
     elif "TTTo" in sample:
-      outList = ['Mtt0to700','Mtt700to1000','Mtt1000toInf',"ttbb", "tt2b", "tt1b", "ttcc", "ttjj" ]
+      outList = ["ttbb", "tt2b", "tt1b", "ttcc", "ttjj" ]
     else:
       outList = [ "none" ]
 
