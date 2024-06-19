@@ -12,7 +12,7 @@ from ROOT import *
 execfile( "../EOSSafeUtils.py" )
 
 tags = [
-  "TTTX",
+#  "TTTX",
   "TTNOBB",
   "TTBB",
   "TTNOBBHT500",
@@ -25,14 +25,14 @@ tags = [
 ]
 
 customFiles = {
-  "TTTX": [
-    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_hadd.root",
-    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_1_hadd.root",
-    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_2_hadd.root",
-    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_3_hadd.root",
-    "TTTJ_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
-    "TTTW_TuneCP5_13TeV-madgraph-pythia8_hadd.root"
-  ],
+#  "TTTX": [
+#    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_hadd.root",
+#    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_1_hadd.root",
+#    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_2_hadd.root",
+#    "TTTT_TuneCP5_13TeV-amcatnlo-pythia8_3_hadd.root",
+#    "TTTJ_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+#    "TTTW_TuneCP5_13TeV-madgraph-pythia8_hadd.root"
+#  ],
   "TTNOBB": [
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_1_hadd.root",
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_2_hadd.root",
@@ -44,6 +44,7 @@ customFiles = {
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_8_hadd.root",
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_9_hadd.root",
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_10_hadd.root",
+    "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_11_hadd.root",
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttcc_hadd.root",
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_tt1b_hadd.root",
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_tt2b_hadd.root",
@@ -62,7 +63,7 @@ customFiles = {
   ],
   "TTH": [
     "ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8_hadd.root",
-    "ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8"
+    "ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8_hadd.root",
   ],
   "ST": [
     "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8_hadd.root",

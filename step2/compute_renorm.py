@@ -12,7 +12,7 @@ args = parser.parse_args()
 from ROOT import TFile, TTree, TH2F
 
 labels = {
-  "TTTX": "TTTX_renorm.root",
+  #"TTTX": "TTTX_renorm.root",
   "TTNOBB": "TTNOBB_renorm.root",
   "TTBB": "TTBB_renorm.root",
   "TTNOBBHT500": "TTNOBBHT500_renorm.root",
@@ -22,15 +22,15 @@ labels = {
   "QCD": "QCD_renorm.root",
   "TTXY": "TTXY_renorm.root",
   "EWK": "EWK_renorm.root",
-  "TTToSemiLep1000": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_hadd.root",
-  "TTToSemiLep700": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_hadd.root",
-  "TTToSemiLep0": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_hadd.root",
-  "TTToHad1000": "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_hadd.root",
-  "TTToHad700": "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_hadd.root",
-  "TTToHad0": "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_hadd.root",
-  "TTToLNu1000": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_hadd.root",
-  "TTToLNu700": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_hadd.root",
-  "TTToLNu0": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_hadd.root",
+#  "TTToSemiLep1000": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_hadd.root",
+#  "TTToSemiLep700": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_hadd.root",
+#  "TTToSemiLep0": "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_hadd.root",
+#  "TTToHad1000": "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_hadd.root",
+#  "TTToHad700": "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_hadd.root",
+#  "TTToHad0": "TTToHadronic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_hadd.root",
+#  "TTToLNu1000": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_hadd.root",
+#  "TTToLNu700": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_hadd.root",
+#  "TTToLNu0": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_hadd.root",
   "X53RHM700":"PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8_hadd.root",        
   "X53RHM800":"PairVLQ_x53x53_tWtW_narrow_RH_M800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM900":"PairVLQ_x53x53_tWtW_narrow_RH_M900_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
@@ -41,7 +41,7 @@ labels = {
   "X53RHM1400":"PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1500":"PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1600":"PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
-  "X53RHM500MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root",          
+#  "X53RHM500MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root",          
   "X53RHM600MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root",       
   "X53RHM600MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM700MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX700_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
@@ -65,6 +65,16 @@ labels = {
   "X53RHM1200MH600":"PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1200MH800":"PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1200MH1000":"PairVLQ_x53x53_tHtH_narrow_RH_MX1200_MH1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root", 
+  "X53RHM1300MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX1300_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1300MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX1300_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1300MH600":"PairVLQ_x53x53_tHtH_narrow_RH_MX1300_MH600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1300MH800":"PairVLQ_x53x53_tHtH_narrow_RH_MX1300_MH800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1300MH1000":"PairVLQ_x53x53_tHtH_narrow_RH_MX1300_MH1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1400MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX1400_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root", 
+  "X53RHM1400MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX1400_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1400MH600":"PairVLQ_x53x53_tHtH_narrow_RH_MX1400_MH600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1400MH800":"PairVLQ_x53x53_tHtH_narrow_RH_MX1400_MH800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1400MH1000":"PairVLQ_x53x53_tHtH_narrow_RH_MX1400_MH1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1500MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root", 
   "X53RHM1500MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1500MH600":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
@@ -80,7 +90,7 @@ elif args.location == "BRUX":
   haddPath = config.haddPath[ args.year ][ "BRUX" ] + "/nominal/"
 
 limits = {
-  "NJ": [4,4,8],
+  "NJ": [3,3,8],#[4,4,8],
   "HT": [50,350,4000]
 }
 
