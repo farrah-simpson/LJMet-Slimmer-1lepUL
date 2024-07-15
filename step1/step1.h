@@ -1349,7 +1349,7 @@ public :
    virtual void     saveHistograms();
    bool             applySF(bool& isTagged, float tag_SF, float tag_eff);
    vector<vector<int>>  get_combinations( int n, int k );
-   double           compute_SFWeight( vector<double>& SF, vector<double>& Eff, vector<int>& Tag );
+   double           compute_SFWeight( vector<double>& SF, vector<double>& Eff, vector<double>& Tag );
    
 };
 
@@ -1422,6 +1422,17 @@ step1::step1( TString inputFileName, TString outputFileName, TString Year_, TStr
     else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH600")) SigMass = 36;
     else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH800")) SigMass = 37;
     else if(inputFileName.Contains("_MX1500") && inputFileName.Contains("MH1000")) SigMass = 38;
+    else if(inputFileName.Contains("_MX1600") && inputFileName.Contains("MH200")) SigMass = 39;
+    else if(inputFileName.Contains("_MX1600") && inputFileName.Contains("MH400")) SigMass = 40;
+    else if(inputFileName.Contains("_MX1600") && inputFileName.Contains("MH600")) SigMass = 41;
+    else if(inputFileName.Contains("_MX1600") && inputFileName.Contains("MH800")) SigMass = 42;
+    else if(inputFileName.Contains("_MX1600") && inputFileName.Contains("MH1000")) SigMass = 43;
+    else if(inputFileName.Contains("_MX1700") && inputFileName.Contains("MH200")) SigMass = 44;
+    else if(inputFileName.Contains("_MX1700") && inputFileName.Contains("MH400")) SigMass = 45;
+    else if(inputFileName.Contains("_MX1700") && inputFileName.Contains("MH600")) SigMass = 46;
+    else if(inputFileName.Contains("_MX1700") && inputFileName.Contains("MH800")) SigMass = 47;
+    else if(inputFileName.Contains("_MX1700") && inputFileName.Contains("MH1000")) SigMass = 48;
+
   }
   else SigMass = -1;
   

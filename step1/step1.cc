@@ -33,13 +33,13 @@ TRandom3 Rand;
 const double MTOP  = 173.5;
 const double MW    = 80.4; 
 
-double step1::compute_SFWeight( vector<double>& SF, vector<double>& Eff, vector<int>& Tag ){
+double step1::compute_SFWeight( vector<double>& SF, vector<double>& Eff, vector<double>& Tag ){
   double pMC = 1.;
   double pData = 1.;
   for( unsigned int i = 0; i < Tag.size(); i++ ){
     if( Tag.at(i) == 1 ){
       pMC *= Eff.at(i);
-      pData *= ( SF.at(i) * Eff.at(i) );
+      pData *= SF.at(i) * Eff.at(i);
     }
     else {
       pMC *= ( 1. - Eff.at(i) );
@@ -480,9 +480,6 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   outputTree->Branch("pileupJetIDWeight",&pileupJetIDWeight,"pileupJetIDWeight/F");
   outputTree->Branch("pileupJetIDWeightUp",&pileupJetIDWeightUp,"pileupJetIDWeightUp/F");
   outputTree->Branch("pileupJetIDWeightDown",&pileupJetIDWeightDown,"pileupJetIDWeightDown/F");
-  outputTree->Branch("pileupJetIDWeight_tag",&pileupJetIDWeight_tag,"pileupJetIDWeight_tag/F");
-  outputTree->Branch("pileupJetIDWeightUp_tag",&pileupJetIDWeightUp_tag,"pileupJetIDWeightUp_tag/F");
-  outputTree->Branch("pileupJetIDWeightDown_tag",&pileupJetIDWeightDown_tag,"pileupJetIDWeightDown_tag/F");
   outputTree->Branch("pileupWeight",&pileupWeight,"pileupWeight/F");
   outputTree->Branch("pileupWeightUp",&pileupWeightUp,"pileupWeightUp/F");
   outputTree->Branch("pileupWeightDown",&pileupWeightDown,"pileupWeightDown/F");
@@ -1033,9 +1030,6 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     pileupJetIDWeight = 1.0;
     pileupJetIDWeightUp = 1.0;
     pileupJetIDWeightDown = 1.0;
-    pileupJetIDWeight_tag = 1.0;
-    pileupJetIDWeightUp_tag = 1.0;
-    pileupJetIDWeightDown_tag = 1.0;
 
     std::string sampleType = "";
     if (isTTTT) sampleType = "tttt";
@@ -1121,8 +1115,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     vector<double> jetPUIDsfUp;
     vector<double> jetPUIDsfDn;
     vector<double> jetPUIDEff;
-    vector<int>    jetPUIDTag;
-    vector<int>    jetPUIDTag_tag;
+    vector<double>    jetPUIDTag;
     btagCSVWeight = 1.0;
     btagCSVWeight_HFup = 1.0;
     btagCSVWeight_HFdn = 1.0;
@@ -1241,21 +1234,28 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
             }
           }
           
-          if( isPU == false ){
-            if( ijetPUIDTight == true ){ 
-              jetPUIDTag.push_back( 0 ); // only apply SF to hard jets that aren't PU tagged
-              jetPUIDTag_tag.push_back( 1 ); // in case it's intended to consider real tagged jets as (1-Eff*SF) and not Eff*SF
-              jetPUIDsf.push_back( jetPUIDsf_ );
-              jetPUIDsfUp.push_back( jetPUIDsfUp_ );
-              jetPUIDsfDn.push_back( jetPUIDsfDn_ );
-              jetPUIDEff.push_back( jetPUIDEff_ );
-            }
+          if( isPU == true ){
+            ijetPUIDTight = false; 
+          }
+
+          // only apply scale factors to prompt jets that are geometrically matched
+          // using event re-weighting method 1-a: https://twiki.cern.ch/twiki/bin/view/CMS/BTagSFMethods#1a_Event_reweighting_using_scale
+          // tagged if it is GEN-matched and passes the ID
+          jetPUIDsf.push_back( jetPUIDsf_ );
+          jetPUIDsfUp.push_back( jetPUIDsfUp_ );
+          jetPUIDsfDn.push_back( jetPUIDsfDn_ );
+          jetPUIDEff.push_back( jetPUIDEff_ );
+          if( isPU == false && ijetPUIDTight == true ){
+            jetPUIDTag.push_back( 1 );
+          }
+          // untagged otherwise
+          else{
+            jetPUIDTag.push_back( 0 );
           }
         }
       }
 
-      // exclude jets tagged as PU
-      // pileup debug
+      // exclude jets with pT < 50 GeV tagged as PU
       if( ijetPUIDTight == false && ijetPt < 50. ){
         NJetsPU_JetSubCalc+=1;
         continue;
@@ -1514,9 +1514,6 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       pileupJetIDWeight     = compute_SFWeight( jetPUIDsf, jetPUIDEff, jetPUIDTag );
       pileupJetIDWeightUp   = compute_SFWeight( jetPUIDsfUp, jetPUIDEff, jetPUIDTag );
       pileupJetIDWeightDown = compute_SFWeight( jetPUIDsfDn, jetPUIDEff, jetPUIDTag ); 
-      pileupJetIDWeight_tag     = compute_SFWeight( jetPUIDsf, jetPUIDEff, jetPUIDTag_tag );
-      pileupJetIDWeightUp_tag   = compute_SFWeight( jetPUIDsfUp, jetPUIDEff, jetPUIDTag_tag );
-      pileupJetIDWeightDown_tag = compute_SFWeight( jetPUIDsfDn, jetPUIDEff, jetPUIDTag_tag );
     }
 
     // ----------------------------------------------------------------------------
@@ -1735,10 +1732,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
         lepIdSF_down = hardcodedConditions.GetMuonIdSF( leppt, lepeta, Year, "down" );
         isoSF = hardcodedConditions.GetMuonIsoSF(leppt, lepeta, Year);
         
-        if( Year == "2016APV" || Year == "2016" ){ // there are no centrally maintained 2016preVFP and 2016postVFP UL SF, so use the SF separately
-          triggerSF = hardcodedConditions.GetMuonTriggerSF( leppt, lepeta, Year );
-          triggerXSF = hardcodedConditions.GetMuonTriggerXSF( AK4HT, leppt, lepeta, Year );
-        }
+ //       if( Year == "2016APV" || Year == "2016" ){ // there are no centrally maintained 2016preVFP and 2016postVFP UL SF, so use the SF separately
+//          triggerSF = hardcodedConditions.GetMuonTriggerSF( leppt, lepeta, Year );
+//          triggerXSF = hardcodedConditions.GetMuonTriggerXSF( AK4HT, leppt, lepeta, Year );
+//        }
         if( MCLepPastTrigger == 1 && MCPastTriggerX == 1 ){ // defaults to using the single-object trigger if available
           triggerSF = hardcodedConditions.GetMuonTriggerSF( leppt, lepeta, Year );
           triggerXSF = 1.0; 
@@ -1845,8 +1842,9 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
 
 //HEM correction
 ///    if !(isMC) and Year == "2018" and run_CommonCalc>=319077 and ( leptonEta_MultiLepCalc > -1.3 or ( leptonPhi_MultiLepCalc < -1.57 or leptonPhi_MultiLepCalc > -0.87 )){
- //      if (theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet) >15) and (theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet).chargedEmEnergyFraction()+theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet).neutralEmEnergyFraction() < 0.9) and  (isMuon and deltaR_lepAK8s[i]>0.2) continue
-    //if isMC and Year == "2018" and jentry%0.65 == 0 {
+ //      if (theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet) >15) and  (isMuon and deltaR_lepAK8s[i]>0.2) continue
+    //if isMC and Year == "2018" and jentry%0.65 == 0  and ( leptonEta_MultiLepCalc > -1.3 or ( leptonPhi_MultiLepCalc < -1.57 or leptonPhi_MultiLepCalc > -0.87 )){
+ //      if (theJetAK8Pt_JetSubCalc_PtOrdered->at(ijet) >15) and  (isMuon and deltaR_lepAK8s[i]>0.2) continue
 
 
       // ----------------------------------------------------------------------------                                  
