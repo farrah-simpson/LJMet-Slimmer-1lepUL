@@ -39,7 +39,7 @@ double step1::compute_SFWeight( vector<double>& SF, vector<double>& Eff, vector<
   for( unsigned int i = 0; i < Tag.size(); i++ ){
     if( Tag.at(i) == 1 ){
       pMC *= Eff.at(i);
-      pData *= SF.at(i) * Eff.at(i);
+      pData *= (SF.at(i) * Eff.at(i) );
     }
     else {
       pMC *= ( 1. - Eff.at(i) );
@@ -805,7 +805,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
    int   njetsCut=3;
    int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
    int   nbjetsCut_shift=1; // syst shift samples aren't used to calculate weights, so can exclude these events for pre-selection 
-   float jetPtCut=25; //30
+   float jetPtCut=30; 
    float jetEtaCut=2.4;
    float ak8EtaCut=2.4;
    float ak8PtCut=200;
@@ -1115,7 +1115,7 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
     vector<double> jetPUIDsfUp;
     vector<double> jetPUIDsfDn;
     vector<double> jetPUIDEff;
-    vector<double>    jetPUIDTag;
+    vector<double> jetPUIDTag;
     btagCSVWeight = 1.0;
     btagCSVWeight_HFup = 1.0;
     btagCSVWeight_HFdn = 1.0;
@@ -1200,10 +1200,10 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
       double ijetEta = theJetEta_JetSubCalc->at(ijet);
       
       if( ijetPt < jetPtCut || fabs(ijetEta) > jetEtaCut ) continue; // jet pt and eta cut
-      if ( hardcodedConditions.GetJetVetoMap( theJetEta_JetSubCalc->at(ijet), theJetPhi_JetSubCalc->at(ijet), Year ) == true ){ // jet veto map
-        jetveto += 1;
-        continue;
-      } 
+//      if ( hardcodedConditions.GetJetVetoMap( theJetEta_JetSubCalc->at(ijet), theJetPhi_JetSubCalc->at(ijet), Year ) == true ){ // jet veto map
+//        jetveto += 1;
+//        continue;
+//      } 
       jettotal += 1;
       
       jetEtaSum+=fabs(ijetEta);
@@ -1234,10 +1234,30 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
             }
           }
           
-          if( isPU == true ){
-            ijetPUIDTight = false; 
-          }
-
+//old version
+//          if( isPU == false ){
+//            if( ijetPUIDTight == true ){ 
+//              jetPUIDTag.push_back( 1 ); // only apply SF to hard jets that aren't PU tagged
+//              jetPUIDsf.push_back( jetPUIDsf_ );
+//              jetPUIDsfUp.push_back( jetPUIDsfUp_ );
+//              jetPUIDsfDn.push_back( jetPUIDsfDn_ );
+//              jetPUIDEff.push_back( jetPUIDEff_ );
+//            }
+//          }
+//        }
+//      }
+//
+//      // exclude jets tagged as PU
+//      // pileup debug
+//      if( ijetPUIDTight == false && ijetPt < 50. ){
+//        NJetsPU_JetSubCalc+=1;
+//        continue;
+//      }
+//Daniel's fix
+//          if( isPU == true ){
+//            ijetPUIDTight = false; 
+//          }
+//
           // only apply scale factors to prompt jets that are geometrically matched
           // using event re-weighting method 1-a: https://twiki.cern.ch/twiki/bin/view/CMS/BTagSFMethods#1a_Event_reweighting_using_scale
           // tagged if it is GEN-matched and passes the ID

@@ -224,6 +224,8 @@ Error = %(OUTFILENAME)s_%(ID)s.err
 Log = %(OUTFILENAME)s_%(ID)s.log
 JobBatchName = step1_%(SHIFT)sUL%(YEAR)s_%(TAG)s 
 Notification = Never
+Priority = 20
++ApptainerImage = "/cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel7"
 Arguments = "%(FILENAME)s %(OUTFILENAME)s %(INPUTDIR)s/%(SAMPLE)s/%(INPATHSUFFIX)s %(OUTPUTDIR)s/%(OUTFILENAME)s '%(LIST)s' %(ID)s %(YEAR)s %(SHIFT)s %(SITE)s %(LOCATION)s"
 Queue 1"""%jobParams)
             jdf.close()
@@ -235,6 +237,7 @@ print( "[CONDOR] Submitting {} jobs".format( len( job_submit ) ) )
 for i in tqdm( range( len( job_submit ) ) ):
   os.chdir( os.path.join( condorDir, job_shift[i] ) )
   #os.system('condor_submit %(OUTFILENAME)s_%(ID)s.job'%dict)
+  print("TESTING", job_submit[i])
   submit = subprocess.call( [ "condor_submit", job_submit[i] ], stdout = open( os.devnull, "w" ), stderr = subprocess.STDOUT )
   #os.system( "condor_submit {}".format( job_submit[i] ) )
   os.chdir( jobParams["RUNDIR"] )
