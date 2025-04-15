@@ -9,11 +9,11 @@ parser.add_argument( "-y", "--year", default = "17" )
 parser.add_argument( "-loc", "--location", required = True, help = "BRUX,LPC,LOCAL" )
 args = parser.parse_args()
 
-from ROOT import TFile, TTree, TH2F
+from ROOT import TFile, TTree, TH2F, TChain
 
 labels = {
   #"TTTX": "TTTX_renorm.root",
-  "TTNOBB": "TTNOBB_renorm.root",
+ "TTNOBB": "TTNOBB_renorm.root",
   "TTBB": "TTBB_renorm.root",
   "TTNOBBHT500": "TTNOBBHT500_renorm.root",
   "TTBBHT500": "TTBBHT500_renorm.root",
@@ -41,6 +41,7 @@ labels = {
   "X53RHM1400":"PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1500":"PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1600":"PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1700":"PairVLQ_x53x53_tWtW_narrow_RH_M1700_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
 #  "X53RHM500MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root",          
   "X53RHM600MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root",       
   "X53RHM600MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
@@ -79,7 +80,18 @@ labels = {
   "X53RHM1500MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1500MH600":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
   "X53RHM1500MH800":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
-  "X53RHM1500MH1000":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root"
+  "X53RHM1500MH1000":"PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1600MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root", 
+  "X53RHM1600MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1600MH600":"PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1600MH800":"PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1600MH1000":"PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1700MH200":"PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root", 
+  "X53RHM1700MH400":"PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH400_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1700MH600":"PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH600_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1700MH800":"PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH800_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
+  "X53RHM1700MH1000":"PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root"
+
 }
 
 if not os.path.exists( "renorm/UL{}/".format( args.year ) ): os.system( "mkdir -vp renorm/UL{}/".format( args.year ) )
@@ -90,7 +102,7 @@ elif args.location == "BRUX":
   haddPath = config.haddPath[ args.year ][ "BRUX" ] + "/nominal/"
 
 limits = {
-  "NJ": [3,3,8],#[4,4,8],
+  "NJ": [5,3,8],#[4,4,8],
   "HT": [50,350,4000]
 }
 
@@ -98,9 +110,12 @@ for label in labels:
   if os.path.exists( "renorm/UL{}/{}".format( args.year, "Weights_{}_extended_HT_cuts_sys.root".format( label ) ) ): 
     print( "[INFO] {} weights already exist, skipping...".format( label ) )
     continue
-  
   print( "[START] Computing deepJet renormalization weight for: {}".format( label ) )
-  if args.location == "LOCAL":
+  if label == 'TTNOBB' and args.year == '18':
+    ttree = TChain("ljmet")
+    for flv in ['tt1b','tt2b','ttjj_1','ttjj_2','ttjj_3','ttjj_4','ttjj_5','ttjj_6','ttjj_7','ttjj_8','ttjj_9','ttjj_10','ttjj_11']:
+        ttree.AddFile(os.path.join( haddPath, 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_'+flv+'_hadd.root' )) 
+  elif args.location == "LOCAL":
     tfile = TFile.Open( args.file )
   else:
     tfile = TFile.Open( os.path.join( haddPath, labels[ label ] ) )
@@ -123,7 +138,7 @@ for label in labels:
     h2D[ "weight" ][ systematic ] = TH2F( "h2D_weight_{}".format( systematic ), "h2D_{}".format( systematic ), limits["NJ"][0], limits["NJ"][1], limits["NJ"][2], limits["HT"][0], limits["HT"][1], limits["HT"][2] )
     h2D[ "weight" ][ systematic ].Sumw2()
 
-  ttree = tfile.Get( "ljmet" )
+  if not (label == 'TTNOBB' and args.year == '18'): ttree = tfile.Get( "ljmet" )
 
   ttree.SetBranchStatus( "*", 0 )
   ttree.SetBranchStatus( "NJets_JetSubCalc*", 1 )

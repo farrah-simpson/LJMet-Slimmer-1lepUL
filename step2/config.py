@@ -5,7 +5,9 @@ years = [ "16APV", "16", "17", "18" ]
 haddPath = {
   year: {
     "LPC": "/eos/uscms/store/user/{}/FWLJMET106XUL_singleLep20{}UL_RunIISummer20v2_{}_step1hadds".format( eosUserName, year, postfix ),
+    #"BRUX": "/isilon/hadoop/store/user/{}/FWLJMET106XUL_singleLep20{}UL_RunIISummer20v2_PUupdated_{}step1hadds".format( eosUserName, year, postfix ) 
     "BRUX": "/isilon/hadoop/store/user/{}/FWLJMET106XUL_singleLep20{}UL_RunIISummer20v2_{}step1hadds".format( eosUserName, year, postfix ) 
+
   } for year in years
 }
 

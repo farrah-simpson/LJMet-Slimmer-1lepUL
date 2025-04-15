@@ -605,6 +605,16 @@ void step2::Loop()
    if(isX53RHM1500MH600)   sampleType = "X53RHM1500MH600";
    if(isX53RHM1500MH800)   sampleType = "X53RHM1500MH800";
    if(isX53RHM1500MH1000)   sampleType = "X53RHM1500MH1000";
+   if(isX53RHM1600MH200)   sampleType = "X53RHM1600MH200";
+   if(isX53RHM1600MH400)   sampleType = "X53RHM1600MH400";
+   if(isX53RHM1600MH600)   sampleType = "X53RHM1600MH600";
+   if(isX53RHM1600MH800)   sampleType = "X53RHM1600MH800";
+   if(isX53RHM1600MH1000)   sampleType = "X53RHM1600MH1000";
+   if(isX53RHM1700MH200)   sampleType = "X53RHM1700MH200";
+   if(isX53RHM1700MH400)   sampleType = "X53RHM1700MH400";
+   if(isX53RHM1700MH600)   sampleType = "X53RHM1700MH600";
+   if(isX53RHM1700MH800)   sampleType = "X53RHM1700MH800";
+   if(isX53RHM1700MH1000)   sampleType = "X53RHM1700MH1000";
    if(isX53RHM1600)   sampleType = "X53RHM1600";
    if(isX53RHM1500)   sampleType = "X53RHM1500";
    if(isX53RHM1400)   sampleType = "X53RHM1400";

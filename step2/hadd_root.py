@@ -33,6 +33,7 @@ customFiles = {
 #    "TTTJ_TuneCP5_13TeV-madgraph-pythia8_hadd.root",
 #    "TTTW_TuneCP5_13TeV-madgraph-pythia8_hadd.root"
 #  ],
+#does not work for 2018, compute_renorm will do this
   "TTNOBB": [
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_1_hadd.root",
     "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_2_hadd.root",

@@ -13,8 +13,8 @@ parser.add_argument( "-y", "--year", default = "17", help = "Year options: [16AP
 parser.add_argument( "--test", action = "store_true", help = "Run only a single file" )
 parser.add_argument( "--dnn", action = "store_true", help = "Run only files used in step3 DNN training" )
 parser.add_argument( "--shifts", action = "store_true", help = "Run JEC/JER shift samples" )
-parser.add_argument( "-i", "--inLoc", default = "LPC", help = "step1 location options: LPC, BRUX" )
-parser.add_argument( "-o", "--outLoc", default = "LPC", help = "step2 destination options: LPC, BRUX" )
+parser.add_argument( "-i", "--inLoc", default = "BRUX", help = "step1 location options: LPC, BRUX" )
+parser.add_argument( "-o", "--outLoc", default = "BRUX", help = "step2 destination options: LPC, BRUX" )
 args = parser.parse_args()
 
 from ROOT import *
@@ -90,7 +90,7 @@ for shift in shifts:
     #if shift != "nominal": continue
   for rootFile in step1Files[ shift ]:
     if args.test: 
-      if "TTTW" not in rootFile: continue
+      if "EGamma" not in rootFile: continue
     if args.dnn:
       if "TTTW" not in rootFile and "TTTJ" not in rootFile and "TTTT" not in rootFile and "TTTo" not in rootFile: continue
       if "up" in rootFile.lower() or "down" in rootFile.lower(): continue
@@ -122,6 +122,7 @@ Transfer_Input_Files = %(RUNDIR)s/%(SYSFILE)s, %(RUNDIR)s/HardcodedConditions.cc
 Output = %(FILENAME)s.out
 Error = %(FILENAME)s.err
 Log = %(FILENAME)s.log
+Priority = 20
 JobBatchName = step2_UL%(YEAR)s_%(SHIFT)s_%(TAG)s
 Notification = Never
 Arguments = %(FILENAME)s.root %(FILENAME)s.root %(INPUTDIR)s %(OUTPUTDIR)s %(YEAR)s

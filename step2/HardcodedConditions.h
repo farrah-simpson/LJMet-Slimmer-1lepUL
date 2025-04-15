@@ -54,6 +54,7 @@ public:
   SFmap hscale_X53RHM1400;
   SFmap hscale_X53RHM1500;
   SFmap hscale_X53RHM1600;
+  SFmap hscale_X53RHM1700;
   SFmap hscale_X53RHM600MH200;   
   SFmap hscale_X53RHM600MH400; 
   SFmap hscale_X53RHM700MH200; 
@@ -92,6 +93,17 @@ public:
   SFmap hscale_X53RHM1500MH600;
   SFmap hscale_X53RHM1500MH800;
   SFmap hscale_X53RHM1500MH1000;
+  SFmap hscale_X53RHM1600MH200;
+  SFmap hscale_X53RHM1600MH400;
+  SFmap hscale_X53RHM1600MH600;
+  SFmap hscale_X53RHM1600MH800;
+  SFmap hscale_X53RHM1600MH1000;
+  SFmap hscale_X53RHM1700MH200;
+  SFmap hscale_X53RHM1700MH400;
+  SFmap hscale_X53RHM1700MH600;
+  SFmap hscale_X53RHM1700MH800;
+  SFmap hscale_X53RHM1700MH1000;
+
 };
 
 #endif
